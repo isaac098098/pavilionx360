@@ -40,7 +40,7 @@ vim.api.nvim_set_keymap('n', '<C-t>', '<cmd>lua cwd_term()<CR>', { noremap = tru
 require("toggleterm").setup{
     -- size can be a number or function which is passed the current terminal
     direction = 'float',
-    open_mapping = '<C-i>', -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+    open_mapping = '<C-y>', -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
     -- on_close = fun(t: Terminal), -- function to run when the terminal closes
     hide_numbers = true, -- hide the number column in toggleterm buffers
     on_open = function(term)

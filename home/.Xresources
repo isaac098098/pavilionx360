@@ -1,0 +1,5 @@
+/*nsxiv base16 tomorrow night*/
+
+Nsxiv.*.background:    #1d1f21
+Nsxiv.*.foreground:    #c5c8c6
+Nsxiv.*.font:          JetBrains Mono NL SemiBold-8

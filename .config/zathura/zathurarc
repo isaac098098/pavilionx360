@@ -1,4 +1,4 @@
-#set guioptions                  ""
+set guioptions                  ""
 set font                        "JetBrains Mono NL SemiBold 9"
 set recolor                     "false"
 set recolor-keephue             "true"

@@ -13,7 +13,7 @@ end
 
 -- Keybindigns
 vim.keymap.set('n','<C-n>','<cmd>NvimTreeToggle<CR>')
---vim.keymap.set('n','<leader>e','<cmd>NvimTreeFocus<CR>')
+-- vim.keymap.set('n','<leader>e','<cmd>NvimTreeFocus<CR>')
 vim.api.nvim_set_keymap('n','<leader>e',':lua parent()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n','<localleader>tf','<cmd>NvimTreeFindFile<CR>')
 
@@ -35,6 +35,7 @@ require("nvim-tree").setup {
     on_attach = attach,
     hijack_cursor = true,
     sync_root_with_cwd = true,
+    -- open_on_tab  = true,
     update_focused_file = {
         enable = true,
         update_root = false,
@@ -50,7 +51,7 @@ require("nvim-tree").setup {
         root_folder_label = false,
         highlight_git = true,
         group_empty = true,
-        indent_markers = { enable = false },
+        indent_markers = { enable = false},
         icons = {
             glyphs = {
                 default = "󰈚",

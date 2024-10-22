@@ -254,9 +254,14 @@ workspace_layout tabbed
 
 # Hide cursor
 
-bindsym $mod+u exec --no-startup-id inclutter -idle 2.0 -root
+bindsym $mod+u exec --no-startup-id unclutter -idle 2.0 -root
 bindsym $mod+t exec --no-startup-id killall unclitter
 
 # Screenshots
 
 bindsym Print exec --no-startup-id scrot -F "$HOME/documents/images/screens/%Y%m%d-%H%M%S.png"
+
+# Screen saving and nsxiv
+
+exec --no-startup-id xset s off -dmps
+exec --no-startup-id xrdb -load .Xresources
