@@ -263,5 +263,6 @@ bindsym Print exec --no-startup-id scrot -F "$HOME/documents/images/screens/%Y%m
 
 # Screen saving and nsxiv
 
-exec_always --no-startup-id xset s off -dmps
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dmps
 exec_always --no-startup-id xrdb -load .Xresources
