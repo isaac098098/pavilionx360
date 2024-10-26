@@ -39,6 +39,7 @@ return {
         name = 'luasnip',
         version = "v2.*",
         build = "make install_jsregexp",
+        ft = 'tex',
         init = function()
             require('config.luasnip')
         end
@@ -50,8 +51,7 @@ return {
             require('config.zen-mode')
         end
     },
-    {
-        "neovim/nvim-lspconfig",
+    { "neovim/nvim-lspconfig",
         config = function()
             require("config.lspconfig")
         end,

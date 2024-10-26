@@ -28,16 +28,17 @@ vim.keymap.set('n','j','gj')
 vim.keymap.set('n','k','gk')
 vim.keymap.set('n','t','gt')
 vim.keymap.set('n','T','gT')
-vim.cmd('nnoremap <CR> :write<CR>')
+-- vim.cmd('nnoremap <CR> :write<CR>')
 
 -- Visual mode
-vim.keymap.set('v','oi','<Esc>')
+vim.keymap.set('v','<A-i>','<Esc>')
 
 -- Select mode
-vim.keymap.set('s','oi','<Esc>')
+vim.keymap.set('s','<A-i>','<Esc>')
 
 -- Insert mode
-vim.keymap.set('i','oi','<Esc>')
+vim.keymap.set('i','<A-i>','<Esc>')
+vim.keymap.set('i','<C-e>','<C-o>$')
 
 --Plugins
 require("config.lazy")

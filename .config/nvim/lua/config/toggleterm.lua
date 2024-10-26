@@ -25,6 +25,7 @@ function cwd_term()
         cmd = 'bash',
         dir = dir,
         direction = 'float',
+        start_in_insert = true,
         float_opts = {
             border = 'rounded',
             width = vim.o.columns - get_nvim_tree_width() - 3,
