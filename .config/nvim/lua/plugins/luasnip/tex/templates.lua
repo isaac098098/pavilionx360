@@ -150,16 +150,23 @@ s(
     {trig = "math-notes", dscr = "Math notes"},
     fmta(
     [[
-		%! TeX root = main.tex
-		\newcommand{\notestitle}{<>}
-		\newcommand{\notesprof}{<>}
-		\newcommand{\notesauthor}{<>}
+    \newcommand{\notestitle}{<>}
+    \newcommand{\notesprof}{<>}
+    \newcommand{\notesauthor}{<>}
 
-		\input{../preamble.tex}
+    \input{pream.tex}
+    \begin{document}
+    \pagenumbering{roman}
+    \maketitle
+    \thispagestyle{plain}
+    \tableofcontents
+    \newpage
+    \pagestyle{title-subsection}
 
-		\input{<>}
+    \input{<>}
 
-		\input{bibliography.tex}
+    \input{eof.tex}
+    \end{document}
     ]],
     {
         i(1,"Title"),
