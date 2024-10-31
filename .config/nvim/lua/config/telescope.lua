@@ -12,6 +12,7 @@ return {
         selection_caret = " ",
         entry_prefix = " ",
         sorting_strategy = "ascending",
+        hidden = true,
         layout_config = {
             horizontal = {
                 prompt_position = "top",
@@ -24,7 +25,11 @@ return {
             n = { ["q"] = require("telescope.actions").close },
         },
     },
-
+    pickers = {
+        find_files = {
+            hidden = true
+        }
+    },
     extensions_list = { "themes", "terms" },
     extensions = {},
 }

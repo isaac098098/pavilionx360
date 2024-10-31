@@ -1,9 +1,13 @@
 #!/usr/bin/bash
+
 cp -r ~/.config/i3 ~/pavilionx360/.config/i3
-cp -r ~/.config/i3status/i3status.conf ~/pavilionx360/.config/i3status
-cp -r ~/.config/kitty ~/pavilionx360/.config/kitty
-cp -r ~/.config/nvim ~/pavilionx360/.config/nvim
-cp -r ~/.config/zathura ~/pavilionx360/.config/zathura
+cp -r ~/.config/i3status/ ~/pavilionx360/.config/
+cp -r ~/.config/kitty ~/pavilionx360/.config/
+cp -r ~/.config/nvim ~/pavilionx360/.config/
+
+cp -r ~/.config/zathura ~/pavilionx360/.config/
+cp ~/.vimrc ~/pavilionx360/home/
 cp ~/.xinitrc ~/pavilionx360/home/
-cp ~/.xinitrc ~/pavilionx360/home/
+cp ~/.bashrc ~/pavilionx360/home/
+cp ~/.Xresources ~/pavilionx360/home/
 cp ~/.bash_profile ~/pavilionx360/home/
