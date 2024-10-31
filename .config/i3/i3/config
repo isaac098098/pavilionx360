@@ -255,7 +255,7 @@ workspace_layout tabbed
 # Hide cursor
 
 bindsym $mod+u exec --no-startup-id unclutter -idle 2.0 -root
-bindsym $mod+t exec --no-startup-id killall unclitter
+bindsym $mod+t exec --no-startup-id killall unclutter
 
 # Screenshots
 

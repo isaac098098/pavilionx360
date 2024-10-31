@@ -86,5 +86,10 @@ return {
             return require('config.bufferline')
         end
     },
-
+    -- {
+    --     'navarasu/onedark.nvim',
+    --     config = function()
+    --         return require('config.onedark')
+    --     end
+    -- },
 }
