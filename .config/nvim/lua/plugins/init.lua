@@ -31,9 +31,9 @@ return {
             require('config.nvim-treesitter')
         end
     },
-    {
-        'RRethy/base16-nvim',
-    },
+    -- {
+    --     'RRethy/base16-nvim',
+    -- },
     {
         "L3MON4D3/LuaSnip",
         name = 'luasnip',
@@ -86,10 +86,10 @@ return {
             return require('config.bufferline')
         end
     },
-    -- {
-    --     'navarasu/onedark.nvim',
-    --     config = function()
-    --         return require('config.onedark')
-    --     end
-    -- },
+    {
+        'navarasu/onedark.nvim',
+        config = function()
+            return require('config.onedark')
+        end
+    },
 }

@@ -42,19 +42,3 @@ vim.keymap.set('i','<C-e>','<C-o>$')
 
 --Plugins
 require("config.lazy")
-
--- Colorschemes
-vim.cmd('colorscheme base16-tomorrow-night')
-vim.cmd('highlight NvimTreeEndOfBuffer guifg=#1d1f21')
-vim.cmd('highlight NvimTreeWinSeparator guibg=#1a1b1d guifg=#1a1b1d')
-vim.cmd('highlight NvimTreeNormal guibg=#1a1b1d')
-vim.cmd('highlight NvimTreeStatusLine guibg=#1a1b1d')
-vim.cmd('highlight NvimTreeStatusLineNC guibg=#1a1b1d')
-vim.cmd('highlight EndOfBuffer guifg=#1d1f21')
-
---toggleterm
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#1a1b1d', fg = '#ffffff' })
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#1d1f21', fg = '#ffffff' })
-
--- bufferline
-vim.cmd('highlight BufferLineOffsetSeparator guifg=#1A1B1D guibg=#1A1B1D')
