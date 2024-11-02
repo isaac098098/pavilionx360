@@ -4,42 +4,80 @@ set recolor                     "false"
 set recolor-keephue             "true"
 set selection-clipboard         clipboard
 
+# onedark-darker
+
+set default-bg                  "#1f2329" #bg0
+set default-fg                  "#a0a8b7" #fg
+
+set completion-bg               "#282c34" #bg1
+set completion-fg               "#48b0bd" #cyan
+set completion-highlight-fg     "#282c34" #bg1
+set completion-highlight-bg     "#48b0bd" #cyan
+set completion-group-fg         "#282c34" #bg1
+set completion-group-bg         "#48b0bd" #cyan
+
+set statusbar-fg                "#a9a8b7" #fg
+set statusbar-bg                "#1f2329" #bg0
+
+set notification-bg             "#8ebb6b" #green
+set notification-fg             "#1f2329" #bg0
+set notification-warning-bg     "#e2b86b" #yellow
+set notification-warning-fg     "#1f2329" #bg0
+set notification-error-bg       "#e55561" #red
+set notification-error-fg       "#1f2329" #bg0
+
+set recolor-lightcolor          "#1f2329" #bg0
+set recolor-darkcolor           "#a0a8b7" #fg
+
+set index-bg                    "#1f2329" #bg0
+set index-fg                    "#a0a8b7" #fg
+set index-active-bg             "#cc9057" #orange
+set index-active-fg             "#1f2329" #bg
+
+set render-loading-bg           "#1f2329" #bg0
+set render-loading-fg           "#1f2329" #bg0
+
+set inputbar-bg                 "#1f2329" #bg0
+set inputbar-fg                 "#a0a8b7" #fg
+
+set highlight-color             rgba(240,198,116,0)
+set highlight-active-color      rgba(129,162,190,0)
+
 # base16 tomorrow night
 
-set default-bg                  "#1d1f21" #00
-set default-fg                  "#c5c8c6" #05
+# set default-bg                  "#1d1f21" #00
+# set default-fg                  "#c5c8c6" #05
 
-set completion-bg               "#373b41" #02
-set completion-fg               "#8abeb7" #0C
-set completion-highlight-fg     "#373b41" #02
-set completion-highlight-bg     "#8abeb7" #0C
-set completion-group-fg         "#373b41" #02
-set completion-group-bg         "#8abeb7" #0C
+# set completion-bg               "#373b41" #02
+# set completion-fg               "#8abeb7" #0C
+# set completion-highlight-fg     "#373b41" #02
+# set completion-highlight-bg     "#8abeb7" #0C
+# set completion-group-fg         "#373b41" #02
+# set completion-group-bg         "#8abeb7" #0C
 
-set statusbar-fg                "#b4b7b4" #04
-set statusbar-bg                "#282a2e" #01
+# set statusbar-fg                "#b4b7b4" #04
+# set statusbar-bg                "#282a2e" #01
 
-set notification-bg             "#b5bd68" #09
-set notification-fg             "#1d1f21" #00
-set notification-warning-bg     "#de935f" #09
-set notification-warning-fg     "#1d1f21" #00
-set notification-error-bg       "#cc6666" #00
-set notification-error-fg       "#1d1f21" #00
+# set notification-bg             "#b5bd68" #09
+# set notification-fg             "#1d1f21" #00
+# set notification-warning-bg     "#de935f" #09
+# set notification-warning-fg     "#1d1f21" #00
+# set notification-error-bg       "#cc6666" #00
+# set notification-error-fg       "#1d1f21" #00
 
-set recolor-lightcolor          "#1d1f21" #00
-set recolor-darkcolor           "#e0e0e0" #06
+# set recolor-lightcolor          "#1d1f21" #00
+# set recolor-darkcolor           "#e0e0e0" #06
 
-set index-bg                    "#1d1f21" #09
-set index-fg                    "#c5c8c6" #00
-set index-active-bg             "#de935f" #09
-set index-active-fg             "#1d1f21" #00
+# set index-bg                    "#1d1f21" #09
+# set index-fg                    "#c5c8c6" #00
+# set index-active-bg             "#de935f" #09
+# set index-active-fg             "#1d1f21" #00
 
-set render-loading-bg           "#de935f" #09
-set render-loading-fg           "#1d1f21" #00
+# set render-loading-bg           "#de935f" #09
+# set render-loading-fg           "#1d1f21" #00
 
-set inputbar-bg                 "#1d1f21" #00
-set inputbar-fg                 "#c5c8c6" #02
+# set inputbar-bg                 "#1d1f21" #00
+# set inputbar-fg                 "#c5c8c6" #02
 
-set highlight-color             rgba(240,198,116,0) #0A
-set highlight-active-color      rgba(129,162,190,0) #0D
-
+# set highlight-color             rgba(240,198,116,0) #0A
+# set highlight-active-color      rgba(129,162,190,0) #0D
