@@ -82,6 +82,25 @@
 %\usepackage{relsize} %relative text resizing
 \usepackage{scalerel} %relative math text resizing
 \usepackage{xcolor}
+\usepackage{listings} %code
+\usepackage{changepage} %adjustwidth environment
+
+\definecolor{gray}{HTML}{f2f2f2}
+
+\lstset{
+    backgroundcolor=\color{gray},
+    breaklines=true,
+    basicstyle=\ttfamily,
+    numberstyle=\ttfamily,
+    numbers=left,
+    numbersep=12pt,
+    frame=single,
+    framexleftmargin=12mm,
+    framextopmargin=2mm,
+    framexbottommargin=2mm,
+    rulecolor=\color{black},
+    framerule=0.7pt,
+}
 
 %Preamble
 
@@ -105,20 +124,20 @@
 
 %Section formatting, depends on titlesec
 
-%\titlespacing*{\section}{0cm}{0cm}{0cm}
-\titlespacing*{\subsection}{0em}{1.4em}{1.4em} %Espaciado de las subsecciones
+\titlespacing*{\section}{0em}{1.4em}{1.4em}
+\titlespacing*{\subsection}{0em}{1.4em}{1.4em}
+\titlespacing*{\subsubsection}{0em}{1.4em}{1.4em}
 %use * to apply to all instances
 %\titlespacing*{sec}{left spacing}{above spacing}{below spacing}
 
-%\titleformat{\section}{\centering\large\scshape}{\thesection.}{0.5em}{}
-\titleformat{\section}{\centering\LARGE}{\thesection.}{0.5em}{}
-%\titleformat{\subsection}{\centering\normalsize\scshape}{\thesubsection.}{0.5em}{}
-\titleformat{\subsection}{\centering\large}{\thesubsection.}{0.5em}{}
+\titleformat{\section}{\LARGE}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\Large}{\thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}{\large}{\thesubsubsection.}{0.5em}{}
 %titleformat{sec}{format}{number format}{number to title spacing}{prenote (between number and title)}
-\renewcommand{\thesection}{\normalfont\arabic{section}} %section number format
+\renewcommand{\thesection}{\arabic{section}} %section number format
 %\renewcommand{\thesection}{\normalfont\Roman{section}} %subsection number format
 %\renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}} %subsection number format
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} %Formato de las subsecciones
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} %subsection format
 
 %toc
 %does not affect section titles in the document body
@@ -127,7 +146,7 @@
 %use addto to add title to spanish title definitions
 %use captionenglish otherwise
 \renewcommand{\cfttoctitlefont}{\huge\scshape} %toc title format
-\renewcommand{\cftsecfont}{\itshape} %section entry format
+\renewcommand{\cftsecfont}{\bfseries} %section entry format
 \renewcommand{\cftsecpagefont}{} %section entry number format
 \renewcommand{\cftsubsecpagefont}{} %subsection entry number format
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} %dot leaders (dot lines)
@@ -227,7 +246,7 @@
 {\topsep} %Separación inferior
 {\itshape} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Teorema [número] [nombre]
@@ -239,7 +258,7 @@
 {\topsep} %Separación inferior
 {\itshape} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Proposición [número] [nombre]
@@ -251,7 +270,7 @@
 {\topsep} %Separación inferior
 {\itshape} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Corolario[número] [nombre]
@@ -263,7 +282,7 @@
 {\topsep} %Separación inferior
 {\itshape} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Lema [número] [nombre]
@@ -273,9 +292,9 @@
 \newtheoremstyle{definition}
 {\topsep} %Separación superior
 {\topsep} %Separación inferior
-{\itshape} %Fuente del cuerpo
+{} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{. (#3)}}} %Definición [número] [nombre]
@@ -299,7 +318,7 @@
 {\topsep} %Separación inferior
 {\rmfamily} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Ejercicio [número] [nombre]
@@ -311,12 +330,12 @@
 {\topsep} %Separación inferior
 {\rmfamily} %Fuente del cuerpo
 {0em} %Sangría
-{\scshape} %Fuente del encabezado
+{\bfseries} %Fuente del encabezado
 {.} %Puntuación después del encabezado
 {0.5em} %Espacio después del encabezado
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Ejemplo [número] [nombre]
 \theoremstyle{example}
-\newtheorem{example}{Ejemplo}[subsection]
+\newtheorem{example}{Ejemplo}[section]
 
 %Lectures
 \newcommand{\seclecture}[2]{

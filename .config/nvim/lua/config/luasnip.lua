@@ -2,7 +2,7 @@ local ls = require("luasnip")
 
 --load and reaload snippets
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/plugins/luasnip/"})
-vim.keymap.set('n', '<localleader>u', '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})<CR>')
+vim.keymap.set('n', '<localleader>u', '<Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/plugins/luasnip/"})<CR>')
 
 --save and compile
 --vim.keymap.set({"i","s"}, "jk", function() ls.expand_or_jump() vim.api.nvim_command('write') end, {silent = true})

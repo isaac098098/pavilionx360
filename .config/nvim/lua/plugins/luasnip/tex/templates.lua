@@ -162,6 +162,7 @@ s(
     \tableofcontents
     \newpage
     \pagestyle{title-subsection}
+    \pagenumbering{arabic}
 
     \input{<>}
 
