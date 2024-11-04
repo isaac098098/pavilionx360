@@ -1,0 +1,10 @@
+configuration {
+    font: "JetBrainsMonoNL NFM Bold 10";
+}
+
+listview {
+	lines: 6;
+	columns: 2;
+}
+
+@theme "onedark"

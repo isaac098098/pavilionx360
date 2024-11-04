@@ -1,0 +1,11 @@
+alt + s
+    rofi -show select -modes "select:$HOME/.config/rofi/scripts/select.sh"
+
+alt + n
+    kitty nvim $HOME/notes/current-notes/main.tex
+
+alt + p
+    rofi -show pdf -modes "pdf:$HOME/.config/rofi/scripts/pdf.sh"
+
+alt + o
+    rofi -markup-rows -show open -modes "open:$HOME/.config/rofi/scripts/open.sh"
