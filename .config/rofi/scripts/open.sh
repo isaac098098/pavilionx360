@@ -9,11 +9,20 @@ new=$(printf '%02d' $((last + 1)))
 case "$1" in 
     "Last")
         killall rofi
+        sed -i "s/^% \\\\\input{lec_$(printf '%02d' $last).tex}/\\\\\input{lec_$(printf '%02d' $last).tex}/g" $HOME/notes/current-notes/main.tex
+        for (( j=1 ; j <= $last-1 ; j++ ))
+        do
+            sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
+        done
         kitty nvim $HOME/notes/current-notes/lec_"$last".tex
     ;;
     "New")
         killall rofi
-        sed -i "/\input{lec_${last}.tex}/a \\\\\input{lec_${new}.tex}" "$HOME/notes/current-notes/main.tex"
+        sed -i "/\input{lec_${last}.tex}/a \\\\\input{lec_${new}.tex}" $HOME/notes/current-notes/main.tex
+        for (( j=1 ; j <= $last ; j++ ))
+        do
+            sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
+        done
         kitty nvim $HOME/notes/current-notes/lec_${new}.tex
     ;;
     "Bibliography")
@@ -26,6 +35,7 @@ case "$1" in
         then
             killall rofi
             tabs=()
+            idx=()
             IFS=',' read -r -a ints <<< "$1"
             for s in "${ints[@]}"
             do
@@ -37,20 +47,34 @@ case "$1" in
                     do
                         if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((last))" ]
                         then
+                            sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
                             tabs+=($HOME/notes/current-notes/lec_$(printf '%02d' $i).tex)
+                            idx+=($((i)))
                         fi
                     done
                 else
                     if [ "1" -le "$((s))" ] && [ "$((s))" -le "$((last))" ]
                     then
+                        sed -i "s/^% \\\\\input{lec_$(printf '%02d' $s).tex}/\\\\\input{lec_$(printf '%02d' $s).tex}/g" $HOME/notes/current-notes/main.tex
                         tabs+=($HOME/notes/current-notes/lec_$(printf '%02d' $s).tex)
+                        idx+=($((s)))
                     fi
                 fi
             done
+
+            for (( j=1 ; j <= $last ; j++ ))
+            do
+                if ! [[ "${idx[@]}" =~ "$j" ]]
+                then
+                    sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
+                fi
+            done
+
             if (( ${#tabs[@]} ))
             then
                 kitty nvim -p "${tabs[@]}"
             fi
+            
         fi
     ;;
 esac
@@ -65,6 +89,13 @@ do
     then
         killall rofi
         sed -i "s/^% \\\\\input{lec_$i.tex}/\\\\\input{lec_$i.tex}/g" $HOME/notes/current-notes/main.tex
+        for (( j=1 ; j <= $last ; j++ ))
+        do
+            if [ "$((j))" -ne "$((i))" ]
+            then
+                sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
+            fi
+        done
         kitty nvim $HOME/notes/current-notes/lec_$(printf '%02d' $i).tex
     fi
 done
