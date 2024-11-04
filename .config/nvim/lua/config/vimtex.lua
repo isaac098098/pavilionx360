@@ -25,7 +25,7 @@ vim.g.vimtex_compiler_latexmk = {
     hooks       = {},
     options     = {
         '-pdf',
-        '-xelatex',
+        -- '-xelatex',
         '-shell-escape',
         --use shell-escape for standalone document
         '-verbose',

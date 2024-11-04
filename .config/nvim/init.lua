@@ -26,7 +26,7 @@ vim.g.localleader = '\\'
 -- Normal mode
 vim.keymap.set('n','j','gj')
 vim.keymap.set('n','k','gk')
-vim.keymap.set('n','t','gt')
+vim.keymap.set('n','rt','gt')
 vim.keymap.set('n','T','gT')
 -- vim.cmd('nnoremap <CR> :write<CR>')
 
@@ -42,3 +42,11 @@ vim.keymap.set('i','<C-e>','<C-o>$')
 
 --Plugins
 require("config.lazy")
+
+-- Colorschemes
+
+-- onedark-darker
+
+-- bufferline
+vim.cmd('highlight BufferLineOffsetSeparator guifg=#181B20 guibg=#181B20')
+-- vim.cmd('highlight BufferLineFill guibg=#171A1E')
