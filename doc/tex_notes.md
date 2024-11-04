@@ -1,29 +1,26 @@
 # Neovim + vimtex notes workflow
 
-This assumes you have a generic notes folder in a convenient directory in order to access it faster. In my case, this folder is `$HOME/notes`. Use `ln -sf /long/path/to/notes/ /short/path/to/notes` to create a symbolic link, use `ln -l /path/to/folder` to check for any symbolic links and use `rm /path/to/symlink` to remove a symbolic link. *Note* that symbolic link creation acts like folder creation. Do always use absolute paths. I recommend doing this a day before starting classes. Make sure to copy `pream.tex` and `eof.tex` to the physical `notes` directory, ussualy the semester directory.
+Paquetes requeridos: `neovim`, `vimtex`, `zathura`, `rofi`, `sxhkd`.
 
-## Create new notes
-1. Create and enter the desired lectures folder. Create a symbolic link if necessary.
-2. Enter the folder and copy the `pream.tex` and `eof.tex` files using the binary `pream`.
-3. Open the main document and the first lecture. E.g. `nvim -p main.tex lec_01.tex`
-4. In `main.tex`, use the `math-notes` snippet.
-5. Fill the fields.
-6. Save file.
-7. In `lec_01.tex` use the `lec` or `les` snippets to create a new section for the lecture.
-8. Fill the title field and use the `date` snippet to fill the date field.
-9. Close all.
-10. Open `lec_1.tex`.
-11. Start taking notes.
+## Crear carpeta para el curso
 
-## Open existing notes
-1. Enter the lectures folder.
-2. Open the main document and the desired lecture.
-3. In `main.tex` comment all older lectures.
-4. Switch to `lec_*.tex`.
-5. Compile and Start taking notes.
+Crear una carpeta en la que se almacenarán las notas de cada curso, también en carpetas. En este caso `$HOME/notes`. Dentro de esta carpeta también se hallará un enlace simbólico llamado `current-notes`, el cuál apuntará a la carpeta con las notas del curso en el que se quiera trabajar en un momento determinado. Sin embargo, no existirá tal carpeta, es decir, no se debe crear una carpeta real sino solo el enlace simbólico, el cuál cambiará dinámicamente. El archivo `.tex` de todos los cursos deben llamarse `main.tex` y se llena usando el snippet `math-notes`.
 
-## Adding bibliography entries
-1. Open the bibliography file. E.g. `bibliography.bib`
-2. Add the BibTeX entry using snippets and fill it.
-3. Go back to the lecture document and cite.
-4. If there's not enough information to fill the entry, use the `foo` snippet to add a temporary footnote.
+Se deben crear las carpetas para cada curso antes de usar los siguientes atajos de teclado. Éstas deberán contener el archivo `main.tex`, que se puede crear seleccionando el curso con `alt-s` y abriendo el archivo principal de las notas con `alt+n`. En la carpeta padre, es decir en la carpeta `notes`, deberán estar `pream.tex` y `eof.tex`, que se pueden copiar usando el binario `pream`. El archivo `lec_01.tex` también será incluido en `main.tex`, así que siempre habrá al menos una entrada en el menú.
+
+## Estructura de las notas individuales
+
+Todos los archivos de las clases tendrán el formato `lec_[num].tex` y deberán contener uno *y solo un* encabezado de la forma `*lecture{title}{date}` para extraer el tema visto en clase y mostarlo en el menú, además de la línea ```%%% title``` por si se quiere que el título de la sección y la entrada del menú sean diferentes, por ejemplo si el título en las notas contiene símbolos matemáticos o caracteres especiales que no puedan ser correctamente procesados por rofi. Los snippets `lec` y `les` insertarán dicha línea automáticamente.
+
+Se puede cambiar `*lecture{title}{date}` a `*lecture{\texorpdfstring{title}{bookmark}}{date}` sin alterar el resultado en el menú, pues sólo se lee el segundo grupo de `{}`.
+
+## Bibliografía
+
+Para agregar una entrada a la bibliografía simmplemente abre el archivo `bibliography.bib` con la opción `Bibliografía` usando `alt-o`. Si no hay suficiente información para llenar los campos más importantes de forma precisa, se puede usar el snippet `foo` para anotar la referencia en el pie de página.
+
+## Atajos
+
+- Seleccionar curso: `alt+s`.
+- Abrir `main.tex` en neovim `alt+n`.
+- Compilar y abrir notas de una clase o varias en zathura `alt+p`.
+- Abrir notas de una clase en neovim `alt+o`.

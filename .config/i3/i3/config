@@ -133,7 +133,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -283,3 +283,7 @@ bindsym Print exec --no-startup-id scrot -F "$HOME/documents/images/screens/%Y%m
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dmps
 exec_always --no-startup-id xrdb -load .Xresources
+
+# Screenshots
+
+exec_always --no-startup-id sxhkd

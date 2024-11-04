@@ -10,7 +10,7 @@ vim.keymap.set('n', '<localleader>u', '<Cmd>lua require("luasnip.loaders.from_lu
 -- Keymaps
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "tex" },
+    pattern = { "tex" , "bib" },
     callback = function()
         -- Keymaps for expanding and jumping in snippets
         vim.cmd[[
