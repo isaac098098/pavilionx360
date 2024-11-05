@@ -287,3 +287,7 @@ exec_always --no-startup-id xrdb -load .Xresources
 # Screenshots
 
 exec_always --no-startup-id sxhkd
+
+# $HOME/pavilionx360/bin/edtex.sh
+
+for_window [class="kitty"] floating enable

@@ -85,6 +85,7 @@ do
         latexmk -output-directory="$HOME/notes/current-notes/" "$HOME/notes/current-notes/main.tex" > /dev/null
         pdflatex -output-directory="$HOME/notes/current-notes/" "$HOME/notes/current-notes/main.tex" > /dev/null
         zathura $HOME/notes/current-notes/main.pdf
+        break
     fi
 done
 

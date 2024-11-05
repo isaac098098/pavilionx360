@@ -2,10 +2,22 @@ alt + s
     rofi -show select -modes "select:$HOME/.config/rofi/scripts/select.sh"
 
 alt + n
-    kitty nvim $HOME/notes/current-notes/main.tex
+    alacritty -e nvim $HOME/notes/current-notes/main.tex
 
 alt + p
     rofi -show pdf -modes "pdf:$HOME/.config/rofi/scripts/pdf.sh"
 
 alt + o
     rofi -markup-rows -show open -modes "open:$HOME/.config/rofi/scripts/open.sh"
+
+ctrl + shift + a
+    rofi -show "add inkscape" -modes "add inkscape:$HOME/pavilionx360/bin/rofi_inkscape_add.sh"
+
+ctrl + shift + e
+    rofi -show "edit inkscape" -modes "edit inkscape:$HOME/pavilionx360/bin/rofi_inkscape_edit.sh"
+
+ctrl + shift + q
+    bash $HOME/pavilionx360/bin/inkscape_save.sh
+
+ctrl + shift + p
+    bash $HOME/pavilionx360/bin/edtex.sh
