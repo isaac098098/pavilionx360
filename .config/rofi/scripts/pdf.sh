@@ -75,7 +75,7 @@ do
     then
         killall rofi
         sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
-        for (( j=1 ; j <= $last ; j++ ))
+        for (( j=1 ; j <= $last ; j++))
         do
             if [[ $((i)) -ne $j ]]
             then

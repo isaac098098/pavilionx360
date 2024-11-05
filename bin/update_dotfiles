@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-cp -r ~/.config/i3 ~/pavilionx360/.config/i3
+cp -r ~/.config/alacritty ~/pavilionx360/.config/
+cp -r ~/.config/i3 ~/pavilionx360/.config/
 cp -r ~/.config/i3status/ ~/pavilionx360/.config/
 cp -r ~/.config/kitty ~/pavilionx360/.config/
 cp -r ~/.config/rofi ~/pavilionx360/.config/
