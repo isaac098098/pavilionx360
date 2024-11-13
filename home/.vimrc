@@ -15,3 +15,9 @@ inoremap <C-e> <C-o>$
 let g:loaded_matchparen=1
 
 highlight NonText ctermfg=0
+
+autocmd VimEnter * if
+    \ argc() == 0 &&
+    \ bufname("%") == "" |
+    \   exe "normal! `0" |
+    \ endif

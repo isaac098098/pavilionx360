@@ -1,8 +1,11 @@
-alt + s
+ctrl + shift + s
     rofi -show select -modes "select:$HOME/.config/rofi/scripts/select.sh"
 
 alt + n
     alacritty -e nvim $HOME/notes/current-notes/main.tex
+
+ctrl + shift + i
+    zathura $HOME/notes/current-notes/main.pdf
 
 alt + p
     rofi -show pdf -modes "pdf:$HOME/.config/rofi/scripts/pdf.sh"

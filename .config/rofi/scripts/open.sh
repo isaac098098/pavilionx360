@@ -96,7 +96,8 @@ do
                 sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
             fi
         done
-        alacritty -e nvim $HOME/notes/current-notes/lec_$(printf '%02d' $i).tex
+        alacritty -e nvim "$HOME/notes/current-notes/lec_$i.tex"
+        break
     fi
 done
 

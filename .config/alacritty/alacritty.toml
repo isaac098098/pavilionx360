@@ -4,7 +4,7 @@ import = [
 ]
 
 [font]
-size = 7
+size = 8
 
 [font.bold]
 family = "JetBrainsMonoNL NFM"

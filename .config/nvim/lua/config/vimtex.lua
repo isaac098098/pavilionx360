@@ -6,6 +6,13 @@ vim.g.vimtex_compiler_method = "latexmk"
 vim.g.vimtex_view_forward_search_on_start = false
 vim.g.vimtex_quickfix_mode = false
 vim.g.vimtex_view_automatic = false
+vim.g.vimtex_toc_mode = 1
+vim.g.vimtex_toc_config = {
+    split_pos   = 'tab'
+}
+vim.g.vimtex_complete_bib = {
+    info_fmt    = ''
+}
 vim.g.vimtex_compiler_latexmk_engines = {
     ['_']       = '-pdf',
     pdfdvi      = '-pdfdvi',
@@ -34,3 +41,10 @@ vim.g.vimtex_compiler_latexmk = {
         '-interaction=nonstopmode'
     }
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'tex',
+    callback = function()
+        vim.api.nvim_set_keymap('n', '<Leader>tt', ':VimtexTocToggle<CR>', { noremap = true, silent = true })
+    end
+})

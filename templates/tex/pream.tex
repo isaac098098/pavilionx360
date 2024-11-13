@@ -180,8 +180,10 @@
 %\renewcommand{\sectionmark}[1]{\markboth{\thesection.\enskip\scshape{#1}}{}}
 
 %section and subsection header, use \rightmark
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\enskip\scshape{#1}}{}}
-\renewcommand{\subsectionmark}[1]{\markright{\thesubsection.\enskip\scshape{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection.\enskip\scshape{#1}}{\thesection.\enskip\scshape{#1}}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection.\enskip\scshape{#1}}}
+%if you need to update the left mark or both left and right at the same time, you should use \markboth
+%if you only need to update the right mark, you should always use \markright and never \markboth
 
 \makeindex
 
@@ -190,6 +192,7 @@
 \fancypagestyle{title-subsection}{
 	\fancyhf{} %clear footer and header
 	\fancyheadoffset{0.5cm} %fancyhdr, left and right header offset
+	%\fancyhead[LO]{\hspace{0.8cm}\small\scshape\nouppercase\leftmark} %left odd
 	\fancyhead[LO]{\hspace{0.8cm}\small\scshape\nouppercase\notestitle} %left odd
 	\fancyhead[RO]{\small\thepage\hspace{0.8cm}} %right odd
 	\fancyhead[LE]{\hspace{0.8cm}\small\thepage} %left even
