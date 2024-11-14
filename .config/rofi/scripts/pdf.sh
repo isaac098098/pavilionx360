@@ -9,7 +9,7 @@ case "$1" in
     "Last")
         # compile last lecture
         killall rofi
-        for (( i=1; i<=$last-1; i++ ))
+        for (( i=1; i<=$((10#$last-1)); i++ ))
         do
             sed -i "s/^\\\\\input{lec_$(printf '%02d' $i).tex}/% \\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
         done
@@ -46,13 +46,13 @@ case "$1" in
                     end=${s#*-}
                 for i in $(seq "$start" "$end")
                 do
-                    if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((last))" ]
+                    if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((10#$last))" ]
                     then
                         sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
                     fi
                 done
             else
-                if [ "1" -le "$((s))" ] && [ "$((s))" -le "$((last))" ]
+                if [ "1" -le "$((s))" ] && [ "$((s))" -le "$((10#$last))" ]
                 then
                     sed -i "s/^% \\\\\input{lec_$(printf '%02d' $s).tex}/\\\\\input{lec_$(printf '%02d' $s).tex}/g" $HOME/notes/current-notes/main.tex
                 fi
@@ -75,7 +75,7 @@ do
     then
         killall rofi
         sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
-        for (( j=1 ; j <= $last ; j++))
+        for (( j=1 ; j <= $((10#$last)) ; j++))
         do
             if [[ $((i)) -ne $j ]]
             then

@@ -2,32 +2,32 @@
 
 lecs=$(grep 'lec' $HOME/notes/current-notes/main.tex | sed -n 's/.*lec_\([0-9]\{2\}\).tex.*/\1/p')
 last=$(echo "$lecs" | sort -nr | head -n1)
-new=$(printf '%02d' $((last + 1)))
+new=$(printf '%02d' $((10#$last + 1)))
 
 # open last lecture or create new
 
 case "$1" in 
     "Last")
         killall rofi
-        sed -i "s/^% \\\\\input{lec_$(printf '%02d' $last).tex}/\\\\\input{lec_$(printf '%02d' $last).tex}/g" $HOME/notes/current-notes/main.tex
-        for (( j=1 ; j <= $last-1 ; j++ ))
+        sed -i "s/^% \\\\\input{lec_$(printf '%02d' $((10#$last))).tex}/\\\\\input{lec_$(printf '%02d' $((10#$last))).tex}/g" $HOME/notes/current-notes/main.tex
+        for (( j=1 ; j <= $((10#$last-1)) ; j++ ))
         do
             sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
         done
-        alacritty -e nvim $HOME/notes/current-notes/lec_"$last".tex
+        kitty nvim $HOME/notes/current-notes/lec_"$last".tex
     ;;
     "New")
         killall rofi
         sed -i "/\input{lec_${last}.tex}/a \\\\\input{lec_${new}.tex}" $HOME/notes/current-notes/main.tex
-        for (( j=1 ; j <= $last ; j++ ))
+        for (( j=1 ; j <= $((10#$last)) ; j++ ))
         do
             sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
         done
-        alacritty -e nvim $HOME/notes/current-notes/lec_${new}.tex
+        kitty nvim $HOME/notes/current-notes/lec_${new}.tex
     ;;
     "Bibliography")
         killall rofi
-        alacritty -e nvim $HOME/notes/current-notes/bibliography.bib
+        kitty nvim $HOME/notes/current-notes/bibliography.bib
     ;;
     *)
         # open lecture note interval or specific lectures
@@ -45,7 +45,7 @@ case "$1" in
                     end=${s#*-}
                     for i in $(seq "$start" "$end")
                     do
-                        if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((last))" ]
+                        if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((0#$last))" ]
                         then
                             sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
                             tabs+=($HOME/notes/current-notes/lec_$(printf '%02d' $i).tex)
@@ -53,7 +53,7 @@ case "$1" in
                         fi
                     done
                 else
-                    if [ "1" -le "$((s))" ] && [ "$((s))" -le "$((last))" ]
+                    if [ "1" -le "$((s))" ] && [ "$((s))" -le "$((10#$last))" ]
                     then
                         sed -i "s/^% \\\\\input{lec_$(printf '%02d' $s).tex}/\\\\\input{lec_$(printf '%02d' $s).tex}/g" $HOME/notes/current-notes/main.tex
                         tabs+=($HOME/notes/current-notes/lec_$(printf '%02d' $s).tex)
@@ -62,7 +62,7 @@ case "$1" in
                 fi
             done
 
-            for (( j=1 ; j <= $last ; j++ ))
+            for (( j=1 ; j <= $((10#$last)) ; j++ ))
             do
                 if ! [[ "${idx[@]}" =~ "$j" ]]
                 then
@@ -72,7 +72,7 @@ case "$1" in
 
             if (( ${#tabs[@]} ))
             then
-                alacritty -e nvim -p "${tabs[@]}"
+                kitty nvim -p "${tabs[@]}"
             fi
             
         fi
@@ -89,14 +89,14 @@ do
     then
         killall rofi
         sed -i "s/^% \\\\\input{lec_$i.tex}/\\\\\input{lec_$i.tex}/g" $HOME/notes/current-notes/main.tex
-        for (( j=1 ; j <= $last ; j++ ))
+        for (( j=1 ; j <= $((10#$last)) ; j++ ))
         do
             if [ "$((j))" -ne "$((i))" ]
             then
                 sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
             fi
         done
-        alacritty -e nvim "$HOME/notes/current-notes/lec_$i.tex"
+        kitty nvim "$HOME/notes/current-notes/lec_$i.tex"
         break
     fi
 done
