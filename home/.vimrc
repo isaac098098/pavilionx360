@@ -4,6 +4,7 @@ set shiftwidth=4
 set expandtab
 set breakindent
 set linebreak
+set autoindent
 
 nnoremap j gj
 nnoremap k gk

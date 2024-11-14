@@ -292,3 +292,7 @@ exec_always --no-startup-id sxhkd
 # $HOME/pavilionx360/bin/edtex.sh
 
 # for_window [class="kitty"] floating enable
+
+# Tggle bar
+
+bindsym $mod+Shift+n bar mode toggle
