@@ -463,13 +463,6 @@ s({trig = "¨", name = "Superscript", snippetType = "autosnippet", wordTrig = fa
     {condition = in_mathzone}
 ),
 
-s({trig = "\'", name = "Subscript and superscript", snippetType = "autosnippet", wordTrig = false},
-    {
-		t("_{"), i(1), t("}^{"), i(2), t("}")
-    },
-    {condition = in_mathzone}
-),
-
 s({trig = "st", name = "Stacking", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),

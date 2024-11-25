@@ -4,10 +4,12 @@ cp -r ~/.config/alacritty ~/pavilionx360/.config/
 cp -r ~/.config/i3 ~/pavilionx360/.config/
 cp -r ~/.config/i3status/ ~/pavilionx360/.config/
 cp -r ~/.config/kitty ~/pavilionx360/.config/
+cp -r ~/.config/polybar ~/pavilionx360/.config/
 cp -r ~/.config/rofi ~/pavilionx360/.config/
 cp -r ~/.config/sxhkd ~/pavilionx360/.config/
 cp -r ~/.config/nvim ~/pavilionx360/.config/
 cp -r ~/.config/zathura ~/pavilionx360/.config/
+cp -r ~/.config/inkscape/templates/default.svg ~/pavilionx360/.config/inkscape/templates/
 
 cp ~/.vimrc ~/pavilionx360/home/
 cp ~/.xinitrc ~/pavilionx360/home/

@@ -4,7 +4,7 @@ ctrl + shift + s
 alt + n
     kitty nvim $HOME/notes/current-notes/main.tex
 
-ctrl + shift + i
+ctrl + shift + u
     zathura $HOME/notes/current-notes/main.pdf
 
 alt + p
