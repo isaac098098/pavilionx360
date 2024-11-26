@@ -3,6 +3,8 @@ set font                        "JetBrains Mono NL SemiBold 9"
 set recolor                     "false"
 set recolor-keephue             "true"
 set selection-clipboard         clipboard
+set window-title-basename       "true"
+set statusbar-basename          "true"
 
 # onedark-darker
 

@@ -85,13 +85,13 @@ for i in $lecs
 do
     title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
     date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
-    if [[  "$1" == "$(printf "%-30s %24s\n" "$i. $title" "$date")" ]]
+    if [[  "$1" == "$(printf "%-30s %42s\n" "$i. $title" "$date")" ]]
     then
         killall rofi
         sed -i "s/^% \\\\\input{lec_$i.tex}/\\\\\input{lec_$i.tex}/g" $HOME/notes/current-notes/main.tex
-        for (( j=1 ; j <= $((10#$last)) ; j++ ))
+        for (( j=1 ; j <= "$((10#$last))" ; j++ ))
         do
-            if [ "$((j))" -ne "$((i))" ]
+            if [ "$((j))" -ne "$((10#$i))" ]
             then
                 sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
             fi
@@ -109,6 +109,6 @@ for i in $lecs
 do
     title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
     date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
-    printf "%-30s %24s\n" "$i. $title" "$date"
+    printf "%-30s %42s\n" "$i. $title" "$date"
 done
 echo "Bibliography"

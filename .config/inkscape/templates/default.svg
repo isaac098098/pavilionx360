@@ -32,151 +32,20 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="100"
+       height="70"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
   <defs
      id="defs1" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1"
-       cx="52.800095"
-       cy="20.044046"
-       r="2.8460882" />
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1-5"
-       cx="31.498257"
-       cy="32.464188"
-       r="2.8460882" />
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1-2"
-       cx="69.896332"
-       cy="32.800278"
-       r="2.8460882" />
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1-7"
-       cx="12.929369"
-       cy="48.176304"
-       r="2.8460882" />
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1-6"
-       cx="40.236542"
-       cy="48.932507"
-       r="2.8460882" />
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1-61"
-       cx="60.737968"
-       cy="47.756199"
-       r="2.8460882" />
-    <circle
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       id="path1-20"
-       cx="85.440407"
-       cy="49.436638"
-       r="2.8460882" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       d="M 49.953887,20.044044 31.498209,29.618102"
-       id="path4" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       d="M 55.646064,20.044044 69.896245,29.95419"
-       id="path5" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       d="M 31.498209,35.310278 12.929365,45.330218"
-       id="path6" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       d="m 31.498209,35.310278 8.738284,10.776138"
-       id="path7" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.0959045;stroke-linecap:round;stroke-linejoin:bevel"
-       d="m 60.737851,44.910109 9.158394,-9.263743 15.544071,10.944185"
-       id="path8" />
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="52.087307"
-       y="21.169584"
-       id="text8"><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.302"
-         x="52.087307"
-         y="21.169584"
-         id="tspan1">0</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="69.031143"
-       y="33.925816"
-       id="text8-6"><tspan
-         sodipodi:role="line"
-         id="tspan8-2"
-         style="stroke-width:0.302"
-         x="69.031143"
-         y="33.925816">2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="30.785469"
-       y="33.589725"
-       id="text8-7"><tspan
-         sodipodi:role="line"
-         id="tspan8-9"
-         style="stroke-width:0.302"
-         x="30.785469"
-         y="33.589725">1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="12.075294"
-       y="49.265327"
-       id="text8-3"><tspan
-         sodipodi:role="line"
-         id="tspan8-7"
-         style="stroke-width:0.302"
-         x="12.075294"
-         y="49.265327">3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="39.366592"
-       y="50.058044"
-       id="text8-2"><tspan
-         sodipodi:role="line"
-         id="tspan8-8"
-         style="stroke-width:0.302"
-         x="39.366592"
-         y="50.058044">4</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="59.868019"
-       y="48.845222"
-       id="text8-61"><tspan
-         sodipodi:role="line"
-         id="tspan8-29"
-         style="stroke-width:0.302"
-         x="59.868019"
-         y="48.845222">5</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:3.175px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.302001;stroke-linecap:round;stroke-linejoin:bevel"
-       x="84.557755"
-       y="50.525661"
-       id="text8-4"><tspan
-         sodipodi:role="line"
-         id="tspan8-78"
-         style="stroke-width:0.302"
-         x="84.557755"
-         y="50.525661">6</tspan></text>
-  </g>
+     id="layer1" />
 </svg>
