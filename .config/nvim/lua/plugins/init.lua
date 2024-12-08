@@ -14,9 +14,7 @@ return {
             require('config.vimtex')
         end
     },
-    {
-        'nvim-tree/nvim-tree.lua',
-        version = "*",
+    { 'nvim-tree/nvim-tree.lua', version = "*",
         lazy = false,
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
@@ -51,18 +49,18 @@ return {
             require('config.zen-mode')
         end
     },
-    { "neovim/nvim-lspconfig",
-        config = function()
-            require("config.lspconfig")
-        end,
-    },
-    {
-        'hrsh7th/nvim-cmp',
-        dependencies = { {'L3MON4D3/LuaSnip'}, {'saadparwaiz1/cmp_luasnip'}, {'hrsh7th/cmp-nvim-lsp'} },
-        config = function()
-            require('config.cmp')
-        end
-    },
+    -- { "neovim/nvim-lspconfig",
+    --     config = function()
+    --         require("config.lspconfig")
+    --     end,
+    -- },
+    -- {
+    --     'hrsh7th/nvim-cmp',
+    --     dependencies = { {'L3MON4D3/LuaSnip'}, {'saadparwaiz1/cmp_luasnip'}, {'hrsh7th/cmp-nvim-lsp'} },
+    --     config = function()
+    --         require('config.cmp')
+    --     end
+    -- },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { {'nvim-treesitter/nvim-treesitter'}, {'nvim-lua/plenary.nvim'} },

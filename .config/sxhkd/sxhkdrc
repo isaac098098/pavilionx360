@@ -7,10 +7,10 @@ alt + n
 ctrl + shift + u
     zathura $HOME/notes/current-notes/main.pdf
 
-alt + p
+ctrl + shift + p
     rofi -show pdf -modes "pdf:$HOME/.config/rofi/scripts/pdf.sh"
 
-alt + o
+ctrl + shift + o
     rofi -markup-rows -show open -modes "open:$HOME/.config/rofi/scripts/open.sh"
 
 ctrl + shift + a
@@ -22,5 +22,5 @@ ctrl + shift + e
 ctrl + shift + q
     bash $HOME/pavilionx360/bin/inkscape_save.sh
 
-ctrl + shift + p
+ctrl + shift + i
     bash $HOME/pavilionx360/bin/edtex.sh

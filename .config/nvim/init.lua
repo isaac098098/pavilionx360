@@ -2,7 +2,7 @@
 
 -- Filetypes
 vim.cmd('filetype plugin on')
-vim.cmd('filetype indent on')
+-- vim.cmd('filetype indent on')
 
 -- Tabs andd indentation
 vim.opt.tabstop = 4
@@ -13,10 +13,17 @@ vim.opt.linebreak = true
 
 -- Line numbering
 vim.opt.number = false
--- vim.opt.numberwidth = 1
+vim.opt.numberwidth = 1
 
 -- Highlighting
 vim.cmd('let loaded_matchparen=1')
+-- vim.api.nvim_create_autocmd('Filetype', {
+--     pattern = '*',
+--     callback = function()
+--         vim.treesitter.stop()
+--     end
+-- })
+-- vim.cmd('syntax off')
 
 -- Keybindings
 
@@ -31,13 +38,13 @@ vim.keymap.set('n','T','gT')
 vim.cmd('nnoremap <CR> :write<CR>')
 
 -- Visual mode
-vim.keymap.set('v','<A-i>','<Esc>')
+vim.keymap.set('v','<S-u>','<Esc>')
 
 -- Select mode
-vim.keymap.set('s','<A-i>','<Esc>')
+vim.keymap.set('s','<S-u>','<Esc>')
 
 -- Insert mode
-vim.keymap.set('i','<A-i>','<Esc>')
+vim.keymap.set('i','<S-u>','<Esc>')
 vim.keymap.set('i','<C-e>','<C-o>$')
 vim.keymap.set('i','<C-p>','<Esc>V"+y:q!<CR>')
 
@@ -49,5 +56,5 @@ require("config.lazy")
 -- onedark-darker
 
 -- bufferline
-vim.cmd('highlight BufferLineOffsetSeparator guifg=#181B20 guibg=#181B20')
+-- vim.cmd('highlight BufferLineOffsetSeparator guifg=#181B20 guibg=#181B20')
 -- vim.cmd('highlight BufferLineFill guibg=#171A1E')

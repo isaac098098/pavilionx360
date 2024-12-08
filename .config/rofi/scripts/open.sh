@@ -45,7 +45,7 @@ case "$1" in
                     end=${s#*-}
                     for i in $(seq "$start" "$end")
                     do
-                        if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((0#$last))" ]
+                        if  [ "1" -le "$((i))" ] && [ "$((i))" -le "$((10#$last))" ]
                         then
                             sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
                             tabs+=($HOME/notes/current-notes/lec_$(printf '%02d' $i).tex)
