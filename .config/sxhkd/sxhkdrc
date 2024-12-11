@@ -22,5 +22,5 @@ ctrl + shift + e
 ctrl + shift + q
     bash $HOME/pavilionx360/bin/inkscape_save.sh
 
-ctrl + shift + i
+ctrl + shift + y
     bash $HOME/pavilionx360/bin/edtex.sh

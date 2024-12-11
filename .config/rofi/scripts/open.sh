@@ -107,8 +107,9 @@ echo "Last"
 echo "New"
 for i in $lecs
 do
-    title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
-    date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
-    printf "%-30s %42s\n" "$i. $title" "$date"
+    cur=$(printf '%02d' $((10#$last-10#$i+1)))
+    title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$cur".tex)
+    date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$cur".tex)
+    printf "%-30s %42s\n" "$cur. $title" "$date"
 done
 echo "Bibliography"

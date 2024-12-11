@@ -1,18 +1,18 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-cp -r ~/.config/alacritty ~/pavilionx360/.config/
-cp -r ~/.config/i3 ~/pavilionx360/.config/
-cp -r ~/.config/i3status/ ~/pavilionx360/.config/
-cp -r ~/.config/kitty ~/pavilionx360/.config/
-cp -r ~/.config/polybar ~/pavilionx360/.config/
-cp -r ~/.config/rofi ~/pavilionx360/.config/
-cp -r ~/.config/sxhkd ~/pavilionx360/.config/
-cp -r ~/.config/nvim ~/pavilionx360/.config/
-cp -r ~/.config/zathura ~/pavilionx360/.config/
-cp -r ~/.config/inkscape/templates/default.svg ~/pavilionx360/.config/inkscape/templates/
+cp -r ~/.config/alacritty ~/pavilionx360/.config
+cp -r ~/.config/dunst ~/pavilionx360/.config
+cp -r ~/.config/i3 ~/pavilionx360/.config
+cp -r ~/.config/nvim ~/pavilionx360/.config
+cp -r ~/.config/rofi ~/pavilionx360/.config
+cp -r ~/.config/sxhkd ~/pavilionx360/.config
+cp -r ~/.config/zathura ~/pavilionx360/.config
+cp -r ~/.config/fontconfig ~/pavilionx360/.config
+cp -r ~/.config/inkscape/templates/default.svg ~/pavilionx360/.config/inkscape/templates
 
-cp ~/.vimrc ~/pavilionx360/home/
-cp ~/.xinitrc ~/pavilionx360/home/
-cp ~/.bashrc ~/pavilionx360/home/
-cp ~/.Xresources ~/pavilionx360/home/
-cp ~/.bash_profile ~/pavilionx360/home/
+cp -r ~/.Xresources ~/pavilionx360/home
+cp -r ~/.bash_profile ~/pavilionx360/home
+cp -r ~/.bashrc ~/pavilionx360/home
+cp -r ~/.vimrc ~/pavilionx360/home
+cp -r ~/.xinitrc ~/pavilionx360/home
+cp -r ~/.mpv ~/pavilionx360/home

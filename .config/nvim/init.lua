@@ -56,5 +56,5 @@ require("config.lazy")
 -- onedark-darker
 
 -- bufferline
--- vim.cmd('highlight BufferLineOffsetSeparator guifg=#181B20 guibg=#181B20')
+vim.cmd('highlight BufferLineOffsetSeparator guifg=#181B20 guibg=#181B20')
 -- vim.cmd('highlight BufferLineFill guibg=#171A1E')

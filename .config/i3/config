@@ -227,7 +227,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status
     #tray_output none
-    font pango:JetBrains Mono NL SemiBold 9
+    font pango:JetBrains Mono NL 9
     colors {
         #                       border  bg      fg
         background              $bg_d
@@ -265,7 +265,8 @@ bindsym $mod+q exec --no-startup-id setxkbmap us -variant intl
 
 # Wallpaper
 
-exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/bg0.png
+#exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/bg0.png
+exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/
 
 # Layout mode
 
