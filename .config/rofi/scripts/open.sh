@@ -83,8 +83,8 @@ esac
 
 for i in $lecs
 do
-    title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
-    date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
+    title=$(sed -n '0,/^%%% /s/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
+    date=$(sed -n '1,/.*lecture{.*}{\(.*\)}/s/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
     if [[  "$1" == "$(printf "%-30s %42s\n" "$i. $title" "$date")" ]]
     then
         killall rofi
