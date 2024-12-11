@@ -13,9 +13,9 @@ set numberwidth=1
 
 nnoremap j gj
 nnoremap k gk
-vnoremap <C-u> <Esc>
-snoremap <C-u> <Esc>
-inoremap <C-u> <Esc>
+vnoremap <C-i> <Esc>
+snoremap <C-i> <Esc>
+inoremap <C-i> <Esc>
 inoremap <C-e> <C-o>$
 
 let g:loaded_matchparen=1

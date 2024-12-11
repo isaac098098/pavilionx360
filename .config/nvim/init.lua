@@ -38,13 +38,13 @@ vim.keymap.set('n','T','gT')
 vim.cmd('nnoremap <CR> :write<CR>')
 
 -- Visual mode
-vim.keymap.set('v','<S-u>','<Esc>')
+vim.keymap.set('v','<C-i>','<Esc>')
 
 -- Select mode
-vim.keymap.set('s','<S-u>','<Esc>')
+vim.keymap.set('s','<C-i>','<Esc>')
 
 -- Insert mode
-vim.keymap.set('i','<S-u>','<Esc>')
+vim.keymap.set('i','<C-i>','<Esc>')
 vim.keymap.set('i','<C-e>','<C-o>$')
 vim.keymap.set('i','<C-p>','<Esc>V"+y:q!<CR>')
 
