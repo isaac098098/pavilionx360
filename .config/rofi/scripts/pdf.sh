@@ -69,15 +69,15 @@ esac
 
 for i in $lecs
 do
-    title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
-    date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
-    if [[  "$1" == "$(printf "%-30s %24s\n" "$i. $title" "$date")" ]]
+    title=$(sed -n '0,/^%%% /s/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
+    date=$(sed -n '1,/.*lecture{.*}{\(.*\)}/s/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
+    if [[  "$1" == "$(printf "%-30s %44s\n" "$i. $title" "$date")" ]]
     then
         killall rofi
         sed -i "s/^% \\\\\input{lec_$(printf '%02d' $i).tex}/\\\\\input{lec_$(printf '%02d' $i).tex}/g" $HOME/notes/current-notes/main.tex
         for (( j=1 ; j <= $((10#$last)) ; j++))
         do
-            if [[ $((i)) -ne $j ]]
+            if [[ "$((j))" -ne "$((10#$i))" ]]
             then
                 sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
             fi
@@ -95,8 +95,8 @@ echo "Last"
 echo "All"
 for i in $lecs
 do
-    title=$(sed -n 's/^%%% //p' $HOME/notes/current-notes/lec_"$i".tex)
-    date=$(sed -n 's/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$i".tex)
-    printf "%-30s %24s\n" "$i. $title" "$date"
-
+    cur=$(printf '%02d' $((10#$last-10#$i+1)))
+    title=$(sed -n '0,/^%%% /s/^%%% //p' $HOME/notes/current-notes/lec_"$cur".tex)
+    date=$(sed -n '1,/.*lecture{.*}{\(.*\)}/s/.*lecture{.*}{\(.*\)}/\1/p' $HOME/notes/current-notes/lec_"$cur".tex)
+    printf "%-30s %44s\n" "$cur. $title" "$date"
 done

@@ -1,8 +1,8 @@
 * {
-    crust:  #181B20;
-    bg0:    #1F2329;
+    crust:  #1f2329;
+    bg0:    #282c34;
     fg0:    #A0A8B7;
-    orange: #CC9057;
+    orange: #e2b86b;
     blue:   #4FA6ED;
 }
 
@@ -14,7 +14,7 @@ element-text, element-icon , mode-switcher {
 window {
 	width: 45%;
 	height: 45%;
-    border: 5px;
+    border: 0px;
     border-color: @crust;
     background-color: @bg0;
 }

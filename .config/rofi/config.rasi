@@ -1,5 +1,5 @@
 configuration {
-    font: "JetBrainsMonoNL NFM Bold 10";
+    font: "JetBrainsMonoNL NFM 10";
 }
 
 listview {
