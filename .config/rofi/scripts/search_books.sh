@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="$HOME/documents/books/sciences/Matemáticas"
+dir="$HOME/documents/books/"
 
 if [[ -n "$1" ]]; then
     killall rofi
