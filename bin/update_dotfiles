@@ -5,6 +5,8 @@ cp -r ~/.config/dunst ~/pavilionx360/.config
 cp -r ~/.config/i3 ~/pavilionx360/.config
 cp -r ~/.config/nvim ~/pavilionx360/.config
 cp -r ~/.config/rofi ~/pavilionx360/.config
+cp -r ~/.config/picom ~/pavilionx360/.config/
+cp -r ~/.config/polybar ~/pavilionx360/.config/
 cp -r ~/.config/sxhkd ~/pavilionx360/.config
 cp -r ~/.config/zathura ~/pavilionx360/.config
 cp -r ~/.config/fontconfig ~/pavilionx360/.config
