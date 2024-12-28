@@ -84,7 +84,6 @@ then
             fi
         fi
     fi
-                
         
 else
     echo "$0 [initial-time] [end-time] in HH:MM:SS or MM:SS format"

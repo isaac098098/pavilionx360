@@ -36,5 +36,5 @@ then
 
     echo "$(printf '%02d' $H):$(printf '%02d' $M):$(printf '%02d' $S).00"
 else
-    echo "$0 [time] in HH:MM:SS or MM:SS format"
+    echo "$0 [time] in H:M:S or M:S format"
 fi

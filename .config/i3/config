@@ -242,12 +242,12 @@ bindsym $mod+r mode "resize"
 #}
 
 #                           title_border        bg          fg          indicator   child_border
-client.focused              $bg0                $bg0        $fg         $blue       $fg
-#client.focused              $bg1                $bg1        $fg         $blue       $blue
-client.focused_inactive     $bg0                $bg0        $fg         $bg0        $bg3
-client.unfocused            $bg_d               $bg_d       $fg         $bg0        $bg3
+#client.focused              $bg0                $bg0        $fg         $blue       $fg
+client.focused              $bg1                $bg1        $fg         $fg         $fg
+client.focused_inactive     $bg0                $bg0        $fg         $bg0        $bg0
+client.unfocused            $bg_d               $bg_d       $fg         $bg0        $bg0
 client.urgent               $red                $red        $white      $bg0        $red
-client.placeholder          $yellow             $yellow     $white      $bg0        $blue
+client.placeholder          $yellow             $yellow     $white      $bg0        $fg
 client.background           $bg_d               $bg_d       $white      $bg_d       $bg_d
 
 # Borders
@@ -304,3 +304,7 @@ bindsym $mod+Shift+n exec --no-startup-id polybar-msg cmd toggle
 # Polybar
 
 exec --no-startup-id polybar
+
+# Picom
+
+exec_always --no-startup-id picom
