@@ -46,7 +46,7 @@ vim.keymap.set('s','<C-j>','<Esc>')
 -- Insert mode
 vim.keymap.set('i','<C-j>','<Esc>')
 vim.keymap.set('i','<C-e>','<C-o>$')
-vim.keymap.set('i','<C-p>','<Esc>V"+y:q!<CR>')
+vim.keymap.set('i','<C-p>','<Esc>0v$h"+y:q!<CR>')
 
 --Plugins
 require("config.lazy")

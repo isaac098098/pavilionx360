@@ -7,16 +7,17 @@ import = [
 size = 7.4
 
 [font.bold]
-family = "JetBrainsMonoNL NFM"
+family = "JetBrains Mono NL"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNL NFM"
+family = "JetBrains Mono NL"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNL NFM"
+family = "JetBrains Mono NL"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNL NFM"
+family = "JetBrains Mono NL"
+style = "Bold"

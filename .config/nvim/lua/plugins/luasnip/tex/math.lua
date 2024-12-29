@@ -1284,7 +1284,7 @@ s({trig = "fd", name = "Function definition"},
     }
 ),
 
-s({trig = "sni", name = "sin", snippetType = "autosnippet"},
+s({trig = "sin", name = "sin", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\sin")
@@ -1292,7 +1292,7 @@ s({trig = "sni", name = "sin", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "co", name = "cos", snippetType = "autosnippet"},
+s({trig = "cos", name = "cos", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\cos")
@@ -1308,7 +1308,7 @@ s({trig = "tan", name = "tan", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "ot", name = "cot", snippetType = "autosnippet"},
+s({trig = "cot", name = "cot", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\cot")
@@ -1316,7 +1316,7 @@ s({trig = "ot", name = "cot", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "sc", name = "sec", snippetType = "autosnippet"},
+s({trig = "sec", name = "sec", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\sec")
@@ -1412,7 +1412,7 @@ s({trig = "coth", name = "coth", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "sh", name = "sech", snippetType = "autosnippet"},
+s({trig = "sch", name = "sech", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\sech")
