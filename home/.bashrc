@@ -11,6 +11,7 @@ PS1='[\u@\h \W]\$ '
 
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD
 
 alias nsxiv='nsxiv -b'
 alias tty-clock='tty-clock -c -s -C 4 -S -n'

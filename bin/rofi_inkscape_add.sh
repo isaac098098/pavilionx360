@@ -27,8 +27,8 @@ then
         cp $HOME/.config/inkscape/templates/default.svg $HOME/notes/current-notes/diagrams/"$1.svg"
         inkscape $HOME/notes/current-notes/diagrams/"$1.svg"
         xwininfo -root -tree | grep -E 'org.inkscape.Inkscape' | tail -n 1 | awk '{print $1}' | xargs xdotool windowactivate
-        xdotool key 5
-        xdotool key ctrl+4
+        #xdotool key 5
+        #xdotool key ctrl+4
         break
     fi
 fi
