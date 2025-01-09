@@ -1,5 +1,5 @@
 configuration {
-    font: "JetBrainsMonoNL NFM 10";
+    font: "Mx437 IBM VGA 8x16 12";
 }
 
 listview {
