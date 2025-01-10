@@ -40,4 +40,5 @@ i3lock \
 --color=00000000             \
 --blur 5                     \
 --verif-text="Verifying"     \
+--nofork                     \
 #--keylayout 0                \

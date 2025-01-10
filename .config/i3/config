@@ -311,3 +311,7 @@ exec --no-startup-id polybar
 exec_always --no-startup-id picom
 
 gaps inner 17
+
+# Screen lock
+
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
