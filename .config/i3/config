@@ -267,8 +267,8 @@ bindsym $mod+q exec --no-startup-id setxkbmap us -variant intl
 
 # Wallpaper
 
-exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/tux.png
-#exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/
+#exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/tux.png
+exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/
 
 # Layout mode
 
@@ -309,3 +309,5 @@ exec --no-startup-id polybar
 # Picom
 
 exec_always --no-startup-id picom
+
+gaps inner 17
