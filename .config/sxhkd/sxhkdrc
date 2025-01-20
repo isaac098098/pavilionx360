@@ -22,8 +22,5 @@ ctrl + shift + e
 ctrl + shift + q
     bash $HOME/pavilionx360/bin/inkscape_save.sh
 
-ctrl + shift + y
-    bash $HOME/pavilionx360/bin/edtex.sh
-
 ctrl + shift + b
     rofi -show books -modes "books:$HOME/.config/rofi/scripts/search_books.sh"

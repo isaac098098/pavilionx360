@@ -21,14 +21,17 @@ then
     else
         echo $1 > $HOME/notes/name
         killall rofi
-        # xdotool type "incsvg$(echo $1 | sed 's/\.svg$//')jk"
-        xdotool type "incsvg${1}jk"
+        python3 $HOME/repos/inkscape-shortcut-manager/main.py &
+        sleep 0.2
+        xdotool type "incsvg"
+        sleep 0.2
+        xdotool type "${1}"
+        sleep 0.2
+        xdotool type "jk"
         i3-msg workspace 7
         cp $HOME/.config/inkscape/templates/default.svg $HOME/notes/current-notes/diagrams/"$1.svg"
         inkscape $HOME/notes/current-notes/diagrams/"$1.svg"
         xwininfo -root -tree | grep -E 'org.inkscape.Inkscape' | tail -n 1 | awk '{print $1}' | xargs xdotool windowactivate
-        #xdotool key 5
-        #xdotool key ctrl+4
-        break
+        exit
     fi
 fi

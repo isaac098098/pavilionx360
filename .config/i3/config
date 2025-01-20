@@ -315,3 +315,6 @@ gaps inner 17
 # Screen lock
 
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
+
+for_window [class="floating-term"] floating enable
+for_window [class="floating-term"] resize set 500 100

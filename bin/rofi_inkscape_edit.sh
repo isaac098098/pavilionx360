@@ -19,12 +19,14 @@ then
     then
         echo $1 > $HOME/notes/name
         killall rofi
+        python3 $HOME/repos/inkscape-shortcut-manager/main.py &
+        sleep 0.2
         i3-msg workspace 7
         inkscape $HOME/notes/current-notes/diagrams/"$1.svg"
         xwininfo -root -tree | grep -E 'org.inkscape.Inkscape' | tail -n 1 | awk '{print $1}' | xargs xdotool windowactivate
-        #xdotool key 5
-        #xdotool key ctrl+4
-        break
+        # xdotool key 5
+        # xdotool key ctrl+4
+        exit
     fi
 fi
 
