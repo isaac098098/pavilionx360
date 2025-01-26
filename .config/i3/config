@@ -49,8 +49,8 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:FreeSans 10
-#font pango:Iosevka NF SemiBold 12
-font pango:Mx437 IBM VGA 8x16 11
+font pango:Iosevka NF SemiBold 10
+# font pango:Mx437 IBM VGA 8x16 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -244,7 +244,7 @@ bindsym $mod+r mode "resize"
 
 #                           title_border        bg          fg          indicator   child_border
 #client.focused              $bg0                $bg0        $fg         $blue       $fg
-client.focused              $bg1                $bg1        $fg         $fg         $fg
+client.focused              $bg1                $bg3        $fg         $fg         $fg
 client.focused_inactive     $bg1                $bg1        $fg         $bg0        $bg0
 client.unfocused            $bg_d               $bg_d       $fg         $bg0        $bg0
 client.urgent               $red                $red        $white      $bg0        $red
@@ -310,11 +310,16 @@ exec --no-startup-id polybar
 
 exec_always --no-startup-id picom
 
+# Gaps
+
 gaps inner 17
+# smart_gaps on
 
 # Screen lock
 
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
+for_window [title="/*"] floating enable
+for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="floating-term"] floating enable
 for_window [class="floating-term"] resize set 500 100
