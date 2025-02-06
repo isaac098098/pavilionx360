@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #dir="$HOME/documents/books/sciences"
-dir="$HOME/documents/academic/esfm/tesis/tesis_bib/books"
+#dir="$HOME/documents/academic/esfm/tesis/tesis_bib/books"
+dir="$HOME/documents/academic/cinvestav/semestre_1"
 
 if [[ -n "$1" ]]; then
     killall rofi

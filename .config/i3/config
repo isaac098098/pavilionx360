@@ -49,7 +49,7 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:FreeSans 10
-font pango:Iosevka NF SemiBold 10
+font pango:Iosevka NF SemiBold 11
 # font pango:Mx437 IBM VGA 8x16 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -268,7 +268,7 @@ bindsym $mod+q exec --no-startup-id setxkbmap us -variant intl
 # Wallpaper
 
 #exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/tux.png
-exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/
+exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/onedark
 
 # Layout mode
 
@@ -308,18 +308,18 @@ exec --no-startup-id polybar
 
 # Picom
 
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom -b --config $HOME/.config/picom/picom.conf
 
 # Gaps
 
 gaps inner 17
-# smart_gaps on
+smart_gaps on
 
 # Screen lock
 
 # exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
-for_window [title="/*"] floating enable
+# for_window [title="/*"] floating enable
 for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="floating-term"] floating enable
 for_window [class="floating-term"] resize set 500 100

@@ -63,3 +63,4 @@ vim.cmd('highlight EndOfBuffer guifg=#1f2329')
 -- toggleterm
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#282c34', fg = '#a0a8b7' })
 vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#282c34', fg = '#a0a8b7' })
+
