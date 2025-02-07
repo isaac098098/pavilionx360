@@ -8,7 +8,8 @@ set statusbar-basename          "true"
 
 # onedark-darker
 
-set default-bg                  "#1f2329" #bg0
+# set default-bg                  "#1f2329" #bg0
+set default-bg                  rgba(31,35,41,0.8) #bg0
 set default-fg                  "#a0a8b7" #fg
 
 set completion-bg               "#282c34" #bg1
@@ -28,7 +29,8 @@ set notification-warning-fg     "#1f2329" #bg0
 set notification-error-bg       "#e55561" #red
 set notification-error-fg       "#1f2329" #bg0
 
-set recolor-lightcolor          "#1f2329" #bg0
+# set recolor-lightcolor          "#1f2329" #bg0
+set recolor-lightcolor          rgba(31,35,41,0) #bg0
 set recolor-darkcolor           "#a0a8b7" #fg
 
 set index-bg                    "#1f2329" #bg0

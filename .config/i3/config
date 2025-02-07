@@ -317,6 +317,7 @@ smart_gaps on
 
 # Screen lock
 
+bindsym $mod+x exec --no-startup-id lock
 # exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
 # for_window [title="/*"] floating enable
