@@ -5,11 +5,14 @@ CLEAR='#00000000'
 DEFAULT='#00000000'
 TEXT='#e2b86bff'
 WRONG='#e55561ff'
-VERIFYING='#bf68d9ff'
+VERIFYING='#8ebd6bff'
+
+polybar-msg cmd toggle
+sleep 0.1
 
 i3lock \
 --insidever-color=$CLEAR     \
---ringver-color=$TEXT   \
+--ringver-color=$VERIFYING   \
 \
 --insidewrong-color=$CLEAR   \
 --ringwrong-color=$WRONG     \
@@ -19,13 +22,19 @@ i3lock \
 --line-color=$BLANK          \
 --separator-color=$DEFAULT   \
 \
---verif-color=$TEXT          \
+--verif-color=$VERIFYING     \
 --wrong-color=$WRONG         \
 --time-color=$TEXT           \
 --date-color=$TEXT           \
 --layout-color=$TEXT         \
 --keyhl-color=$TEXT          \
 --bshl-color=$TEXT           \
+\
+--time-size=45               \
+--date-size=17               \
+--verif-size=30              \
+--wrong-size=30              \
+--radius=115                 \
 \
 --screen 1                   \
 --clock                      \
@@ -42,3 +51,5 @@ i3lock \
 --verif-text="Verifying"     \
 --nofork                     \
 #--keylayout 0                \
+
+polybar-msg cmd toggle

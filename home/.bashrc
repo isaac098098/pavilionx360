@@ -16,3 +16,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD
 alias nsxiv='nsxiv -b'
 alias tty-clock='tty-clock -c -s -C 4 -S -n'
 alias pipes.sh='pipes.sh'
+
+TOP="$HOME/documents/academic/cinvestav/semestre_1/topologia"
+VAR="$HOME/documents/academic/cinvestav/semestre_1/variable_compleja"
