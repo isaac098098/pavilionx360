@@ -84,10 +84,16 @@ return {
             return require('config.bufferline')
         end
     },
+    -- {
+        -- 'navarasu/onedark.nvim',
+        -- config = function()
+            -- return require('config.onedark')
+        -- end
+    --},
     {
-        'navarasu/onedark.nvim',
+        'nordtheme/vim',
         config = function()
-            return require('config.onedark')
+            return require('config.nord')
         end
-    },
+    }
 }

@@ -1,51 +1,90 @@
 set guioptions                  ""
-set font                        "JetBrains Mono NL SemiBold 9"
+set font                        "Iosevka NF SemiBold 10.4"
 set recolor                     "true"
 set recolor-keephue             "true"
 set selection-clipboard         clipboard
 set window-title-basename       "true"
 set statusbar-basename          "true"
 
-# onedark-darker
+# nord
 
-# set default-bg                  "#1f2329" #bg0
-set default-bg                  rgba(31,35,41,0.8) #bg0
-set default-fg                  "#a0a8b7" #fg
+set default-bg                  rgba(46,52,64,0.8)
+set default-fg                  "#D8DEE9"
 
-set completion-bg               "#282c34" #bg1
-set completion-fg               "#48b0bd" #cyan
-set completion-highlight-fg     "#282c34" #bg1
-set completion-highlight-bg     "#48b0bd" #cyan
-set completion-group-fg         "#282c34" #bg1
-set completion-group-bg         "#48b0bd" #cyan
+set completion-bg               "#3B4252"
+set completion-fg               "#81A1C1"
+set completion-highlight-fg     "#3B4252"
+set completion-highlight-bg     "#81A1C1"
+set completion-group-fg         "#3B4252"
+set completion-group-bg         "#81A1C1"
 
-set statusbar-fg                "#a9a8b7" #fg
-set statusbar-bg                "#1f2329" #bg0
+set statusbar-fg                "#D8DEE9"
+set statusbar-bg                "#3B4252"
 
-set notification-bg             "#8ebb6b" #green
-set notification-fg             "#1f2329" #bg0
-set notification-warning-bg     "#e2b86b" #yellow
-set notification-warning-fg     "#1f2329" #bg0
-set notification-error-bg       "#e55561" #red
-set notification-error-fg       "#1f2329" #bg0
+set notification-bg             "#A3BE8C"
+set notification-fg             "#3B4252"
+set notification-warning-bg     "#D08770"
+set notification-warning-fg     "#2E3440"
+set notification-error-bg       "#BF616A"
+set notification-error-fg       "#2E3440"
 
-# set recolor-lightcolor          "#1f2329" #bg0
-set recolor-lightcolor          rgba(31,35,41,0) #bg0
-set recolor-darkcolor           "#a0a8b7" #fg
+set recolor-lightcolor          rgba(0,0,0,0)
+set recolor-darkcolor           "#D8DEE9"
 
-set index-bg                    "#1f2329" #bg0
-set index-fg                    "#a0a8b7" #fg
-set index-active-bg             "#cc9057" #orange
-set index-active-fg             "#1f2329" #bg
+set index-bg                    "#3B4252"
+set index-fg                    "#D8DEE9"
+set index-active-bg             "#8FBCBB"
+set index-active-fg             "#3B4252"
 
-set render-loading-bg           "#1f2329" #bg0
-set render-loading-fg           "#1f2329" #bg0
+set render-loading-bg           "#3B4252"
+set render-loading-fg           "#3B4252"
 
-set inputbar-bg                 "#1f2329" #bg0
-set inputbar-fg                 "#a0a8b7" #fg
+set inputbar-bg                 "#3B4252"
+set inputbar-fg                 "#D8DEE9"
 
 set highlight-color             rgba(240,198,116,0)
 set highlight-active-color      rgba(129,162,190,0)
+
+# onedark-darker
+
+# set default-bg                  "#1f2329" #bg0
+# set default-bg                  rgba(31,35,41,0.8) #bg0
+# set default-fg                  "#a0a8b7" #fg
+ 
+# set completion-bg               "#282c34" #bg1
+# set completion-fg               "#48b0bd" #cyan
+# set completion-highlight-fg     "#282c34" #bg1
+# set completion-highlight-bg     "#48b0bd" #cyan
+# set completion-group-fg         "#282c34" #bg1
+# set completion-group-bg         "#48b0bd" #cyan
+ 
+# set statusbar-fg                "#a9a8b7" #fg
+# set statusbar-bg                "#1f2329" #bg0
+ 
+# set notification-bg             "#8ebb6b" #green
+# set notification-fg             "#1f2329" #bg0
+# set notification-warning-bg     "#e2b86b" #yellow
+# set notification-warning-fg     "#1f2329" #bg0
+# set notification-error-bg       "#e55561" #red
+# set notification-error-fg       "#1f2329" #bg0
+
+# set recolor-lightcolor          "#1f2329" #bg0
+# set recolor-lightcolor          rgba(31,35,41,0) #bg0
+# set recolor-darkcolor           "#a0a8b7" #fg
+ 
+# set index-bg                    "#1f2329" #bg0
+# set index-fg                    "#a0a8b7" #fg
+# set index-active-bg             "#cc9057" #orange
+# set index-active-fg             "#1f2329" #bg
+ 
+# set render-loading-bg           "#1f2329" #bg0
+# set render-loading-fg           "#1f2329" #bg0
+ 
+# set inputbar-bg                 "#1f2329" #bg0
+# set inputbar-fg                 "#a0a8b7" #fg
+ 
+# set highlight-color             rgba(240,198,116,0)
+# set highlight-active-color      rgba(129,162,190,0)
 
 # base16 tomorrow night
 

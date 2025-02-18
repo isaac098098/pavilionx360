@@ -1,7 +1,11 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/one_dark.toml"
+    "~/.config/alacritty/themes/nord.toml"
 ]
+
+[window]
+padding.y = 5
+padding.x = 3
 
 [font]
 size = 7.4

@@ -45,12 +45,12 @@ require("toggleterm").setup{
     -- on_close = fun(t: Terminal), -- function to run when the terminal closes
     hide_numbers = true, -- hide the number column in toggleterm buffers
     on_open = function(term)
-        vim.cmd('hi MsgArea guifg=#1f2329')
-        vim.cmd('hi ModeMsg guifg=#1f2329')
+        vim.cmd('hi MsgArea guifg=#2E3440')
+        vim.cmd('hi ModeMsg guifg=#2E3440')
     end,
     on_close = function(term)
-        vim.cmd('hi MsgArea guifg=#a0a8b7')
-        vim.cmd('hi ModeMsg guifg=#B5BD68')
+        vim.cmd('hi MsgArea guifg=#E5E9F0')
+        vim.cmd('hi ModeMsg guifg=#E5E9F0')
     end,
     autochdir = false, -- when neovim changes it current directory the terminal will change it's own when next it's opened
     shading_factor = '-10',
@@ -59,19 +59,16 @@ require("toggleterm").setup{
         -- highlights which map to a highlight group name and a table of it's values
         -- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
         Normal = {
-            guibg = "#1f2329",
+            guibg = "#434C5E",
+            guifg = "#ECEFF4",
         },
         NormalFloat = {
-            guibg = "#1a1e24",
+            guibg = "#434C5E",
         },
         FloatBorder = {
-            guifg = "#1a1e24",
-            guibg = "#1a1e24",
+            guifg = "#434C5E",
+            guibg = "#434C5E",
         },
-        -- MsgArea = {
-        --     guifg = "#1a1e24",
-        --     guibg = "#1a1e24",
-        -- },
     },
     start_in_insert = true,
     insert_mappings = false,
