@@ -262,7 +262,7 @@ bindsym $mod+r mode "resize"
 #}
 
 #                           title_border    bg          fg          indicator   child_border
-client.focused              $nord3          $nord3      $nord4      $nord3      $nord0
+client.focused              $nord3          $nord3      $nord4      $nord3      $nord4
 client.focused_inactive     $nord3          $nord3      $nord4      $nord3      $nord0
 client.unfocused            $nord0          $nord0      $nord4      $nord0      $nord0
 client.urgent               $nord11         $nord11     $nord4      $nord0      $nord0
