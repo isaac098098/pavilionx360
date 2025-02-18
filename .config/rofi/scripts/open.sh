@@ -14,7 +14,7 @@ case "$1" in
         do
             sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
         done
-        kitty nvim $HOME/notes/current-notes/lec_"$last".tex
+        alacritty -e nvim $HOME/notes/current-notes/lec_"$last".tex
     ;;
     "New")
         killall rofi
@@ -23,11 +23,11 @@ case "$1" in
         do
             sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
         done
-        kitty nvim $HOME/notes/current-notes/lec_${new}.tex
+        alacritty -e nvim $HOME/notes/current-notes/lec_${new}.tex
     ;;
     "Bibliography")
         killall rofi
-        kitty nvim $HOME/notes/current-notes/bibliography.bib
+        alacritty -e nvim $HOME/notes/current-notes/bibliography.bib
     ;;
     *)
         # open lecture note interval or specific lectures
@@ -72,7 +72,7 @@ case "$1" in
 
             if (( ${#tabs[@]} ))
             then
-                kitty nvim -p "${tabs[@]}"
+                alacritty -e nvim -p "${tabs[@]}"
             fi
             
         fi
@@ -96,7 +96,7 @@ do
                 sed -i "s/^\\\\\input{lec_$(printf '%02d' $j).tex}/% \\\\\input{lec_$(printf '%02d' $j).tex}/g" $HOME/notes/current-notes/main.tex
             fi
         done
-        kitty nvim "$HOME/notes/current-notes/lec_$i.tex"
+        alacritty -e nvim "$HOME/notes/current-notes/lec_$i.tex"
         break
     fi
 done

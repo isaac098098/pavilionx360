@@ -1,9 +1,9 @@
 * {
-    crust:  #1f2329;
-    bg0:    #282c34;
-    fg0:    #A0A8B7;
-    orange: #e2b86b;
-    blue:   #4FA6ED;
+    crust:  #2E3440;
+    bg0:    #3B4252;
+    fg0:    #D8DEE9;
+    orange: #EBCB8B;
+    blue:   #5E81AC;
 }
 
 element-text, element-icon , mode-switcher {
