@@ -114,7 +114,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -nb '$nord1' -sb '$nord9' -sf '$nord0' -nf '$nord5' -fn 'Iosevka NF SemiBold-11'
+bindsym $mod+d exec --no-startup-id dmenu_run -nb '$nord0' -sb '$nord13' -sf '$nord0' -nf '$nord5' -fn 'Iosevka NF SemiBold-11'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -262,12 +262,12 @@ bindsym $mod+r mode "resize"
 #}
 
 #                           title_border    bg          fg          indicator   child_border
-client.focused              $nord3          $nord3      $nord4      $nord3      $nord4
-client.focused_inactive     $nord3          $nord3      $nord4      $nord3      $nord0
+client.focused              $nord3          $nord3      $nord4      $nord4      $nord4
+client.focused_inactive     $nord3          $nord3      $nord4      $nord0      $nord0
 client.unfocused            $nord0          $nord0      $nord4      $nord0      $nord0
 client.urgent               $nord11         $nord11     $nord4      $nord0      $nord0
 client.placeholder          $nord13         $nord13     $nord0      $nord0      $nord4
-client.background           $nord1          $nord1      $nord4      $nord1      $nord1
+client.background           $nord1          $nord1      $nord4      $nord0      $nord1
 
 # Borders
 

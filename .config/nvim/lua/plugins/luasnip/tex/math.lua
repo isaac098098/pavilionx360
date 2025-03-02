@@ -1702,7 +1702,7 @@ s({trig = "thp", name = "Thin space", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "mdn", name = "Medium space", snippetType = "autosnippet"},
+s({trig = "mes", name = "Medium space", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\:")

@@ -1,6 +1,6 @@
 set guioptions                  ""
 set font                        "Iosevka NF SemiBold 10.4"
-set recolor                     "true"
+set recolor                     "false"
 set recolor-keephue             "true"
 set selection-clipboard         clipboard
 set window-title-basename       "true"
