@@ -111,7 +111,7 @@ bindsym $mod+Return exec alacritty
 # bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+q focus parent,kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '$nord0' -sb '$nord13' -sf '$nord0' -nf '$nord4' -fn 'Iosevka NF SemiBold-10.6'

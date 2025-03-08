@@ -5,6 +5,8 @@ set recolor-keephue             "true"
 set selection-clipboard         clipboard
 set window-title-basename       "true"
 set statusbar-basename          "true"
+unmap normal i
+map i mark_evaluate
 
 # nord
 

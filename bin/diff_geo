@@ -1,0 +1,9 @@
+#!/bin/bash
+
+VAR="$HOME/documents/academic/cinvestav/semestre_1/topologia/top_bib/differential_geometry"
+zathura $VAR/lee2000.pdf &
+sleep 0.3
+zathura $VAR/docarmo2016.pdf &
+sleep 0.3
+zathura $VAR/oneill2006.pdf &
+sleep 0.3

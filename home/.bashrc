@@ -19,3 +19,4 @@ alias pipes.sh='pipes.sh'
 
 TOP="$HOME/documents/academic/cinvestav/semestre_1/topologia"
 VAR="$HOME/documents/academic/cinvestav/semestre_1/variable_compleja"
+AUX="$HOME/documents/academic/cinvestav/semestre_1/aux_bib"
