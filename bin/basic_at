@@ -11,19 +11,17 @@ zathura $VAR/gray1975.pdf &
 sleep 0.3
 zathura $VAR/munkres1984.pdf &
 sleep 0.3
+zathura $VAR/whitehead1978.pdf &
+sleep 0.4
 zathura $VAR/spanier1981.pdf &
 sleep 0.3
 zathura $VAR/bredon1993.pdf &
-sleep 0.3
-zathura $VAR/davis1991.pdf &
-sleep 0.3
-zathura $VAR/singer1976.pdf &
 sleep 0.3
 zathura $VAR/pontrjagin1946.pdf &
 sleep 0.4
 zathura $VAR/botvinnik2019.pdf &
 sleep 0.3
-zathura $VAR/whitehead1978.pdf &
-sleep 0.4
+zathura $VAR/singer1976.pdf &
+sleep 0.3
 zathura $VAR/hatcher2001.pdf &
 sleep 0.3
