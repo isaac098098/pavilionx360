@@ -111,7 +111,8 @@ bindsym $mod+Return exec alacritty
 # bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+Shift+q focus parent,kill
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+w focus parent,kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '$nord0' -sb '$nord13' -sf '$nord0' -nf '$nord4' -fn 'Iosevka NF SemiBold-10.6'
@@ -263,6 +264,7 @@ bindsym $mod+r mode "resize"
 
 #                           title_border    bg          fg          indicator   child_border
 client.focused              $nord3          $nord3      $nord4      $nord4      $nord4
+#client.focused              $nord3          $nord3      $nord4      $nord4      $nord0
 client.focused_inactive     $nord3          $nord3      $nord4      $nord0      $nord0
 client.unfocused            $nord0          $nord0      $nord4      $nord0      $nord0
 client.urgent               $nord11         $nord11     $nord4      $nord0      $nord0
@@ -286,6 +288,7 @@ bindsym $mod+q exec --no-startup-id setxkbmap us -variant intl
 # Wallpaper
 
 exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/nord
+#exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/nord/nord8.png
 
 # Layout mode
 
@@ -334,6 +337,7 @@ bindsym $mod+x exec --no-startup-id lock
 # exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
 # for_window [title="/*"] floating enable
+for_window [workspace="10"] floating enable
 for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="floating-term"] floating enable
 for_window [class="floating-term"] resize set 500 100

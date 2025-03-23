@@ -53,9 +53,17 @@ require("config.lazy")
 
 -- Colorschemes
 
--- onedark-darker
+-- Transparent background
+
+vim.cmd('highlight Normal ctermbg=none guibg=none')
+vim.cmd('highlight NonText ctermbg=none guibg=none')
+
+-- nord
 
 -- bufferline
 vim.cmd('highlight BufferLineOffsetSeparator guifg=#3B4252 guibg=#3B4252')
 vim.cmd('highlight BufferLineSeparator guifg=#222730 guibg=#222730')
 vim.cmd('highlight BufferLineFill guibg=#222730 guifg=#222730')
+
+-- vimtex
+vim.cmd('highlight VimTeXInfo guifg=#81A1C1')

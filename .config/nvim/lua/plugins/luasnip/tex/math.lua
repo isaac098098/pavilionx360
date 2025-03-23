@@ -2613,6 +2613,26 @@ s({trig = "nos", name = "Definite o-sum", snippetType = "autosnippet"},
 
 -- Products
 
+s({trig = "cop", name = "Inverted product symbol", snippetType = "autosnippet"},
+    {
+		f(function(_,snip) return snip.captures[1] end),
+		c(1,
+		    {
+		        {
+        			t("\\coprod_{"), i(1), t("}")
+		        },
+		        {
+        			t("\\coprod_{"), i(1), t("}^{"), i(2), t("}")
+		        },
+		        {
+        			i(1,"\\coprod")
+		        }
+		    }
+		)
+    },
+    {condition = in_mathzone}
+),
+
 s({trig = "sp", name = "Subscript product", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
@@ -2900,6 +2920,16 @@ s({trig = "itms", name = "Multiple integral subscript", snippetType = "autosnipp
 		t("\\idotsint_{"), i(1), t("}")
     },
     {condition = in_mathzone}
+),
+
+s({trig = "tcd", name = "TikZ commutative diagram"},
+    {
+        t("\\adjustbox{scale=1.2,center}{"),
+        t({"",""}), t("    \\begin{tikzcd}[row sep=large,column sep=large]"),
+        t({"",""}), t("        "), i(1),
+        t({"",""}), t("    \\end{tikzcd}"),
+        t({"",""}), t("}")
+    }
 ),
 
 }

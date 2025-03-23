@@ -147,12 +147,14 @@
 %use addto to add title to spanish title definitions
 %use captionenglish otherwise
 \renewcommand{\cfttoctitlefont}{\huge\scshape} %toc title format
-\renewcommand{\cftsecfont}{\bfseries} %section entry format
-\renewcommand{\cftsecpagefont}{} %section entry number format
-\renewcommand{\cftsubsecpagefont}{} %subsection entry number format
+\renewcommand{\cftsecfont}{\itshape} %section entry format
+\renewcommand{\cftsecpagefont}{} %section page number format
+\renewcommand{\cftsubsecpagefont}{} %subsection page number format
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} %dot leaders (dot lines)
 \renewcommand{\cftsecaftersnum}{.} %dot after section number
+\renewcommand{\cftsecpresnum}{\textnormal} %section number format
 \renewcommand{\cftsubsecaftersnum}{.} %dot after subsection number
+\renewcommand{\cftsubsecpresnum}{\textnormal} %subsection number format
 %\renewcommand{\cftsecnumwidth}{0pt} %horizontal space after section number
 %\renewcommand{\cftsubsecnumwidth}{0pt} %horizontal space after subsection number
 %\renewcommand{\cftsecafterpnum}{\vskip0pt} %vertical spacing between sections
