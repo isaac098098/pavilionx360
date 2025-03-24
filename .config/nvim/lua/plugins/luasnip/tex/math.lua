@@ -1586,6 +1586,33 @@ s({trig = "unb", name = "Underbrace", snippetType = "autosnippet"},
 
 -- Delimiters
 
+s(
+    {trig = "(", descr = "Parentheses", snippetType = "autosnippet", wordTrig = false},
+    {
+        t("("), d(1,get_visual), t(")")
+    }
+),
+
+s(
+    {trig = "[", descr = "Square brackets", snippetType = "autosnippet", wordTrig = false},
+    {
+        t("["), d(1,get_visual), t("]")
+    }
+),
+
+s(
+    {trig = "{", descr = "Curly brackets", snippetType = "autosnippet", wordTrig = false},
+    {
+        t("{"), d(1,get_visual), t("}") }
+),
+
+s(
+    {trig = "\"", descr = "Double quotes", snippetType = "autosnippet", wordTrig = false},
+    {
+        t("\""), d(1,get_visual), t("\"")
+    }
+),
+
 s({trig = "dp", name = "Parenthesis", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),

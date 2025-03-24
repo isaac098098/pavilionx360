@@ -336,8 +336,11 @@ smart_gaps on
 bindsym $mod+x exec --no-startup-id lock
 # exec_always --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
+# Floating windows
+
 # for_window [title="/*"] floating enable
-for_window [workspace="10"] floating enable
 for_window [class="Gnome-pomodoro"] floating enable
 for_window [class="floating-term"] floating enable
 for_window [class="floating-term"] resize set 500 100
+for_window [class="Gpick"] floating enable
+for_window [workspace="10"] floating enable

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#dir="$HOME/documents/books"
-#dir="$HOME/documents/books/manuals/drawing"
-dir="$HOME/documents/academic/cinvestav/semestre_1"
+dir=""
 
 if [[ -n "$1" ]]; then
     killall rofi
@@ -11,4 +9,4 @@ if [[ -n "$1" ]]; then
     exit 0
 fi
 
-find "$dir" -type f -printf "%f\n"
+find "$dir" -type f -printf "%f\n" | grep .pdf
