@@ -326,6 +326,10 @@ exec --no-startup-id polybar
 
 exec_always --no-startup-id picom -b --config $HOME/.config/picom/picom.conf
 
+# Notifications
+
+exec_always --no-startup-id dunst
+
 # Gaps
 
 gaps inner 17
