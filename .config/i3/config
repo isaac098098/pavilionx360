@@ -68,8 +68,8 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:FreeSans 10
-font pango:Iosevka NF SemiBold 11
-# font pango:Mx437 IBM VGA 8x16 11
+# font pango:Iosevka NF SemiBold 11
+font pango:Mx437 IBM VGA 8x16 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -115,7 +115,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+w focus parent,kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -nb '$nord0' -sb '$nord13' -sf '$nord0' -nf '$nord4' -fn 'Iosevka NF SemiBold-10.6'
+bindsym $mod+d exec --no-startup-id dmenu_run -nb '$nord0' -sb '$nord13' -sf '$nord0' -nf '$nord4' -fn 'Mx437 IBM VGA 8x16-12.4'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -274,8 +274,8 @@ client.background           $nord1          $nord1      $nord4      $nord0      
 # Borders
 
 default_floating_border none
-default_border pixel 2
-smart_borders on
+default_border pixel 0
+# smart_borders on
 
 # Focus windows
 
@@ -287,8 +287,8 @@ bindsym $mod+q exec --no-startup-id setxkbmap us -variant intl
 
 # Wallpaper
 
-exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/nord
-#exec_always --no-startup-id feh --bg-scale $HOME/documents/images/wallpapers/nord/nord8.png
+#exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/nord
+exec_always --no-startup-id feh --bg-scale --randomize $HOME/documents/images/wallpapers/nord/pixel/
 
 # Layout mode
 

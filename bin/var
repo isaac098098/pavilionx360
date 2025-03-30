@@ -9,6 +9,8 @@ zathura $VAR/ahlfors1979.pdf &
 sleep 0.3
 zathura $VAR/grove1974.pdf &
 sleep 0.3
-zathura $VAR/beardon1979.pdf &
+zathura $VAR/marsden1973.pdf &
 sleep 0.3
-zathura $VAR/lang1977.pdf
+zathura $VAR/lang1977.pdf &
+sleep 0.3
+zathura $VAR/beardon1979.pdf &

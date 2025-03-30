@@ -8,24 +8,27 @@ padding.y = 5
 padding.x = 3
 # padding.y = 20
 # padding.x = 20
-# opacity = 0.7
+opacity = 0.7
 
 [font]
-size = 7.4
-# size = 8
-
-[font.bold]
-family = "JetBrains Mono NL"
-style = "Bold"
-
-[font.bold_italic]
-family = "JetBrains Mono NL"
-style = "Bold Italic"
-
-[font.italic]
-family = "JetBrains Mono NL"
-style = "Italic"
+# size = 7.4
+size = 9.7
 
 [font.normal]
-family = "JetBrains Mono NL"
+# family = "JetBrains Mono NL"
+family = "Mx437 IBM VGA 8x16"
+
+[font.bold]
+# family = "JetBrains Mono NL"
+family = "Mx437 IBM VGA 8x16"
 style = "Bold"
+
+[font.italic]
+# family = "JetBrains Mono NL"
+family = "Mx437 IBM VGA 8x16"
+style = "Italic"
+
+[font.bold_italic]
+# family = "JetBrains Mono NL"
+family = "Mx437 IBM VGA 8x16"
+style = "Bold Italic"

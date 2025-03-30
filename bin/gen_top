@@ -13,5 +13,6 @@ zathura $VAR/dugundji1966.pdf &
 sleep 0.3
 zathura $VAR/janich1984.pdf &
 sleep 0.3
-zathura $VAR/steen1970.pdf &
+zathura $VAR/lee2000.pdf &
 sleep 0.3
+zathura $VAR/steen1970.pdf &

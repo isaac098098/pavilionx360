@@ -27,3 +27,6 @@ ctrl + shift + q
 
 ctrl + shift + b
     rofi -show books -modes "books:$HOME/.config/rofi/scripts/search_books.sh"
+
+alt + y
+    alacritty --working-directory $HOME/todo

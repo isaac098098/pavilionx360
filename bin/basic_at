@@ -26,4 +26,3 @@ sleep 0.3
 zathura $VAR/singer1976.pdf &
 sleep 0.3
 zathura $VAR/hatcher2001.pdf &
-sleep 0.3
