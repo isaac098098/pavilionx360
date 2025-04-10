@@ -15,4 +15,6 @@ zathura $VAR/janich1984.pdf &
 sleep 0.3
 zathura $VAR/lee2000.pdf &
 sleep 0.3
+zathura $VAR/hatcher2011.pdf &
+sleep 0.3
 zathura $VAR/steen1970.pdf &
