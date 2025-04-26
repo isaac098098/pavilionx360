@@ -67,3 +67,27 @@ vim.cmd('highlight BufferLineFill guibg=#222730 guifg=#222730')
 
 -- vimtex
 vim.cmd('highlight VimTeXInfo guifg=#81A1C1')
+
+local function synctex()
+    local cwd = vim.fn.expand('%:p:h')
+    local filename = vim.fn.expand('%:t:r')
+    local pdf_path = cwd .. "/main.pdf"
+
+    if vim.fn.filereadable(pdf_path) == 0 then
+        pdf_path = cwd .. "/" .. filename .. ".pdf"
+    end
+
+    local line = vim.fn.line('.')
+    local col = vim.fn.col('.')
+    local texfile = vim.fn.expand('%:p')
+
+    local param = string.format("--synctex-forward %d:%d:%s %s", line, col, texfile, pdf_path)
+
+    -- vim.notify("line: " .. line .. ", col: " .. col)
+
+    vim.fn.jobstart("zathura -x 'nvr --remote +%{line} %{input}' " .. param)
+    vim.cmd('redraw!')
+end
+
+vim.keymap.set('n', '<C-CR>', synctex, { noremap = true, silent = true })
+

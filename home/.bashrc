@@ -17,7 +17,8 @@ alias nsxiv='nsxiv -b'
 alias tty-clock='tty-clock -c -s -C 4 -S -n'
 alias pipes.sh='pipes.sh'
 alias fastfetch="fastfetch | sed 's/\ x5-E8000\/J3xxx\/N3xxx\ Integrated\ Graphics\ Controller\ @\ 0.60\ GHz\ \[Integrated\]//'"
-alias pomotroid="pomotroid --disable-gpu-sandbox"
+alias pomotroid="pomotroid --no--sandbox"
+alias nvim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 
 TOP="$HOME/documents/academic/cinvestav/semestre_1/topologia"
 VAR="$HOME/documents/academic/cinvestav/semestre_1/variable_compleja"

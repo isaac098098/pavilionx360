@@ -1,0 +1,11 @@
+#!/bin/bash
+
+hyprpaper &
+
+sleep 1
+
+WALLPAPER_DIR="$HOME/documents/images/wallpapers/nord/pixel/"
+MONITOR="eDP-1"
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+
+hyprctl hyprpaper reload ,"$WALLPAPER"

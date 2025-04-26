@@ -1,4 +1,5 @@
 vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_general_options = "--fork --synctex-forward @line:@col:@pdf @tex"
 vim.g.vimtex_motion_matchparen = false
 vim.g.vimtex_matchparen_enabled = false
 vim.g.vimtex_compiler_silent = false
