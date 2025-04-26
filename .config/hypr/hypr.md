@@ -17,6 +17,12 @@ neovim-remote AUR
 cliphist
 ```
 
+### Plugins
+
+```
+hyprgrass
+```
+
 ## Tips and tricks
 
 ### Set cursor theme
