@@ -33,10 +33,11 @@ button {
     background-color: #3b4252;
 }
 
-#pulseaudio,
-#network,
-#battery,
 #clock,
+#network,
+#pulseaudio,
+#custom-aud,
+#battery,
 #tray {
     padding: 3px 8px 0px 8px;
     border-radius: 8px;
@@ -62,6 +63,17 @@ button {
     margin-right: 0;
 }
 
+#clock {
+    background-color: rgba(40, 46, 57, 1);
+    color: #D8DEE9;
+}
+
+tooltip {
+    background-color: #282E39;
+    border: 0px;
+    padding: 5px;
+}
+
 #network {
     background-color: #EBCB8B;
     color: #2E3440;
@@ -80,6 +92,11 @@ button {
 #pulseaudio.muted {
     background-color: #282E39;
     color: #3B4252;
+}
+
+#custom-aud {
+    background-color: #88C0D0;
+    color: #2E3440;
 }
 
 /*
@@ -109,7 +126,7 @@ button {
 }
 
 #battery.charging, #battery.plugged {
-    background-color: #81A1C1;
+    background-color: #A3BE8C;
     color: #2E3440;
 }
 
@@ -127,17 +144,6 @@ button {
 
 label:focus {
     background-color: #000000;
-}
-
-#clock {
-    background-color: rgba(40, 46, 57, 1);
-    color: #D8DEE9;
-}
-
-tooltip {
-    background-color: #282E39;
-    border: 0px;
-    padding: 5px;
 }
 
 #tray {

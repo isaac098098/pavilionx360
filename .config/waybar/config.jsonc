@@ -11,6 +11,7 @@
     "modules-right": [
         "network",
         "pulseaudio",
+        "custom/aud",
         "battery",
         "tray",
     ],
@@ -24,17 +25,20 @@
             //"default": "󰊠"
         //}
     },
-    "pulseaudio": {
-        "scroll-step": 2,
-        "format": "VOL <span color='#FFFFFF'>{volume}%</span>",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "MUTED",
-    },
     "network": {
         "format-wifi": "{ifname} <span color='#FFFFFF'>{gwaddr}</span>",
         "format-ethernet": "{ipaddr}/{cidr}",
         "format-disconnected": "disconnected",
+    },
+    "pulseaudio": {
+        "scroll-step": 2,
+        "format": "VOL <span color='#FFFFFF'>{volume}%</span>",
+        "format-muted": "MUTED",
+    },
+    "custom/aud": {
+        "exec": "$HOME/.config/waybar/scripts/aud.sh",
+        "format": "AUD <span color='#FFFFFF'>{}</span>",
+        "interval": 5
     },
     "battery": {
         "states": {
@@ -42,7 +46,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "<span color='#FFFFFF'>{capacity}%</span>",
+        "format": "BAT <span color='#FFFFFF'>{capacity}%</span>",
         "format-full": "FULL",
         "format-charging": "CHR <span color='#FFFFFF'>{capacity}%</span>",
     },
