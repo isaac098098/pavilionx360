@@ -37,3 +37,9 @@ hyprctl setcursor [int size]
 
 alias nvim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 ```
+
+### Update plugins
+
+```
+hyprpm update
+```

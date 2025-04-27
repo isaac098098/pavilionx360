@@ -3,6 +3,7 @@
 cp -r ~/.config/alacritty ~/pavilionx360/.config/
 cp -r ~/.config/awesome ~/pavilionx360/.config/
 cp -r ~/.config/hypr ~/pavilionx360/.config/
+cp -r ~/.config/waybar ~/pavilionx360/.config/
 cp -r ~/.config/i3 ~/pavilionx360/.config/
 cp -r ~/.config/i3status/ ~/pavilionx360/.config/
 cp -r ~/.config/kitty ~/pavilionx360/.config/

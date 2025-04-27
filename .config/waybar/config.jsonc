@@ -1,0 +1,67 @@
+// -*- mode: jsonc -*-
+{
+    // "height": 18,
+    "spacing": 0,
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray",
+    ],
+
+    // Modules configuration
+
+    "hyprland/workspaces": {
+        "format" : "{name}",
+        //"format-icons": {
+            //"active": "󰮯",
+            //"default": "󰊠"
+        //}
+    },
+    "pulseaudio": {
+        "scroll-step": 2,
+        "format": "VOL <span color='#FFFFFF'>{volume}%</span>",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "MUTED",
+    },
+    "network": {
+        "format-wifi": "{ifname} <span color='#FFFFFF'>{gwaddr}</span>",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "format-disconnected": "disconnected",
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span color='#FFFFFF'>{capacity}%</span>",
+        "format-full": "FULL",
+        "format-charging": "CHR <span color='#FFFFFF'>{capacity}%</span>",
+    },
+    "clock": {
+        "format": "{:%R %B %d, %Y}",
+        "tooltip-format": "<span size='12pt' font='Mx437 IBM VGA 8x16'>{calendar}</span>",
+        "calendar": {
+            "mode"          : "month",
+            "format": {
+                "months":     "<span color='#d8dee9'><b>{}</b></span>",
+                "days":       "<span color='#d8dee9'>{}</span>",
+                "weeks":      "<span color='#d8dee9'><b>W{}</b></span>",
+                "weekdays":   "<span color='#d8dee9'>{}</span>",
+                "today":      "<span color='#d8dee9'><b><u>{}</u></b></span>"
+            }
+        },
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+}
