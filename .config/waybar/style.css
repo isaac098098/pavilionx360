@@ -58,6 +58,10 @@ button {
     margin-right: 0;
 }
 
+.modules-right > widget:last-child > #battery {
+    margin-right: 0;
+}
+
 #network {
     background-color: #EBCB8B;
     color: #2E3440;
