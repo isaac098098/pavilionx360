@@ -295,6 +295,14 @@ s({trig = "tim", name = "Margin paragraph timestamp"},
     }
 ),
 
+
+s({trig = "cm", name = "Comment"},
+    {
+        t("%%% "), i(1),
+        t({"",""}), t({"",""}), i(2)
+    }
+),
+
 -- Cross-references
 
 -- Labels

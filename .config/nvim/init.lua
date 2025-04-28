@@ -71,10 +71,13 @@ vim.cmd('highlight VimTeXInfo guifg=#81A1C1')
 local function synctex()
     local cwd = vim.fn.expand('%:p:h')
     local filename = vim.fn.expand('%:t:r')
-    local pdf_path = cwd .. "/main.pdf"
+    local pdf_path = cwd .. "/" .. filename .. ".pdf"
 
     if vim.fn.filereadable(pdf_path) == 0 then
-        pdf_path = cwd .. "/" .. filename .. ".pdf"
+        pdf_path = cwd .. "/main.pdf"
+        if vim.fn.filereadable(pdf_path) == 0 then
+            pdf_path = vim.fn.expand('%:p:h:h') .. "/main.pdf"
+        end
     end
 
     local line = vim.fn.line('.')
