@@ -1,0 +1,4 @@
+- [ ] Scripts para crear nueva carta, abrir cartas, eliminar carta y editar carta.
+- [ ] Anexo de demostraciones largas.
+- [ ] Agregar sistema de tags para editar y estudiar cartas.
+- [ ] Hacer una función en los snippets que escriba el nombre del archivo para etiquetar las fichas.

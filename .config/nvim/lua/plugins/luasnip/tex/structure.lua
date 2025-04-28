@@ -296,10 +296,12 @@ s({trig = "tim", name = "Margin paragraph timestamp"},
 ),
 
 
-s({trig = "cm", name = "Comment"},
+s({trig = "zz", name = "Zettelkasten card header"},
     {
         t("%%% "), i(1),
-        t({"",""}), t({"",""}), i(2)
+        t({"",""}), t("%% tags: "), i(2),
+        t({"",""}), t({"",""}), t("\\zheader{"), rep(1), t("}{"), f(function() return vim.fn.expand("%:t:r") end), t("}{"), rep(2), t("}"),
+        t({"",""}), i(3)
     }
 ),
 

@@ -1,0 +1,19 @@
+\newtheoremstyle{proposition}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %proposition [number] [name]
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposición}[section]
+
+\newcommand{\zheader}[3]{
+    \marginnote{\sffamily\Large #2}
+    \marginnote{\sffamily #3}[1.0cm]
+    \vspace*{-\topsep}
+    {\noindent\Large\sffamily #1}
+    \bigskip
+}
