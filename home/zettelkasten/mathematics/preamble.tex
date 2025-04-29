@@ -1,3 +1,15 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[paperwidth=279mm, paperheight=156.9mm, right=55mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{lipsum}
+\usepackage{marginnote}
+
+\setlength\marginparsep{1.0cm} %separation from text to marginnote
+
 \newtheoremstyle{proposition}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
@@ -17,3 +29,5 @@
     {\noindent\Large\sffamily #1}
     \bigskip
 }
+
+\pagestyle{empty} %no page number

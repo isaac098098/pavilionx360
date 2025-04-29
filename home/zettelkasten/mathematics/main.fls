@@ -4,6 +4,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT main.tex
 OUTPUT main.log
+INPUT ./preamble.tex
+INPUT ./preamble.tex
+INPUT preamble.tex
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo
@@ -55,9 +58,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/marginnote/marginnote.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/marginnote/marginnote.sty
-INPUT ./preamble.tex
-INPUT ./preamble.tex
-INPUT preamble.tex
 INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux
