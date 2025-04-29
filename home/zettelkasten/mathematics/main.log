@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  29 APR 2025 06:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.19)  29 APR 2025 11:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -168,6 +168,11 @@ Package: marginnote 2018/08/09 1.4b non floating margin notes for LaTeX
 \c@mn@abspage=\count290
 )
 \c@proposition=\count291
+\@indexfile=\write3
+\openout3 = `main.idx'.
+
+
+Writing index file main.idx
 ) (./main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
@@ -200,14 +205,14 @@ LaTeX Info: Redefining \% on input line 3.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(119.07599pt, 518.26575pt, 156.49014pt)
-* v-part:(T,H,B)=(53.57138pt, 312.49524pt, 80.3571pt)
+* v-part:(T,H,B)=(53.5842pt, 312.56993pt, 80.3763pt)
 * \paperwidth=793.83188pt
-* \paperheight=446.42372pt
+* \paperheight=446.53043pt
 * \textwidth=518.26575pt
-* \textheight=312.49524pt
+* \textheight=312.56993pt
 * \oddsidemargin=46.806pt
 * \evensidemargin=46.806pt
-* \topmargin=-55.69861pt
+* \topmargin=-55.68579pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -225,11 +230,22 @@ LaTeX Info: Redefining \% on input line 3.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./cards/1.tex
-Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 4.
+(./main.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ (./cards/1.tex
+
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package marginnote Info: Margin note 2.1 is on absolute page 2 on input line 4.
 Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
-Package marginnote Info: Margin note 1.2 is on absolute page 1 on input line 4.
+Package marginnote Info: Margin note 2.2 is on absolute page 2 on input line 4.
 Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
@@ -239,11 +255,45 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) (./cards/1a.tex) (./cards/1a1.tex) (./cards/2.tex) (./cards/2a2.tex) (./cards/3.tex) (./cards/4.tex) (./cards/5.tex) (./cards/5a.tex) (./cards/5a1.tex)
+)) (./cards/1a.tex) (./cards/1b.tex) (./cards/1ab.tex
 
-[1
+[2]
+Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+Package marginnote Info: Margin note 3.2 is on absolute page 3 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+) (./cards/1a1.tex
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main.aux
+[3]
+Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+Package marginnote Info: Margin note 4.2 is on absolute page 4 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+) (./cards/1a2.tex
+
+[4]
+Package marginnote Info: Margin note 5.1 is on absolute page 5 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+Package marginnote Info: Margin note 5.2 is on absolute page 5 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+) (./cards/1a1.tex
+
+[5]
+Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 4.
+Package marginnote Info: right page because not two side mode on input line 4.
+Package marginnote Info: xpos seems to be 119.07599pt on input line 4.
+) (./cards/2.tex) (./cards/2a2.tex) (./cards/3.tex) (./cards/4.tex) (./cards/5.tex) (./cards/5a.tex) (./cards/5a1.tex)
+
+[6] (./main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -253,18 +303,18 @@ L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3961 strings out of 473579
- 67258 string characters out of 5728233
- 562081 words of memory out of 5000000
- 26811 multiletter control sequences out of 15000+600000
- 561332 words of font info for 49 fonts, out of 8000000 for 9000
+ 4003 strings out of 473579
+ 67799 string characters out of 5728233
+ 562205 words of memory out of 5000000
+ 26836 multiletter control sequences out of 15000+600000
+ 562252 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,6n,96p,252b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (1 page, 74948 bytes).
+ 84i,6n,96p,252b,422s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (6 pages, 97333 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage[paperwidth=279mm, paperheight=156.9mm, right=55mm]{geometry}
+\usepackage[paperwidth=279mm, paperheight=156.9375mm, right=55mm]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amsthm}
@@ -23,6 +23,8 @@
 \newtheorem{proposition}{Proposición}[section]
 
 \newcommand{\zheader}[3]{
+    \newpage
+    \addcontentsline{toc}{section}{\normalfont\textsf{\large #1 }\textsf{\small tags: #3}}
     \marginnote{\sffamily\Large #2}
     \marginnote{\sffamily #3}[1.0cm]
     \vspace*{-\topsep}
@@ -31,3 +33,5 @@
 }
 
 \pagestyle{empty} %no page number
+
+\makeindex

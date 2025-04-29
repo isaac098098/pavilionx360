@@ -1,0 +1,6 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\normalfont \textsf {\large Definición de espacio topológico }\textsf {\small tags: propiedad universal, caracterización, suma topológica}}{2}{}%
+\contentsline {section}{\normalfont \textsf {\large Definición de espacio topológico }\textsf {\small tags: propiedad universal, caracterización, suma topológica}}{3}{}%
+\contentsline {section}{\normalfont \textsf {\large Definición de espacio topológico }\textsf {\small tags: propiedad universal, caracterización, suma topológica}}{4}{}%
+\contentsline {section}{\normalfont \textsf {\large Definición de espacio topológico }\textsf {\small tags: propiedad universal, caracterización, suma topológica}}{5}{}%
+\contentsline {section}{\normalfont \textsf {\large Definición de espacio topológico }\textsf {\small tags: propiedad universal, caracterización, suma topológica}}{6}{}%
