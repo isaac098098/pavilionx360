@@ -801,6 +801,12 @@ s({trig = "rta", name = "Reference table"},
     }
 ),
 
+s({trig = "rfc", name = "Reference card"},
+    {
+        t("\\hyperref[card:"), i(1), t("]{\\textsf{"), rep(1), t("}}")
+    }
+),
+
 -- Page reference commands
 
 s({trig = "pge", name = "Generic page reference"},

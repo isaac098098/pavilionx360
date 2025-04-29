@@ -9,13 +9,13 @@
 \usepackage{amssymb} %more math symbols
 \usepackage{lipsum}
 \usepackage{marginnote}
-\usepackage[hidelinks]{hyperref} %clickable cross-references and url's
-\usepackage[spanish]{cleveref} %reference element type
-\usepackage{bookmark} %pdf bookmarks
 \usepackage{tocloft} %toc, tof and tot formatting
+\usepackage[hidelinks,linktoc=all]{hyperref} %clickable cross-references and url's
+\usepackage{bookmark} %pdf bookmarks
 \usepackage{enumitem} %lists formatting
 \usepackage{scalerel} %relative math text resizing
 \usepackage{mathtools} %used by DeclarePairedDelimiter
+\usepackage[spanish]{cleveref} %reference element type
 
 %Diagrams
 \usepackage{tikz-cd}
@@ -205,19 +205,21 @@
 
 \newcommand{\zheader}[3]{
     \newpage
+    \phantomsection
+    {\Large\sffamily #1}
     \addcontentsline{toc}{section}{#2 #1 \textsf{\footnotesize @#3}}
-    \marginnote{\sffamily\Large #2}
+    \marginnote{\hyperref[toc]{\sffamily\Large #2}\label{card:#2}}
     \marginnote{\footnotesize\sffamily #3}[1.0cm]
     \vspace*{-\topsep}
-    {\Large\sffamily #1}
     \bigskip
 }
 
 \newcommand{\zheadernotags}[2]{
     \newpage
-    \addcontentsline{toc}{section}{#2 #1}
-    \marginnote{\sffamily\Large #2}
-    \vspace*{-\topsep}
+    \phantomsection
     {\Large\sffamily #1}
+    \addcontentsline{toc}{section}{#2 #1}
+    \marginnote{\hyperref[toc]{\sffamily\Large #2}\label{card:#2}}
+    \vspace*{-\topsep}
     \bigskip
 }
