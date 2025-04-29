@@ -3,8 +3,11 @@
 if [[ "$1" ]]
 then
     case "$1" in
-        "Mathematics")
-            dir="$HOME/zettelkasten/mathematics"
+        "Topology")
+            dir="$HOME/zettelkasten/topology"
+        ;;
+    *)
+        exit 0
         ;;
     esac
 
@@ -13,6 +16,6 @@ then
 
     exit 0
 else
-    echo "Mathematics"
+    echo "Topology"
     exit 0
 fi

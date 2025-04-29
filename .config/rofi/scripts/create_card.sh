@@ -1,20 +1,28 @@
 #!/bin/bash
 
 dir="$HOME/zettelkasten/current"
-cards=$(ls "$dir/cards" | grep .tex | sort -V)
+cards=$(ls "$dir/cards" | grep .tex)
 
 if [[ "$1" ]]
 then
-    killall rofi
+    killall rofi > /dev/null 2>&1
     if [[ "$1" == "New" ]]
     then
         last=$(ls "$dir/cards" | sed -nE "s/^([0-9]+)\.tex/\1/p" | sort -n | tail -n 1)
-        next=$((10#$last + 1))
-        eof=$(grep -n "\\\\end{document}" "$dir/main.tex" | cut -f1 -d:)
-        sed -i "/\\end{document}/s/\\end{document}/\\input{cards\/$next.tex}\n\n\\\\end{document}/" "$dir/main.tex"
-        sed -i "$((10#$eof - 1))d" "$dir/main.tex"
-        alacritty -e nvim "$dir/cards/$next.tex" &
-        exit 0
+        if [[ "$last" ]]
+        then
+            next=$((10#$last + 1))
+            eof=$(grep -n "\\\\end{document}" "$dir/main.tex" | cut -f1 -d:)
+            sed -i "/\\end{document}/s/\\end{document}/\\input{cards\/$next.tex}\n\n\\\\end{document}/" "$dir/main.tex"
+            sed -i "$((10#$eof - 1))d" "$dir/main.tex"
+            alacritty -e nvim "$dir/cards/$next.tex" &
+            exit 0
+        else
+            eof=$(grep -n "\\\\end{document}" "$dir/main.tex" | cut -f1 -d:)
+            sed -i "/\\end{document}/s/\\end{document}/\\input{cards\/1.tex}\n\n\\\\end{document}/" "$dir/main.tex"
+            alacritty -e nvim "$dir/cards/1.tex" &
+            exit 0
+        fi
     else
         card=$(echo "$1" | awk '{print $1}')
         last_char=${card: -1}
@@ -102,13 +110,13 @@ else
         {
             original = $0
             key = build_sort_key($0)
-            print key "|" original }' | cut -d"|" -f2 | sed 's/$/.tex/')
+            print key "|" original }' | cut -d"|" -f2)
 
     for i in $sorted
     do
-        title=$(sed -n '0,/^%%% /s/^%%% //p' "$dir/cards/$i")
+        title=$(sed -n '0,/^%%% /s/^%%% //p' "$dir/cards/$i.tex")
         tags=$(grep "^%% tags:" "$dir/cards/$i" | sed -E 's/^.*tags:[[:space:]]*//')
-        printf "%-8s %s %59s\n" "${i%.tex}" "$title" "$tags"
+        printf "%-8s %s %59s\n" "$i" "$title" "$tags"
     done
     echo "New"
     exit 0

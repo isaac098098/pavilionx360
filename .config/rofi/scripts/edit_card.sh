@@ -5,7 +5,7 @@ cards=$(ls "$dir/cards" | grep .tex | sort -V)
 
 if [[ "$1" ]]
 then
-    killall rofi
+    killall rofi > /dev/null 2>&1
     card=$(echo "$1" | awk '{print $1}')
     alacritty -e nvim "$dir/cards/$card.tex" &
     exit 0
@@ -46,13 +46,13 @@ else
         {
             original = $0
             key = build_sort_key($0)
-            print key "|" original }' | cut -d"|" -f2 | sed 's/$/.tex/')
+            print key "|" original }' | cut -d"|" -f2)
 
     for i in $sorted
     do
-        title=$(sed -n '0,/^%%% /s/^%%% //p' "$dir/cards/$i")
+        title=$(sed -n '0,/^%%% /s/^%%% //p' "$dir/cards/$i.tex")
         tags=$(grep "^%% tags:" "$dir/cards/$i" | sed -E 's/^.*tags:[[:space:]]*//')
-        printf "%-8s %s %59s\n" "${i%.tex}" "$title" "$tags"
+        printf "%-8s %s %59s\n" "$i" "$title" "$tags"
     done
     echo "New"
     exit 0
