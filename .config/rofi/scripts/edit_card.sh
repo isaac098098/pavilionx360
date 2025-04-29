@@ -51,9 +51,13 @@ else
     for i in $sorted
     do
         title=$(sed -n '0,/^%%% /s/^%%% //p' "$dir/cards/$i.tex")
-        tags=$(grep "^%% tags:" "$dir/cards/$i" | sed -E 's/^.*tags:[[:space:]]*//')
-        printf "%-8s %s %59s\n" "$i" "$title" "$tags"
+        tags=$(grep "^%% tags:" "$dir/cards/$i.tex" | sed -E 's/^.*tags:[[:space:]]*//')
+        if [[ "$tags" ]]
+        then
+            printf "%-8s %s %30s\n" "$i" "$title" "$tags"
+        else
+            printf "%-8s %s\n" "$i" "$title"
+        fi
     done
-    echo "New"
     exit 0
 fi
