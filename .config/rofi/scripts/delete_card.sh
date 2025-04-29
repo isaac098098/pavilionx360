@@ -26,15 +26,24 @@ then
                 if [[ "$parent$last" == "$card" ]]
                 then
                     sed -i "/\\input{cards\/$card\.tex}/d" "$dir/main.tex"
-                    rm "$dir/cards/$card.tex"
-                    rm "$dir/cards/$card.aux"
+                    rm "$dir/cards/$card".*
+                    new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
+                    for i in $new_cards
+                    do
+                        sed -i "s/\\\\hyperref\[card:$card\]{\\\\textsf{$card}}/\\\\texttt{broken hyperref}/" "$dir/cards/$i"
+                    done
                     exit 0
                 else
-                    rm "$dir/cards/$card.tex"
-                    rm "$dir/cards/$card.aux"
+                    rm "$dir/cards/$card".*
                     sed -i "/\\input{cards\/$parent$last\.tex}/d" "$dir/main.tex"
                     mv "$dir/cards/$parent$last.tex" "$dir/cards/$card.tex"
                     sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$card}|" "$dir/cards/$card.tex"
+                    new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
+                    for i in $new_cards
+                    do
+                        sed -i "s/\\\\hyperref\[card:$parent$last\]{\\\\textsf{$parent$last}}/\\\\hyperref[card:$card]{\\\\textsf{$card}}/" "$dir/cards/$i"
+                        sed -i "s/\\\\hyperref\[card:$card\]{\\\\textsf{$card}}/\\\\texttt{broken hyperref}/" "$dir/cards/$i"
+                    done
                     exit 0
                 fi
             fi
@@ -57,22 +66,31 @@ then
                 if [[ "$parent$last" == "$card" ]]
                 then
                     sed -i "/\\input{cards\/$card\.tex}/d" "$dir/main.tex"
-                    rm "$dir/cards/$card.tex"
-                    rm "$dir/cards/$card.aux"
+                    rm "$dir/cards/$card".*
+                    new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
+                    for i in $new_cards
+                    do
+                        sed -i "s/\\\\hyperref\[card:$card\]{\\\\textsf{$card}}/\\\\texttt{broken hyperref}/" "$dir/cards/$i"
+                    done
                     exit 0
                 else
-                    rm "$dir/card/$card.tex"
-                    rm "$dir/card/$card.aux"
+                    rm "$dir/cards/$card".*
                     sed -i "/\\input{cards\/$parent$last\.tex}/d" "$dir/main.tex"
                     mv "$dir/cards/$parent$last.tex" "$dir/cards/$card.tex"
                     sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$card}|" "$dir/cards/$card.tex"
+                    new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
+                    for i in $new_cards
+                    do
+                        sed -i "s/\\\\hyperref\[card:$parent$last\]{\\\\textsf{$parent$last}}/\\\\hyperref[card:$card]{\\\\textsf{$card}}/" "$dir/cards/$i"
+                        sed -i "s/\\\\hyperref\[card:$card\]{\\\\textsf{$card}}/\\\\texttt{broken hyperref}/" "$dir/cards/$i"
+                    done
                     exit 0
                 fi
             fi
         fi
     fi
 else
-        sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
+    sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
         function split_levels(name, levels,   i, c, part, type, n) {
             n = split("", levels)
             i = 1

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir="$HOME/zettelkasten/current"
-cards=$(ls "$dir/cards" | grep .tex)
+cards=$(ls "$dir/cards" | grep .tex | sort -V)
 
 if [[ "$1" ]]
 then

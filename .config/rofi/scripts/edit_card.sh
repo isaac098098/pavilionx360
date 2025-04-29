@@ -10,7 +10,7 @@ then
     alacritty -e nvim "$dir/cards/$card.tex" &
     exit 0
 else
-        sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
+    sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
         function split_levels(name, levels,   i, c, part, type, n) {
             n = split("", levels)
             i = 1

@@ -6,3 +6,4 @@
 - [ X ] Diseñar la tabla de contenidos y hacer que las fichas aparezcan con su título ahí.
 
 Nota: el sistema solo puede ordenar un máximo de 10^8 fochas por nivel jerárquico, sin límite de niveles.
+Nota: cuando se elimina una ficha y ésta ha sido referenciada en el documento, se indica un vínculo roto en todas las fichas que la hayan citado, y se actualizan las citas de la ficha que ha tomado su lugar (la última de su familia).
