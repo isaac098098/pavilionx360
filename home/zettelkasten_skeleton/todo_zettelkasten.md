@@ -1,6 +1,6 @@
 - [ X ] Scripts para crear nueva carta, abrir cartas, eliminar carta y editar carta.
 - [ X ] Agregar sistema de tags para editar y estudiar cartas.
 - [ X ] Hacer una función en los snippets que escriba el nombre del archivo para etiquetar las fichas.
-- [ ] Desplegar en orden las cartas en los menus de rofi.
-- [ ] Completar preámbulo.
-- [ ] Diseñar la tabla de contenidos y hacer que las fichas aparezcan con su título ahí.
+- [ X ] Desplegar en orden las cartas en los menus de rofi.
+- [ X ] Completar preámbulo.
+- [ X ] Diseñar la tabla de contenidos y hacer que las fichas aparezcan con su título ahí.

@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[paperwidth=279mm, paperheight=156.9375mm, right=55mm]{geometry}
+\usepackage[tbtags]{amsmath}
+%use tbtags to tag equations at the bottom
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb} %more math symbols
+\usepackage{lipsum}
+\usepackage{marginnote}
+\usepackage[hidelinks]{hyperref} %clickable cross-references and url's
+\usepackage[spanish]{cleveref} %reference element type
+\usepackage{bookmark} %pdf bookmarks
+\usepackage{tocloft} %toc, tof and tot formatting
+\usepackage{enumitem} %lists formatting
+
+%Diagrams
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\usepackage{adjustbox}
+
+%Formatting
+
+\decimalpoint %decimal point
+\renewcommand\qedsymbol{$\blacksquare$} %black filled qed symbol
+% \numberwithin{equation}{section} %equation numbered by section
+\hypersetup{breaklinks=true} %hyperref, allow hyperlinks to break
+\allowdisplaybreaks %allow equations to break across pages
+\setlength\marginparsep{1.0cm} %separation from text to marginnote
+\setlength\parindent{0pt} %paragraph indentation
+
+%toc
+
+\addto{\captionsspanish}{\renewcommand{\contentsname}{Índice general}} %babel, toc title format
+%use addto to add title to spanish title definitions
+%use captionenglish otherwise
+\renewcommand{\cfttoctitlefont}{\LARGE\sffamily} %toc title format
+\renewcommand{\cftsecfont}{\sffamily} %section entry format
+\renewcommand{\cftsecpagefont}{\sffamily} %section page number format
+\renewcommand{\cftsubsecpagefont}{\sffamily} %subsection page number format
+\renewcommand{\cftsubsecpresnum}{\textnormal} %subsection number format
+\renewcommand{\cftbeforesecskip}{0pt} %vertical spacing before section entry
+%\renewcommand{\cftbeforesubsecskip}{0pt} %vertical spacing before subsection entry
+%\renewcommand{\cftsecafterpnum}{\vskip0pt} %vertical spacing between subsections
+\addtocontents{toc}{\vspace{6pt}} %vertical spacing after title
+
+%theorem-like environments
+\newtheoremstyle{proposition}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %proposition [number] [name]
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposición}[section]
+
+\newcommand{\zheader}[3]{
+    \newpage
+    \addcontentsline{toc}{section}{{#2 #1 }\textsf{\footnotesize @#3}}
+    \marginnote{\sffamily\Large #2}
+    \marginnote{\sffamily #3}[1.0cm]
+    \vspace*{-\topsep}
+    {\Large\sffamily #1}
+    \bigskip
+}
+
+\addtocontents{toc}{\protect\thispagestyle{empty}} %remove page number from toc
+\pagestyle{empty} %no page numbers
+
+\makeindex
