@@ -1,5 +1,5 @@
 * {
-    crust:  #2E3440;
+    crust:  #282E39;
     bg0:    #3B4252;
     fg0:    #D8DEE9;
     orange: #EBCB8B;
@@ -15,6 +15,7 @@ window {
 	width: 45%;
 	height: 44%;
     border: 0px;
+    border-radius: 3px;
     border-color: @crust;
     background-color: @bg0;
 }
@@ -79,10 +80,13 @@ button selected {
 }
 
 message {
-    background-color: @bg0;
+    text-color: @fg0;
+    background-color: @orange;
 }
 
 textbox {
-    text-color: @blue;
+    text-color: @fg0;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
     background-color: @bg0;
 }

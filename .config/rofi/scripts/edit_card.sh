@@ -10,11 +10,50 @@ then
     alacritty -e nvim "$dir/cards/$card.tex" &
     exit 0
 else
-    for i in $cards
+        sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
+        function split_levels(name, levels,   i, c, part, type, n) {
+            n = split("", levels)
+            i = 1
+            while (i <= length(name)) {
+                c = substr(name, i, 1)
+                if (c ~ /[0-9]/) {
+                    type = "[0-9]"
+                } else {
+                    type = "[a-z]"
+                }
+                part = ""
+                while (i <= length(name) && substr(name, i, 1) ~ type) {
+                    part = part substr(name, i, 1)
+                    i++
+                }
+                levels[length(levels)+1] = part
+            }
+            return length(levels)
+        }
+
+        function build_sort_key(name,   levels, n, key, i) {
+            n = split_levels(name, levels)
+            key = ""
+            for (i = 1; i <= n; i++) {
+                if (levels[i] ~ /^[0-9]+$/) {
+                    key = key sprintf("%08d.", levels[i])
+                } else {
+                    key = key levels[i] "."
+                }
+            }
+            return key
+        }
+        {
+            original = $0
+            key = build_sort_key($0)
+            print key "|" original }' | cut -d"|" -f2 | sed 's/$/.tex/')
+
+    for i in $sorted
     do
         title=$(sed -n '0,/^%%% /s/^%%% //p' "$dir/cards/$i")
         tags=$(grep "^%% tags:" "$dir/cards/$i" | sed -E 's/^.*tags:[[:space:]]*//')
         printf "%-8s %s %59s\n" "${i%.tex}" "$title" "$tags"
     done
+    echo "New"
     exit 0
 fi

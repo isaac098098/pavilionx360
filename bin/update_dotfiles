@@ -9,13 +9,21 @@ cp -r ~/.config/i3status/ ~/pavilionx360/.config/
 cp -r ~/.config/kitty ~/pavilionx360/.config/
 cp -r ~/.config/picom ~/pavilionx360/.config/
 cp -r ~/.config/polybar ~/pavilionx360/.config/
-cp -r ~/.config/rofi ~/pavilionx360/.config/
+cp ~/.config/rofi/config.rasi ~/pavilionx360/.config/rofi
+cp ~/.config/rofi/onedark.rasi ~/pavilionx360/.config/rofi
+cp ~/.config/rofi/scripts/edit_notes.sh ~/pavilionx360/.config/rofi/scripts
+cp ~/.config/rofi/scripts/compile_notes.sh ~/pavilionx360/.config/rofi/scripts
+cp ~/.config/rofi/scripts/create_card.sh ~/pavilionx360/.config/rofi/scripts
+cp ~/.config/rofi/scripts/delete_card.sh ~/pavilionx360/.config/rofi/scripts
+cp ~/.config/rofi/scripts/edit_card.sh ~/pavilionx360/.config/rofi/scripts
+cp ~/.config/rofi/scripts/select_zettelkasten.sh ~/pavilionx360/.config/rofi/scripts
 cp -r ~/.config/sxhkd ~/pavilionx360/.config/
 cp -r ~/.config/nvim ~/pavilionx360/.config/
 cp -r ~/.config/zathura ~/pavilionx360/.config/
 cp -r ~/.config/inkscape/templates/default.svg ~/pavilionx360/.config/inkscape/templates/
 cp -r ~/.config/gtk-3.0/ ~/pavilionx360/.config/
 cp -r ~/.config/gtk-4.0/ ~/pavilionx360/.config/
+cp -r ~/.local/bin/* ~/pavilionx360/bin/
 
 cp ~/.vimrc ~/pavilionx360/home/
 cp ~/.xinitrc ~/pavilionx360/home/

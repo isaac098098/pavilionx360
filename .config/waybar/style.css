@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Mx437 IBM VGA 8x16", "JetBrains Mono NF";
-    font-size: 14px;
+    font-size: 13px;
 }
 
 window#waybar {
@@ -80,7 +80,7 @@ tooltip {
 }
 
 #network.disconnected {
-    background-color: #2E3440;
+    background-color: #282E39;
     color: #434C5E;
 }
 

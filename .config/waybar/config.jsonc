@@ -9,7 +9,8 @@
         "clock",
     ],
     "modules-right": [
-        "network",
+        "network#wlan0",
+        "network#enp2s0",
         "pulseaudio",
         "custom/aud",
         "battery",
@@ -25,10 +26,17 @@
             //"default": "󰊠"
         //}
     },
-    "network": {
-        "format-wifi": "{ifname} <span color='#FFFFFF'>{gwaddr}</span>",
-        "format-ethernet": "{ipaddr}/{cidr}",
-        "format-disconnected": "disconnected",
+    "network#wlan0": {
+        "interface": "wlan0",
+        "family" : "ipv4",
+        "format-wifi": "{ifname} <span color='#FFFFFF'>{essid} {ipaddr}</span>",
+        "format-disconnected": "<span color='#EBCB8B'>{ifname}</span> disconnected",
+    },
+    "network#enp2s0": {
+        "interface": "enp2s0",
+        "format-ethernet": "{ifname} <span color='#FFFFFF'>{essid} {ipaddr}</span>",
+        // "format-disconnected": "<span color='#EBCB8B'>{ifname}</span> disconnected",
+        "format-disconnected": "",
     },
     "pulseaudio": {
         "scroll-step": 2,

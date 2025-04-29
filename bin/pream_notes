@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp $HOME/pavilionx360/templates/tex/notes/pream.tex .
+cp $HOME/pavilionx360/templates/tex/notes/eof.tex .

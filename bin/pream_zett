@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp $HOME/pavilionx360/templates/tex/zettelkasten/pream.tex .
