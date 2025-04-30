@@ -1,0 +1,10 @@
+configuration {
+    font: "Mx437 IBM VGA 8x16 12";
+}
+
+listview {
+	lines: 2;
+	columns: 2;
+}
+
+@theme "onedark_apps"
