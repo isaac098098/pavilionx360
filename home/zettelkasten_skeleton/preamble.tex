@@ -36,7 +36,6 @@
 %toc
 
 \addtocontents{toc}{\protect\thispagestyle{empty}} %remove page number from toc
-\addto{\captionsspanish}{\renewcommand{\contentsname}{Topología}} %babel, toc title format
 %use addto to add title to spanish title definitions
 %use captionenglish otherwise
 \renewcommand{\cfttoctitlefont}{\LARGE\sffamily} %toc title format
@@ -222,4 +221,8 @@
     \marginnote{\hyperref[toc]{\sffamily\Large #2}\label{card:#2}}
     \vspace*{-\topsep}
     \bigskip
+}
+
+\newcommand{\ztitle}[1]{
+    \addto{\captionsspanish}{\renewcommand{\contentsname}{#1}} %babel, toc title format
 }
