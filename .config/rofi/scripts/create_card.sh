@@ -123,6 +123,6 @@ else
             printf "%-8s %s\n" "$i" "$title"
         fi
     done
-    echo "New"
+    echo "New root node"
     exit 0
 fi
