@@ -61,7 +61,7 @@ else
     sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
         function split_levels(name, levels,   i, c, part, type, n) {
             n = split("", levels)
-            i = 2
+            i = 1
             while (i <= length(name)) {
                 c = substr(name, i, 1)
                 if (c ~ /[0-9]/) {

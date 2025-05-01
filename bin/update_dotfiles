@@ -16,6 +16,7 @@ cp ~/.config/rofi/scripts/compile_notes.sh ~/pavilionx360/.config/rofi/scripts
 cp ~/.config/rofi/scripts/create_card.sh ~/pavilionx360/.config/rofi/scripts
 cp ~/.config/rofi/scripts/delete_card.sh ~/pavilionx360/.config/rofi/scripts
 cp ~/.config/rofi/scripts/edit_card.sh ~/pavilionx360/.config/rofi/scripts
+cp ~/.config/rofi/scripts/swap_cards.sh ~/pavilionx360/.config/rofi/scripts
 cp ~/.config/rofi/scripts/select_zettelkasten.sh ~/pavilionx360/.config/rofi/scripts
 cp -r ~/.config/sxhkd ~/pavilionx360/.config/
 cp -r ~/.config/nvim ~/pavilionx360/.config/
