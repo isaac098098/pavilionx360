@@ -9,11 +9,13 @@
 \usepackage{amssymb} %more math symbols
 \usepackage{lipsum}
 \usepackage{marginnote}
-\usepackage[hidelinks]{hyperref} %clickable cross-references and url's
-\usepackage[spanish]{cleveref} %reference element type
-\usepackage{bookmark} %pdf bookmarks
 \usepackage{tocloft} %toc, tof and tot formatting
+\usepackage[hidelinks,linktoc=all]{hyperref} %clickable cross-references and url's
+\usepackage{bookmark} %pdf bookmarks
 \usepackage{enumitem} %lists formatting
+\usepackage{scalerel} %relative math text resizing
+\usepackage{mathtools} %used by DeclarePairedDelimiter
+\usepackage[spanish]{cleveref} %reference element type
 
 %Diagrams
 \usepackage{tikz-cd}
@@ -29,23 +31,37 @@
 \allowdisplaybreaks %allow equations to break across pages
 \setlength\marginparsep{1.0cm} %separation from text to marginnote
 \setlength\parindent{0pt} %paragraph indentation
+\pagestyle{empty} %no page numbers
 
 %toc
 
-\addto{\captionsspanish}{\renewcommand{\contentsname}{Índice general}} %babel, toc title format
+\addtocontents{toc}{\protect\thispagestyle{empty}} %remove page number from toc
 %use addto to add title to spanish title definitions
 %use captionenglish otherwise
 \renewcommand{\cfttoctitlefont}{\LARGE\sffamily} %toc title format
 \renewcommand{\cftsecfont}{\sffamily} %section entry format
-\renewcommand{\cftsecpagefont}{\sffamily} %section page number format
+\renewcommand{\cftsecpagefont}{\small\sffamily} %section page number format
 \renewcommand{\cftsubsecpagefont}{\sffamily} %subsection page number format
 \renewcommand{\cftsubsecpresnum}{\textnormal} %subsection number format
-\renewcommand{\cftbeforesecskip}{0pt} %vertical spacing before section entry
+\renewcommand{\cftbeforesecskip}{5pt} %vertical spacing before section entry
 %\renewcommand{\cftbeforesubsecskip}{0pt} %vertical spacing before subsection entry
 %\renewcommand{\cftsecafterpnum}{\vskip0pt} %vertical spacing between subsections
 \addtocontents{toc}{\vspace{6pt}} %vertical spacing after title
 
 %theorem-like environments
+
+\newtheoremstyle{theorem}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %theorem [number] [name]
+\theoremstyle{theorem}
+\newtheorem{theorem}{Teorema}
+
 \newtheoremstyle{proposition}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
@@ -56,19 +72,157 @@
 {0.5em} %horizontal space after header
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %proposition [number] [name]
 \theoremstyle{proposition}
-\newtheorem{proposition}{Proposición}[section]
+\newtheorem{proposition}{Proposición}
+
+\newtheoremstyle{corollary}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %corollary [number] [name]
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corolario}
+
+\newtheoremstyle{lemma}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %lemma [number] [name]
+\theoremstyle{lemma}
+\newtheorem{lemma}{Lema}
+
+\newtheoremstyle{definition}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %definition [number] [name]
+\theoremstyle{lemma}
+\newtheorem{definition}{Definición}
+
+\newtheoremstyle{remark}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\bfseries} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %remark [number] [name]
+\theoremstyle{remark}
+\newtheorem{remark}{Observación}
+
+\newtheoremstyle{example}
+{\topsep} %vertical space before
+{\topsep} %vertical space after
+{} %body font
+{0em} %indentation
+{\itshape} %header font
+{.} %dot afer header
+{0.5em} %horizontal space after header
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %example [number] [name]
+\theoremstyle{example}
+\newtheorem{example}{Ejemplo}
+
+%Symbol resizing, depends on scalerel
+
+\let\oldpartial\partial
+\renewcommand{\partial}{\mathbin{\scaleobj{1.15}{\oldpartial}}}
+
+\let\oldsubset\subset
+\renewcommand{\subset}{\mathbin{\scaleobj{1.1}{\oldsubset}}}
+\let\oldsubseteq\subseteq
+\renewcommand{\subseteq}{\mathbin{\scaleobj{1.1}{\oldsubseteq}}}
+
+\let\oldsupset\supset
+\renewcommand{\supset}{\mathbin{\scaleobj{1.1}{\oldsupset}}}
+\let\oldsupseteq\supseteq
+\renewcommand{\supseteq}{\mathbin{\scaleobj{1.1}{\oldsupseteq}}}
+
+\makeindex
+
+%Other macros
+
+%Operators
+
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+
+%Trigonometric functions
+
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+
+%Logic
+
+\let\oldforall\forall
+\renewcommand{\forall}{\:\oldforall\,}
+\let\oldexists\exists
+\renewcommand{\exists}{\:\oldexists\:}
+\let\oldnexists\nexists
+\renewcommand{\nexists}{\:\oldnexists\:}
+
+%Sets and inclusion
+
+\newcommand{\std}{\, : \,}
+
+%Derivatives
+
+\newcommand{\dx}{\,\text{d}}
+\newcommand{\dr}{\text{d}}
+\newcommand{\der}[2]{\frac{\dr#1}{\dr#2}}
+\newcommand{\Der}[2]{\frac{\dr}{\dr#2}#1}
+\newcommand{\ndr}[3]{\frac{\dr^{#1}#2}{\dr#3^{#1}}}
+\newcommand{\Ndr}[3]{\frac{\dr^{#1}}{\dr#3^{#1}}#2}
+\newcommand{\pdr}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\Pdr}[2]{\frac{\partial}{\partial#2}#1}
+\newcommand{\npd}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+\newcommand{\Npd}[3]{\frac{\partial^{#1}}{\partial#3^{#1}}#2}
+\newcommand{\evl}[1]{\mathrel{\bigg|_{#1}}}
+
+% Zettelkasten header
 
 \newcommand{\zheader}[3]{
     \newpage
-    \addcontentsline{toc}{section}{{#2 #1 }\textsf{\footnotesize @#3}}
-    \marginnote{\sffamily\Large #2}
-    \marginnote{\sffamily #3}[1.0cm]
-    \vspace*{-\topsep}
+    \phantomsection
     {\Large\sffamily #1}
+    \addcontentsline{toc}{section}{#2 #1 \textsf{\footnotesize @#3}}
+    \marginnote{\hyperref[toc]{\sffamily\Large #2}\label{card:#2}}
+    \marginnote{\footnotesize\sffamily #3}[1.0cm]
+    \vspace*{-\topsep}
     \bigskip
 }
 
-\addtocontents{toc}{\protect\thispagestyle{empty}} %remove page number from toc
-\pagestyle{empty} %no page numbers
+\newcommand{\zheadernotags}[2]{
+    \newpage
+    \phantomsection
+    {\Large\sffamily #1}
+    \addcontentsline{toc}{section}{#2 #1}
+    \marginnote{\hyperref[toc]{\sffamily\Large #2}\label{card:#2}}
+    \vspace*{-\topsep}
+    \bigskip
+}
 
-\makeindex
+\newcommand{\ztitle}[1]{
+    \addto{\captionsspanish}{\renewcommand{\contentsname}{#1}} %babel, toc title format
+}
