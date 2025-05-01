@@ -29,7 +29,8 @@
     "network#wlan0": {
         "interface": "wlan0",
         "family" : "ipv4",
-        "format-wifi": "{ifname} <span color='#FFFFFF'>{essid} {ipaddr}</span>",
+        //"format-wifi": "{ifname} <span color='#FFFFFF'>{essid} {ipaddr}</span>",
+        "format-wifi": "{ifname} <span color='#FFFFFF'>{essid}</span>",
         "format-disconnected": "<span color='#EBCB8B'>{ifname}</span> disconnected",
     },
     "network#enp2s0": {

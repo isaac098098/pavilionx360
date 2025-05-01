@@ -6,7 +6,7 @@ cards=$(ls "$dir/cards" | grep .tex | sort -V)
 if [[ "$1" ]]
 then
     killall rofi > /dev/null 2>&1
-    if [[ "$1" == "New" ]]
+    if [[ "$1" == "New root node" ]]
     then
         last=$(ls "$dir/cards" | sed -nE "s/^([0-9]+)\.tex/\1/p" | sort -n | tail -n 1)
         if [[ "$last" ]]
