@@ -8,8 +8,8 @@ found2=0
 if [[ "$1" ]]
 then
     killall rofi > /dev/null 2>&1
-    card1=$(echo "$1" | awk '{print $1}')
-    card2=$(echo "$1" | awk '{print $2}')
+    card1=$(echo "$1" | awk -F'-' '{print $1}')
+    card2=$(echo "$1" | awk -F'-' '{print $2}')
 
     if [[ "$card1" ]] && [[ "$card2" ]]
     then
@@ -61,7 +61,7 @@ else
     sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
         function split_levels(name, levels,   i, c, part, type, n) {
             n = split("", levels)
-            i = 1
+            i = 2
             while (i <= length(name)) {
                 c = substr(name, i, 1)
                 if (c ~ /[0-9]/) {
