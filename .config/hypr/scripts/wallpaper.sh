@@ -2,7 +2,7 @@
 
 hyprpaper &
 
-sleep 1
+sleep 2
 
 WALLPAPER_DIR="$HOME/documents/images/wallpapers/nord/pixel/"
 MONITOR="eDP-1"

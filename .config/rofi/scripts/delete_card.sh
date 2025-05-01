@@ -38,6 +38,7 @@ then
                     sed -i "/\\input{cards\/$parent$last\.tex}/d" "$dir/main.tex"
                     mv "$dir/cards/$parent$last.tex" "$dir/cards/$card.tex"
                     sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$card}|" "$dir/cards/$card.tex"
+                    sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$card}|" "$dir/cards/$card.tex"
                     new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
                     for i in $new_cards
                     do
@@ -78,6 +79,7 @@ then
                     sed -i "/\\input{cards\/$parent$last\.tex}/d" "$dir/main.tex"
                     mv "$dir/cards/$parent$last.tex" "$dir/cards/$card.tex"
                     sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$card}|" "$dir/cards/$card.tex"
+                    sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$card}|" "$dir/cards/$card.tex"
                     new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
                     for i in $new_cards
                     do
