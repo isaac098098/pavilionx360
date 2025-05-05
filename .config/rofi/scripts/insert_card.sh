@@ -33,8 +33,8 @@ then
             do
                 for k in $cards
                 do
-                    sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent_$j}|" "$dir/cards/$k"
-                    sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent_$j}|" "$dir/cards/$k"
+                    sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
+                    sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                     sed -E -i "s|(\\\\hyperref\\[card:)$parent$i$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
                     sed -E -i "s|(\\\\textsf\\{)$parent$i$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
                 done
@@ -85,8 +85,8 @@ then
 
             for k in $cards
             do
-                sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent_$j}|" "$dir/cards/$k"
-                sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent_$j}|" "$dir/cards/$k"
+                sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
+                sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                 sed -E -i "s|(\\\\hyperref\\[card:)$parent${siblings[$i]}$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
                 sed -E -i "s|(\\\\textsf\\{)$parent${siblings[$i]}$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
             done
