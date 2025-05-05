@@ -54,7 +54,7 @@ else
         tags=$(grep "^%% tags:" "$dir/cards/$i.tex" | sed -E 's/^.*tags:[[:space:]]*//')
         if [[ "$tags" ]]
         then
-            printf "%-8s %s %30s\n" "$i" "$title" "$tags"
+            printf "%-8s %s | %s\n" "$i" "$title" "$tags"
         else
             printf "%-8s %s\n" "$i" "$title"
         fi
