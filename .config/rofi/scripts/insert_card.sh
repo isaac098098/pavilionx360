@@ -17,31 +17,37 @@ then
         for (( i=last_char; i<=last_sibling; i++ ))
         do
             new_parent="$parent$((10#$i + 1))"
-            for k in $cards
+            mv "$dir/cards/$parent$i.tex" "$dir/cards/$new_parent.tex"
+            # mv "$dir/cards/$parent$i.aux" "$dir/cards/$new_parent.aux"
+            # echo "$parent$i -> $new_parent"
+            
+            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
+            for k in $new_cards
             do
                 sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent}|" "$dir/cards/$k"
                 sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent}|" "$dir/cards/$k"
                 sed -E -i "s|(\\\\hyperref\\[card:)$parent$i([^]]*\\])|\1$new_parent\2|" "$dir/cards/$k"
                 sed -E -i "s|(\\\\textsf\\{)$parent$i([^]]*\\})|\1$new_parent\2|" "$dir/cards/$k"
             done
-            # echo "$parent$i -> $new_parent"
-            mv "$dir/cards/$parent$i.tex" "$dir/cards/$new_parent.tex"
-            # mv "$dir/cards/$parent$i.aux" "$dir/cards/$new_parent.aux"
             
-            children=$(echo "$cards" | sed -nE "s/^$parent$i(.*)\.tex$/\1/p")
+            children=$(echo "$cards" | sed -nE "s/^$parent${siblings[$i]}(.*)\.tex$/\1/p")
             for j in $children
             do
-                for k in $cards
+                for k in $new_cards
                 do
                     sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                     sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                     sed -E -i "s|(\\\\hyperref\\[card:)$parent$i$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
                     sed -E -i "s|(\\\\textsf\\{)$parent$i$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
                 done
+            done
+            for j in $children
+            do
                 # echo "$parent$i$j -> $new_parent$j"
                 mv "$dir/cards/$parent$i$j.tex" "$dir/cards/$new_parent$j.tex"
                 # mv "$dir/cards/$parent$i$j.aux" "$dir/cards/$new_parent$j.aux"
             done
+            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
         done
 
         alacritty -e nvim "$dir/cards/$card.tex" &
@@ -82,31 +88,37 @@ then
             )
 
             new_parent="$parent$next"
-
-            for k in $cards
+            mv "$dir/cards/$parent${siblings[$i]}.tex" "$dir/cards/$new_parent.tex"
+            # mv "$dir/cards/$parent${siblings[$i]}.aux" "$dir/cards/$new_parent.aux"
+            # echo "$parent$i -> $new_parent"
+            
+            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
+            for k in $new_cards
             do
                 sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                 sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                 sed -E -i "s|(\\\\hyperref\\[card:)$parent${siblings[$i]}$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
                 sed -E -i "s|(\\\\textsf\\{)$parent${siblings[$i]}$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
             done
-            mv "$dir/cards/$parent${siblings[$i]}.tex" "$dir/cards/$new_parent.tex"
-            # mv "$dir/cards/$parent${siblings[$i]}.aux" "$dir/cards/$new_parent.aux"
-
+            
             children=$(echo "$cards" | sed -nE "s/^$parent${siblings[$i]}(.*)\.tex$/\1/p")
             for j in $children
             do
-                for k in $cards
+                for k in $new_cards
                 do
                     sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                     sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
                     sed -E -i "s|(\\\\hyperref\\[card:)$parent${siblings[$i]}$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
                     sed -E -i "s|(\\\\textsf\\{)$parent${siblings[$i]}$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
                 done
-                # echo "$parent${siblings[$i]}$j -> $new_parent$j"
-                mv "$dir/cards/$parent${siblings[$i]}$j}.tex" "$dir/cards/$new_parent$j.tex"
-                # mv "$dir/cards/$parent${siblings[$i]}$j}.aux" "$dir/cards/$new_parent$j.aux"
             done
+            for j in $children
+            do
+                # echo "$parent${siblings[$i]}$j -> $new_parent$j"
+                mv "$dir/cards/$parent${siblings[$i]}$j.tex" "$dir/cards/$new_parent$j.tex"
+                # mv "$dir/cards/$parent${siblings[$i]}$j.aux" "$dir/cards/$new_parent$j.aux"
+            done
+            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
         done
 
         alacritty -e nvim "$dir/cards/$card.tex" &
