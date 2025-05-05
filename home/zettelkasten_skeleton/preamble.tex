@@ -58,7 +58,7 @@
 {\bfseries} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %theorem [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %theorem [number] [name]
 \theoremstyle{theorem}
 \newtheorem{theorem}{Teorema}
 
@@ -70,7 +70,7 @@
 {\bfseries} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %proposition [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %proposition [number] [name]
 \theoremstyle{proposition}
 \newtheorem{proposition}{Proposición}
 
@@ -82,7 +82,7 @@
 {\bfseries} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %corollary [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %corollary [number] [name]
 \theoremstyle{corollary}
 \newtheorem{corollary}{Corolario}
 
@@ -94,7 +94,7 @@
 {\bfseries} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %lemma [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %lemma [number] [name]
 \theoremstyle{lemma}
 \newtheorem{lemma}{Lema}
 
@@ -106,7 +106,7 @@
 {\bfseries} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %definition [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %definition [number] [name]
 \theoremstyle{lemma}
 \newtheorem{definition}{Definición}
 
@@ -118,7 +118,7 @@
 {\bfseries} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %remark [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %remark [number] [name]
 \theoremstyle{remark}
 \newtheorem{remark}{Observación}
 
@@ -130,7 +130,7 @@
 {\itshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ [#3]}}} %example [number] [name]
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %example [number] [name]
 \theoremstyle{example}
 \newtheorem{example}{Ejemplo}
 
@@ -224,5 +224,5 @@
 }
 
 \newcommand{\ztitle}[1]{
-    \addto{\captionsspanish}{\renewcommand{\contentsname}{#1}} %babel, toc title format
+    \addto{\captionsspanish}{\renewcommand{\contentsname}{Topología}} %babel, toc title format
 }
