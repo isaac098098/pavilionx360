@@ -12,14 +12,16 @@ then
     if [[ "$last_char" =~ [0-9] ]]
     then
         parent=$(echo $card | sed -nE "s/^(.*)[0-9]+$/\1/p")
-        last_sibling=$(echo "$cards" | sed -nE "s/^$parent([0-9]+)\.tex$/\1/p" | sort -n | tail -n 1)
+        siblings=$(ls "$dir/cards" | sed -nE "s/^$parent([0-9]+)\.tex$/\1/p" | sort -n)
+        last_sibling=$(echo "$siblings" | tail -n 1)
+        first_new=$parent$((10#$last_char + 1))
 
         for (( i=last_char; i<=last_sibling; i++ ))
         do
             new_parent="$parent$((10#$i + 1))"
-            mv "$dir/cards/$parent$i.tex" "$dir/cards/$new_parent.tex"
-            # mv "$dir/cards/$parent$i.aux" "$dir/cards/$new_parent.aux"
-            # echo "$parent$i -> $new_parent"
+            mv "$dir/cards/$parent$i.tex" "$dir/cards/tmp_$new_parent.tex"
+            sed -i "s|\\input{cards/$parent$i\.tex}|\\input{cards/$new_parent\.tex}|" "$dir/main.tex"
+            # echo "$parent$i -> tmp_$new_parent"
             
             new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
             for k in $new_cards
@@ -30,7 +32,7 @@ then
                 sed -E -i "s|(\\\\textsf\\{)$parent$i([^]]*\\})|\1$new_parent\2|" "$dir/cards/$k"
             done
             
-            children=$(echo "$cards" | sed -nE "s/^$parent${siblings[$i]}(.*)\.tex$/\1/p")
+            children=$(echo "$cards" | sed -nE "s/^$parent$i([a-z]+.*)\.tex$/\1/p")
             for j in $children
             do
                 for k in $new_cards
@@ -43,12 +45,22 @@ then
             done
             for j in $children
             do
-                # echo "$parent$i$j -> $new_parent$j"
-                mv "$dir/cards/$parent$i$j.tex" "$dir/cards/$new_parent$j.tex"
-                # mv "$dir/cards/$parent$i$j.aux" "$dir/cards/$new_parent$j.aux"
+                # echo "$parent$i$j -> $tmp_$new_parent$j"
+                mv "$dir/cards/$parent$i$j.tex" "$dir/cards/tmp_$new_parent$j.tex"
+                sed -i "s|\\input{cards/$parent$i$j\.tex}|\\input{cards/$new_parent$j\.tex}|" "$dir/main.tex"
             done
             new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
         done
+
+        tmp=$(ls "$dir/cards" | grep .tex | grep tmp)
+        for i in $tmp
+        do
+            rename=$(echo "$i" | sed -nE 's/tmp_(.*)\.tex/\1/p')
+            # echo "$i -> $rename.tex"
+            mv "$dir/cards/$i" "$dir/cards/$rename.tex"
+        done
+
+        sed -i "/\\input{cards\/$first_new\.tex}/i \\\\\\input{cards/$card\.tex}" "$dir/main.tex"
 
         alacritty -e nvim "$dir/cards/$card.tex" &
         exit 0
@@ -56,6 +68,24 @@ then
     then
         parent=$(echo $card | sed -nE "s/^(.*)[a-z]+$/\1/p")
         siblings=($(ls "$dir/cards" | sed -nE "s/^$parent([a-z]+)\.tex$/\1/p" | awk '{print length, $0}' | sort -n | cut -d' ' -f2-))
+        number=$(echo "$card" | sed -nE "s/^.*([a-z]+)/\1/p")
+        card_next=$(
+            echo "$number" | awk '{
+                for(i=length;i;i--){
+                    c=substr($0,i,1)
+                    if(c!="z"){
+                        d=index("abcdefghijklmnopqrstuuvwxyz",c)
+                        printf "%s%s", substr($0,1,i-1), substr("abcdefghijklmnopqrstuuvwxyz", d+1, 1)
+                        for(j=i+1;j<=length;j++) printf "a"
+                            print ""; exit
+                    }
+                }
+                n=length+1
+                blank=sprintf("%*s",n,"")
+                gsub(/ /,"a",blank)
+                print blank
+            }'
+        )
 
         start=0
         for i in "${!siblings[@]}"
@@ -66,6 +96,7 @@ then
                 break
             fi
         done
+        first_new="$parent$card_next"
 
         for (( i=start; i<${#siblings[@]}; i++ ))
         do
@@ -88,9 +119,9 @@ then
             )
 
             new_parent="$parent$next"
-            mv "$dir/cards/$parent${siblings[$i]}.tex" "$dir/cards/$new_parent.tex"
-            # mv "$dir/cards/$parent${siblings[$i]}.aux" "$dir/cards/$new_parent.aux"
-            # echo "$parent$i -> $new_parent"
+            # echo "$parent${siblings[$i]} -> $new_parent"
+            mv "$dir/cards/$parent${siblings[$i]}.tex" "$dir/cards/tmp_$new_parent.tex"
+            sed -i "s|\\input{cards/$parent${siblings[$i]}\.tex}|\\input{cards/$new_parent\.tex}|" "$dir/main.tex"
             
             new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
             for k in $new_cards
@@ -115,11 +146,22 @@ then
             for j in $children
             do
                 # echo "$parent${siblings[$i]}$j -> $new_parent$j"
-                mv "$dir/cards/$parent${siblings[$i]}$j.tex" "$dir/cards/$new_parent$j.tex"
+                mv "$dir/cards/$parent${siblings[$i]}$j.tex" "$dir/cards/tmp_$new_parent$j.tex"
                 # mv "$dir/cards/$parent${siblings[$i]}$j.aux" "$dir/cards/$new_parent$j.aux"
+                sed -i "s|\\input{cards/$parent${siblings[$i]}$j\.tex}|\\input{cards/$new_parent$j\.tex}|" "$dir/main.tex"
             done
             new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
         done
+
+        tmp=$(ls "$dir/cards" | grep .tex | grep tmp)
+        for i in $tmp
+        do
+            rename=$(echo "$i" | sed -nE 's/tmp_(.*)\.tex/\1/p')
+            # echo "$i -> $rename.tex"
+            mv "$dir/cards/$i" "$dir/cards/$rename.tex"
+        done
+
+        sed -i "/\\input{cards\/$first_new\.tex}/i \\\\\\input{cards/$card\.tex}" "$dir/main.tex"
 
         alacritty -e nvim "$dir/cards/$card.tex" &
         exit 0
