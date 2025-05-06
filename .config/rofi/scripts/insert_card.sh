@@ -8,6 +8,8 @@ then
     killall rofi > /dev/null 2>&1
     card=$(echo "$1" | awk '{print $1}')
     last_char=${card: -1}
+    from=()
+    to=()
 
     if [[ "$last_char" =~ [0-9] ]]
     then
@@ -20,45 +22,49 @@ then
         do
             new_parent="$parent$((10#$i + 1))"
             mv "$dir/cards/$parent$i.tex" "$dir/cards/tmp_$new_parent.tex"
-            sed -i "s|\\input{cards/$parent$i\.tex}|\\input{cards/$new_parent\.tex}|" "$dir/main.tex"
-            # echo "$parent$i -> tmp_$new_parent"
-            
-            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
-            for k in $new_cards
-            do
-                sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent}|" "$dir/cards/$k"
-                sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent}|" "$dir/cards/$k"
-                sed -E -i "s|(\\\\hyperref\\[card:)$parent$i([^]]*\\])|\1$new_parent\2|" "$dir/cards/$k"
-                sed -E -i "s|(\\\\textsf\\{)$parent$i([^]]*\\})|\1$new_parent\2|" "$dir/cards/$k"
-            done
+            from+=("$parent$i")
+            to+=("$new_parent")
             
             children=$(echo "$cards" | sed -nE "s/^$parent$i([a-z]+.*)\.tex$/\1/p")
             for j in $children
             do
-                for k in $new_cards
-                do
-                    sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
-                    sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
-                    sed -E -i "s|(\\\\hyperref\\[card:)$parent$i$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
-                    sed -E -i "s|(\\\\textsf\\{)$parent$i$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
-                done
-            done
-            for j in $children
-            do
-                # echo "$parent$i$j -> $tmp_$new_parent$j"
                 mv "$dir/cards/$parent$i$j.tex" "$dir/cards/tmp_$new_parent$j.tex"
-                sed -i "s|\\input{cards/$parent$i$j\.tex}|\\input{cards/$new_parent$j\.tex}|" "$dir/main.tex"
+                from+=("$parent$i$j")
+                to+=("$new_parent$j")
             done
-            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
         done
 
         tmp=$(ls "$dir/cards" | grep .tex | grep tmp)
         for i in $tmp
         do
             rename=$(echo "$i" | sed -nE 's/tmp_(.*)\.tex/\1/p')
-            # echo "$i -> $rename.tex"
             mv "$dir/cards/$i" "$dir/cards/$rename.tex"
+            # echo "$i -> $rename.tex"
         done
+
+        for (( i=0; i<${#from[@]}; i++ ))
+        do
+            # printf "%s -> %s\n" "${from[$i]}" "${to[$i]}"
+            sed -i -E "s|(\\zheader\{[^}]+\})\{${from[$i]}\}(\{[^}]+\})|\1{${to[$i]}}\2|" "$dir/cards/${to[$i]}.tex"
+            sed -i -E "s|(\\zheadernotags\{[^}]+\})\{${from[$i]}\}|\1{${to[$i]}}|" "$dir/cards/${to[$i]}.tex"
+            sed -i "s|\\input{cards/${from[$i]}\.tex}|\\input{cards/tmp_${to[$i]}\.tex}|" "$dir/main.tex"
+        done
+
+        for (( i=0; i<${#from[@]}; i++ ))
+        do
+            sed -i "s|\\input{cards/tmp_${to[$i]}\.tex}|\\input{cards/${to[$i]}\.tex}|" "$dir/main.tex"
+        done
+
+        cards=$(ls "$dir/cards" | grep .tex | sort -V)
+        for (( i=0; i<${#from[@]}; i++ ))
+        do
+            for j in $cards
+            do
+                sed -i -E "s|(\\\\hyperref\\[card:)${from[$i]}([^]]*\\])|\1${to[$i]}\2|" "$dir/cards/$j"
+                sed -i -E "s|(\\\\textsf\\{)${from[$i]}([^]]*\\})|\1${to[$i]}\2|" "$dir/cards/$j"
+            done
+        done
+
 
         sed -i "/\\input{cards\/$first_new\.tex}/i \\\\\\input{cards/$card\.tex}" "$dir/main.tex"
 
@@ -83,8 +89,7 @@ then
                 n=length+1
                 blank=sprintf("%*s",n,"")
                 gsub(/ /,"a",blank)
-                print blank
-            }'
+                print blank }'
         )
 
         start=0
@@ -119,46 +124,48 @@ then
             )
 
             new_parent="$parent$next"
-            # echo "$parent${siblings[$i]} -> $new_parent"
             mv "$dir/cards/$parent${siblings[$i]}.tex" "$dir/cards/tmp_$new_parent.tex"
-            sed -i "s|\\input{cards/$parent${siblings[$i]}\.tex}|\\input{cards/$new_parent\.tex}|" "$dir/main.tex"
-            
-            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
-            for k in $new_cards
-            do
-                sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
-                sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
-                sed -E -i "s|(\\\\hyperref\\[card:)$parent${siblings[$i]}$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
-                sed -E -i "s|(\\\\textsf\\{)$parent${siblings[$i]}$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
-            done
+            from+=("$parent${siblings[$i]}")
+            to+=("$new_parent")
             
             children=$(echo "$cards" | sed -nE "s/^$parent${siblings[$i]}(.*)\.tex$/\1/p")
             for j in $children
             do
-                for k in $new_cards
-                do
-                    sed -i -E "s|(\\zheader\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
-                    sed -i -E "s|(\\zheadernotags\{[^}]*\})\{[^}]+\}|\1{$new_parent$j}|" "$dir/cards/$k"
-                    sed -E -i "s|(\\\\hyperref\\[card:)$parent${siblings[$i]}$j([^]]*\\])|\1$new_parent$j\2|" "$dir/cards/$k"
-                    sed -E -i "s|(\\\\textsf\\{)$parent${siblings[$i]}$j([^]]*\\})|\1$new_parent$j\2|" "$dir/cards/$k"
-                done
-            done
-            for j in $children
-            do
-                # echo "$parent${siblings[$i]}$j -> $new_parent$j"
                 mv "$dir/cards/$parent${siblings[$i]}$j.tex" "$dir/cards/tmp_$new_parent$j.tex"
-                # mv "$dir/cards/$parent${siblings[$i]}$j.aux" "$dir/cards/$new_parent$j.aux"
-                sed -i "s|\\input{cards/$parent${siblings[$i]}$j\.tex}|\\input{cards/$new_parent$j\.tex}|" "$dir/main.tex"
+                from+=("$parent${siblings[$i]}$j")
+                to+=("$new_parent$j")
             done
-            new_cards=$(ls "$dir/cards" | grep .tex | sort -V)
         done
 
         tmp=$(ls "$dir/cards" | grep .tex | grep tmp)
         for i in $tmp
         do
             rename=$(echo "$i" | sed -nE 's/tmp_(.*)\.tex/\1/p')
-            # echo "$i -> $rename.tex"
             mv "$dir/cards/$i" "$dir/cards/$rename.tex"
+            # echo "$i -> $rename.tex"
+        done
+
+        for (( i=0; i<${#from[@]}; i++ ))
+        do
+            # printf "%s -> %s\n" "${from[$i]}" "${to[$i]}"
+            sed -i -E "s|(\\zheader\{[^}]+\})\{${from[$i]}\}(\{[^}]+\})|\1{${to[$i]}}\2|" "$dir/cards/${to[$i]}.tex"
+            sed -i -E "s|(\\zheadernotags\{[^}]+\})\{${from[$i]}\}|\1{${to[$i]}}|" "$dir/cards/${to[$i]}.tex"
+            sed -i "s|\\input{cards/${from[$i]}\.tex}|\\input{cards/tmp_${to[$i]}\.tex}|" "$dir/main.tex"
+        done
+
+        for (( i=0; i<${#from[@]}; i++ ))
+        do
+            sed -i "s|\\input{cards/tmp_${to[$i]}\.tex}|\\input{cards/${to[$i]}\.tex}|" "$dir/main.tex"
+        done
+
+        cards=$(ls "$dir/cards" | grep .tex | sort -V)
+        for (( i=0; i<${#from[@]}; i++ ))
+        do
+            for j in $cards
+            do
+                sed -i -E "s|(\\\\hyperref\\[card:)${from[$i]}([^]]*\\])|\1${to[$i]}\2|" "$dir/cards/$j"
+                sed -i -E "s|(\\\\textsf\\{)${from[$i]}([^]]*\\})|\1${to[$i]}\2|" "$dir/cards/$j"
+            done
         done
 
         sed -i "/\\input{cards\/$first_new\.tex}/i \\\\\\input{cards/$card\.tex}" "$dir/main.tex"
