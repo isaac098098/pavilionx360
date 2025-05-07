@@ -25,6 +25,7 @@ cp -r ~/.config/inkscape/templates/default.svg ~/pavilionx360/.config/inkscape/t
 cp -r ~/.config/gtk-3.0/ ~/pavilionx360/.config/
 cp -r ~/.config/gtk-4.0/ ~/pavilionx360/.config/
 cp -r ~/.local/bin/* ~/pavilionx360/bin/
+rsync -a --delete ~/zettelkasten/ ~/pavilionx360/home/zettelkasten_backup/
 
 cp ~/.vimrc ~/pavilionx360/home/
 cp ~/.xinitrc ~/pavilionx360/home/

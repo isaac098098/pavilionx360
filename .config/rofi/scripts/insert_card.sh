@@ -65,7 +65,6 @@ then
             done
         done
 
-
         sed -i "/\\input{cards\/$first_new\.tex}/i \\\\\\input{cards/$card\.tex}" "$dir/main.tex"
 
         alacritty -e nvim "$dir/cards/$card.tex" &

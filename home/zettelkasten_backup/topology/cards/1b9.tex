@@ -1,0 +1,24 @@
+%%% Propiedad universal de las identificaciones
+%% tags: propiedad universal, identificación
+
+\zheader{Propiedad universal de las identificaciones}{1b9}{propiedad universal, identificación}
+
+\begin{theorem}
+Sea $f : X \longrightarrow Y$ una función. Entonces $f$ es identificación si y sólo si se cumplen las siguientes condiciones:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item $f$ es continua.
+\item Una función $g : Y \longrightarrow Z$ es continua si y sólo si $g \circ f$ es continua.
+\end{enumerate}
+\bigskip
+
+\adjustbox{scale=1.2,center}{
+    \begin{tikzcd}[row sep=large,column sep=large]
+        X \arrow[swap]{d}{f} \arrow{dr}{g \circ f} & \\
+        Y \arrow[swap,dashed]{r}{g} & Z
+    \end{tikzcd}
+}
+\end{theorem}
+
+\begin{proof}
+Pendiente.
+\end{proof}

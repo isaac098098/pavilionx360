@@ -1,0 +1,24 @@
+%%% Caracterización de identificaciones
+%% tags: caracterización, compatibilidad, identificación
+
+\zheader{Caracterización de identificaciones}{1b12}{caracterización, compatibilidad, identificación}
+
+\begin{definition}
+Dada una función $p : X \longrightarrow \overline{X}$, se dice que otra función $f : X \longrightarrow Y$ es compatible con $p$ si $p(x) = p(x')$ implica que $f(x) = f(x')$, para cada $x, x' \in X$.
+\end{definition}
+
+\begin{theorem}
+Sea $p : X \longrightarrow \overline{X}$ continua y suprayectiva. Entonces $p$ es identificación si y sólo si para cada función continua $f : X \longrightarrow Y$ compatible con $p$, existe una única función continua $\overline{f} : \overline{X} \longrightarrow Y$ tal que $\overline{f} \circ p = f$.
+\bigskip
+
+\adjustbox{scale=1.2,center}{
+    \begin{tikzcd}[row sep=large,column sep=large]
+        X \arrow[swap]{d}{p} \arrow{r}{f} & Y \\
+        \overline{X} \arrow[swap,dashed]{ru}{\overline{f}}
+    \end{tikzcd}
+}
+\end{theorem}
+
+\begin{definition}
+En la definición anterior, se dice que $\overline{f}$ es el resultado de pasar $f$ al cociente.
+\end{definition}
