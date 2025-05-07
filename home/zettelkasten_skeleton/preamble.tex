@@ -1,7 +1,9 @@
 \documentclass{article}
+\usepackage{anyfontsize}
+\usepackage[fontsize=12pt]{scrextend}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage[paperwidth=279mm, paperheight=156.9375mm, right=55mm]{geometry}
+\usepackage[paperwidth=279mm, paperheight=156.9375mm]{geometry}
 \usepackage[tbtags]{amsmath}
 %use tbtags to tag equations at the bottom
 \usepackage{amsfonts}
@@ -16,6 +18,8 @@
 \usepackage{scalerel} %relative math text resizing
 \usepackage{mathtools} %used by DeclarePairedDelimiter
 \usepackage[spanish]{cleveref} %reference element type
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
 
 %Diagrams
 \usepackage{tikz-cd}
@@ -25,7 +29,7 @@
 %Formatting
 
 \decimalpoint %decimal point
-\renewcommand\qedsymbol{$\blacksquare$} %black filled qed symbol
+% \renewcommand\qedsymbol{$\blacksquare$} %black filled qed symbol
 % \numberwithin{equation}{section} %equation numbered by section
 \hypersetup{breaklinks=true} %hyperref, allow hyperlinks to break
 \allowdisplaybreaks %allow equations to break across pages
@@ -36,6 +40,7 @@
 %toc
 
 \addtocontents{toc}{\protect\thispagestyle{empty}} %remove page number from toc
+\addtocontents{toc}{\protect\small} %remove page number from toc
 %use addto to add title to spanish title definitions
 %use captionenglish otherwise
 \renewcommand{\cfttoctitlefont}{\LARGE\sffamily} %toc title format
@@ -53,9 +58,9 @@
 \newtheoremstyle{theorem}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
-{} %body font
+{\itshape} %body font
 {0em} %indentation
-{\bfseries} %header font
+{\scshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %theorem [number] [name]
@@ -65,9 +70,9 @@
 \newtheoremstyle{proposition}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
-{} %body font
+{\itshape} %body font
 {0em} %indentation
-{\bfseries} %header font
+{\scshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %proposition [number] [name]
@@ -77,9 +82,9 @@
 \newtheoremstyle{corollary}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
-{} %body font
+{\itshape} %body font
 {0em} %indentation
-{\bfseries} %header font
+{\scshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %corollary [number] [name]
@@ -89,9 +94,9 @@
 \newtheoremstyle{lemma}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
-{} %body font
+{\itshape} %body font
 {0em} %indentation
-{\bfseries} %header font
+{\scshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %lemma [number] [name]
@@ -101,13 +106,13 @@
 \newtheoremstyle{definition}
 {\topsep} %vertical space before
 {\topsep} %vertical space after
-{} %body font
+{\normalfont} %body font
 {0em} %indentation
-{\bfseries} %header font
+{\scshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %definition [number] [name]
-\theoremstyle{lemma}
+\theoremstyle{definition}
 \newtheorem{definition}{Definición}
 
 \newtheoremstyle{remark}
@@ -115,10 +120,10 @@
 {\topsep} %vertical space after
 {} %body font
 {0em} %indentation
-{\bfseries} %header font
+{\itshape} %header font
 {.} %dot afer header
 {0.5em} %horizontal space after header
-{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %remark [number] [name]
+{\thmname{#1}\textnormal{\thmnote{ (#2)}}} %remark [number] [name]
 \theoremstyle{remark}
 \newtheorem{remark}{Observación}
 

@@ -13,5 +13,13 @@ Si $f : X \longrightarrow Y$ es una función, son equivalentes:
 \end{theorem}
 
 \begin{proof}
-Pendiente.
+({\scshape\romannumeral 1}) $\implies$ ({\scshape\romannumeral 2}).  Si $f$ es identificación entonces $f$ es, en particular, continua, y por tanto $U$ abierto en $Y$ implica $f^{-1}(U)$ abierto en $X$. Supogase ahora que $f^{-1}(U)$ es abierto en $X$ con $U \subset Y$. Entonces $U$ es abierto en $X$ por definición de topología de identificación. Como $U$ fue arbitrario se tiene el resultado.
+\bigskip
+
+(b) $\implies$ (c). Se tiene que
+\begin{align*}
+    F \text{ es cerrado en } Y & \iff X - F \text{ es abierto en } Y \\
+                               & \iff f^{-1}(X - F) = Y-f^{-1}(F) \text{ es abierto en } X, \text{ por hipótesis} \\
+                               & \iff f^{-1}(F) \text{ es cerrado en } X.
+\end{align*}
 \end{proof}

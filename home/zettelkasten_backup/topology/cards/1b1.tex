@@ -8,5 +8,8 @@ Sea $X$ un espacio topológico y $f : X \longrightarrow Y$ una función. La topo
 \end{proposition}
 
 \begin{proof}
-Pendiente.
+Sea $\mathcal{T}_f$ la topología de identificación en $Y$. Si $U \in \mathcal{T}$, entonces $f^{-1}(U)$ es abierto en $X$, por definición. Como $U$ fue arbitrario, entonces $f$ debe ser continua, por definición de continuidad.
+\bigskip
+
+Sea $\mathcal{T}$ una topología que hace continua a $f$. Si $U \in \mathcal{T}$, entonces $U \subset Y$ y $f^{-1}(U)$ es abierto en $X$ por definición de continuidad, pero esto implica que $U \in \mathcal{T}_f$ por definición de $\mathcal{T}_f$. Como $U$ fue arbitrario, entonces $\mathcal{T} \subset \mathcal{T}_f$, y a su vez como $\mathcal{T}$ fue una topología arbitraria que hace continua a $f$, entonces $\mathcal{T}_f$ debe ser la más fina entre ellas.
 \end{proof}

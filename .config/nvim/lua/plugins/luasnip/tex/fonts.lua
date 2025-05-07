@@ -228,4 +228,10 @@ s({trig = "tn", name = "Main font"},
     }
 ),
 
+s({trig = "ro", name = "Roman numeral"},
+    {
+        t("{\\scshape\\romannumeral "), i(1), t("}")
+    }
+),
+
 }
