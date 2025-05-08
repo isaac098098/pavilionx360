@@ -4,7 +4,7 @@
 \zheader{Propiedades de las identificaciones}{1b3}{propiedades, composición, identificación}
 
 \begin{proposition}
-Se verifican las siguientes afirmaciones:
+Sean $f : X \longrightarrow Y$ y $g : Y \longrightarrow Z$ funciones. Se verifican las siguientes afirmaciones
 \begin{enumerate}[label=\textnormal{(\roman*)}]
 \item $\text{id}_X : X \longrightarrow X$ es identificación.
 \item Si $f$ y $g$ son identificaciones, entonces $g \circ f$ es identificación.
@@ -13,5 +13,21 @@ Se verifican las siguientes afirmaciones:
 \end{proposition}
 
 \begin{proof}
-Pendiente.
+({\scshape\romannumeral 1}) Se sigue de que $U$ es abierto en $X$ si y sólo si $\text{id}_X(U) = U$ es abierto en $X$.
+\bigskip
+
+({\scshape\romannumeral 2}) Como $f$ y $g$ son identificaciones, entonces, por \hyperref[card:1b2]{\textsf{1b2}},
+\begin{align*}
+    U \text{ es abierto en } Z & \iff g^{-1}(U) \text{ es abierto en } Y \\
+                               & \iff f^{-1}(g^{-1}(U)) = (g \circ f)^{-1}(U) \text{ es abierto en } X.
+\end{align*}
+Luego $g \circ f$ es identificación.
+\bigskip
+
+({\scshape\romannumeral 3}) Se tiene que
+\begin{align*}
+    U \text{ es abierto en } Z & \iff (g \circ f)^{-1}(U) = f^{-1}(g^{-1}(U)) \text{ es abierto en } X \\
+                               & \iff g^{-1}(U) \text{ es abierto en } Y,
+\end{align*}
+luego $g$ es identificación.
 \end{proof}

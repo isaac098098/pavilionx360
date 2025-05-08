@@ -40,8 +40,9 @@ vim.cmd('highlight NvimTreeNormalFloat guibg=#3B4252')
 vim.cmd('highlight NvimTreeCursorLine guibg=#4C566A')
 vim.cmd('highlight NvimTreeEndOfBuffer guifg=#3B4252')
 vim.cmd('highlight NvimTreeWinSeparator guibg=#3B4252 guifg=#3B4252')
-vim.cmd('highlight NvimTreeStatusLine guibg=#2E3440')
-vim.cmd('highlight NvimTreeStatusLineNC guibg=#2E3440')
+vim.cmd('highlight StatusLine guifg=#eceff4')
+vim.cmd('highlight NvimTreeStatusLine guibg=#3B4252 guifg=#3b4252')
+vim.cmd('highlight NvimTreeStatusLineNC guibg=#3B4252 guifg=#3b4252')
 vim.cmd('highlight EndOfBuffer guifg=#2E3440')
 
 -- toggleterm
