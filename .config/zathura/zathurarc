@@ -45,7 +45,8 @@ set render-loading-fg           "#3B4252"
 set inputbar-bg                 "#3B4252"
 set inputbar-fg                 "#D8DEE9"
 
-set highlight-color             rgba(240,198,116,0)
+set highlight-color             rgba(46,52,64,0)
+set highlight-fg                "#BF616A"
 set highlight-active-color      rgba(129,162,190,0)
 
 # onedark-darker

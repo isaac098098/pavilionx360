@@ -1,15 +1,20 @@
-%%% Más fina para continuidad
-%% tags: comparación
+%%% Criterio para homeomorfismos
+%% tags: criterio, abierta, cerrada, homeomorfismo
 
-\zheader{Más fina para continuidad}{1b1}{comparación}
+\zheader{Criterio para homeomorfismos}{1b1}{criterio, abierta, cerrada}
 
-\begin{proposition}
-Sea $X$ un espacio topológico y $f : X \longrightarrow Y$ una función. La topología de identificación en $Y$ coinducida por $f$ hace continua a $f$. Más aún, de entre todas las topologías que hacen continua a $f$, esta es la más fina.
-\end{proposition}
+\begin{theorem}
+Si una función $f : X \longrightarrow Y$ es biyectiva, continua y abierta o cerrada, entonces $f$ es un homeomorfismo.
+\end{theorem}
 
 \begin{proof}
-Sea $\mathcal{T}_f$ la topología de identificación en $Y$. Si $U \in \mathcal{T}$, entonces $f^{-1}(U)$ es abierto en $X$, por definición. Como $U$ fue arbitrario, entonces $f$ debe ser continua, por definición de continuidad.
-\bigskip
+Como $f$ es biyectiva, existe su inversa $g : Y \longrightarrow X$ tal que $g \circ f = \text{id}_X$. Sea $U$ un abierto en $X$ y notemos que $f^{-1}(g^{-1}(U)) = (g \circ f)^{-1}(U) = \text{id}_X^{-1}(U) = U$ y aplicando $f$ a ambos lados obtenemos $g^{-1}(U) = f(U)$ por suprayectividad de $f$. Como $f(U)$ es abierto por ser $f$ una funcion abierta, entonces $g^{-1}(U)$ es abierto. Dado que $U$ fue un abierto arbitrario, entones $g$ es continua y en consecuencia $f$ es un homeomorfismo. Si $f$ es cerrada la demostración es similar.
+\end{proof}
 
-Sea $\mathcal{T}$ una topología que hace continua a $f$. Si $U \in \mathcal{T}$, entonces $U \subset Y$ y $f^{-1}(U)$ es abierto en $X$ por definición de continuidad, pero esto implica que $U \in \mathcal{T}_f$ por definición de $\mathcal{T}_f$. Como $U$ fue arbitrario, entonces $\mathcal{T} \subset \mathcal{T}_f$, y a su vez como $\mathcal{T}$ fue una topología arbitraria que hace continua a $f$, entonces $\mathcal{T}_f$ debe ser la más fina entre ellas.
+\begin{theorem}
+Si $f$ es un homeomorfismo, entonces $f$ es abierta y cerrada.
+\end{theorem}
+
+\begin{proof}
+Sea $g$ la inversa de $f$. Si $U$ es abierto en $X$, entonces $g^{-1}(U)$ es abierto en $X$ por ser $g$ continua, pero, de manera similar al teorema anterior, se tiene que $g^{-1}(U) = f(U)$, luego $f(U)$ es abierto y se sigue que $f$ es una función abierta. Similarmente se prueba que $f$ es cerrada.
 \end{proof}

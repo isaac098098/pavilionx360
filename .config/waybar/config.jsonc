@@ -35,7 +35,7 @@
     },
     "network#enp2s0": {
         "interface": "enp2s0",
-        "format-ethernet": "{ifname} <span color='#FFFFFF'>{essid} {ipaddr}</span>",
+        "format-ethernet": "{ifname}<span color='#FFFFFF'>{essid} {ipaddr}</span>",
         // "format-disconnected": "<span color='#EBCB8B'>{ifname}</span> disconnected",
         "format-disconnected": "",
     },

@@ -36,6 +36,7 @@
 \setlength\marginparsep{1.0cm} %separation from text to marginnote
 \setlength\parindent{0pt} %paragraph indentation
 \pagestyle{empty} %no page numbers
+\renewcommand\ttdefault{cmtt} %default typewriter font
 
 %toc
 
@@ -140,6 +141,11 @@
 \newtheorem{example}{Ejemplo}
 
 %Symbol resizing, depends on scalerel
+
+\let\oldcap\cap
+\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
+\let\oldcup\cup
+\renewcommand{\cup}{\mathbin{\scaleobj{1.1}{\oldcup}}}
 
 \let\oldpartial\partial
 \renewcommand{\partial}{\mathbin{\scaleobj{1.15}{\oldpartial}}}

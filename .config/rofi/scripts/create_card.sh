@@ -15,12 +15,12 @@ then
             eof=$(grep -n "\\\\end{document}" "$dir/main.tex" | cut -f1 -d:)
             sed -i "/\\end{document}/s/\\end{document}/\\input{cards\/$next.tex}\n\n\\\\end{document}/" "$dir/main.tex"
             sed -i "$((10#$eof - 1))d" "$dir/main.tex"
-            alacritty -e nvim "$dir/cards/$next.tex" &
+            NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/$next.tex" &
             exit 0
         else
             eof=$(grep -n "\\\\end{document}" "$dir/main.tex" | cut -f1 -d:)
             sed -i "/\\end{document}/s/\\end{document}/\\input{cards\/1.tex}\n\n\\\\end{document}/" "$dir/main.tex"
-            alacritty -e nvim "$dir/cards/1.tex" &
+            NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/1.tex" &
             exit 0
         fi
     else
@@ -50,11 +50,11 @@ then
                 )
 
                 sed -i "/\\input{cards\/${card}${last}\.tex}/a \\\\\\\\input{cards\/${card}${next}\.tex}" "$dir/main.tex"
-                alacritty -e nvim "$dir/cards/$card$next.tex" &
+                NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/$card$next.tex" &
                 exit 0
             else
                 sed -i "/\\input{cards\/$card\.tex}/a \\\\\\\\input{cards\/${card}a\.tex}" "$dir/main.tex"
-                alacritty -e nvim "$dir/cards/${card}a.tex" &
+                NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/${card}a.tex" &
                 exit 0
             fi
         elif [[ "$last_char" =~ [a-z] ]]
@@ -64,11 +64,11 @@ then
             then
                 next=$((10#$last + 1))
                 sed -i "/\\input{cards\/${card}${last}\.tex}/a \\\\\\\\input{cards\/${card}${next}\.tex}" "$dir/main.tex"
-                alacritty -e nvim "$dir/cards/$card$next.tex" &
+                NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/$card$next.tex" &
                 exit 0
             else
                 sed -i "/\\input{cards\/${card}\.tex}/a \\\\\\\\input{cards\/${card}1\.tex}" "$dir/main.tex"
-                alacritty -e nvim "$dir/cards/${card}1.tex" &
+                NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/${card}1.tex" &
                 exit 0
             fi
         fi

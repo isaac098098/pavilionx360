@@ -7,7 +7,7 @@ if [[ "$1" ]]
 then
     killall rofi > /dev/null 2>&1
     card=$(echo "$1" | awk '{print $1}')
-    alacritty -e nvim "$dir/cards/$card.tex" &
+    NVIM_LISTEN_ADDRESS=/tmp/nvimsocket_cards alacritty -e nvim --server /tmp/nvimsocket_cards --remote-tab "$dir/cards/$card.tex" &
     exit 0
 else
     sorted=$(echo "$cards" | sed 's/\.tex$//' | awk '
