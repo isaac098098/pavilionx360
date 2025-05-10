@@ -11,10 +11,10 @@ do
     then
         if [ -d "$HOME/zettelkasten/current" ]
             then
-                rm $HOME/zettelksaten/current
+                rm $HOME/zettelkasten/current
         fi
 
-        ln -s $HOME/zettelkasten/"$i" $HOME/zettelkassten/current
+        ln -s $HOME/zettelkasten/"$i" $HOME/zettelkasten/current
         exit 0
     fi
 done
