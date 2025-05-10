@@ -19,9 +19,9 @@
 \contentsline {section}{1c7 Identificación es casi homeomorfismo \textsf {\footnotesize @homeomorfismo, identificación}}{18}{section*.15}%
 \contentsline {section}{1c8 Restricción de identificaciones \textsf {\footnotesize @restricción, identificación, criterio}}{19}{section*.16}%
 \contentsline {section}{1c9 Propiedad universal de las identificaciones \textsf {\footnotesize @propiedad universal, identificación}}{20}{section*.17}%
-\contentsline {section}{1c10 Definición de espacio cociente \textsf {\footnotesize @cociente, topología}}{21}{section*.18}%
-\contentsline {section}{1c10a Propiedades de saturación \textsf {\footnotesize @definición, saturación, identificación}}{22}{section*.19}%
-\contentsline {section}{1c10b Espacios cocientes Hausdorff \textsf {\footnotesize @espacio cociente, Hausdorff, T2}}{23}{section*.20}%
-\contentsline {section}{1c11 Homeomorfismo inducido por una identificación}{24}{section*.21}%
-\contentsline {section}{1c12 Caracterización de identificaciones \textsf {\footnotesize @caracterización, compatibilidad, identificación}}{25}{section*.22}%
-\contentsline {section}{1c13 Criterio para identificaciones \textsf {\footnotesize @compacto, Hausdorff, identificación}}{26}{section*.23}%
+\contentsline {section}{1c10 Definición de espacio cociente \textsf {\footnotesize @cociente, topología}}{22}{section*.18}%
+\contentsline {section}{1c10a Propiedades de saturación \textsf {\footnotesize @definición, saturación, identificación}}{23}{section*.19}%
+\contentsline {section}{1c10b Espacios cocientes Hausdorff \textsf {\footnotesize @espacio cociente, Hausdorff, T2}}{24}{section*.20}%
+\contentsline {section}{1c11 Homeomorfismo inducido por una identificación}{25}{section*.21}%
+\contentsline {section}{1c12 Caracterización de identificaciones \textsf {\footnotesize @caracterización, compatibilidad, identificación}}{26}{section*.22}%
+\contentsline {section}{1c13 Criterio para identificaciones \textsf {\footnotesize @compacto, Hausdorff, identificación}}{27}{section*.23}%

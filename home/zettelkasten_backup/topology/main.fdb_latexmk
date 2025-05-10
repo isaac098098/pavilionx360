@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1746467368.23479 "main.idx" "main.ind" "main" 1746833657.34052 0
-  "main.idx" 1746833654.747 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1746467368.23479 "main.idx" "main.ind" "main" 1746839229.8055 0
+  "main.idx" 1746839227.168 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1746833651.24787 "main.tex" "main.pdf" "main" 1746833657.3411 0
+["pdflatex"] 1746839223.65028 "main.tex" "main.pdf" "main" 1746839229.8061 0
   "../preamble.tex" 1746826539.223 7577 6c7c8e3898ccb099a551286540edd131 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_edcawa.enc" 1490131464 2833 ab571e969b0d4b8e87f8f63627b1db02 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/libertine/lbtn_kijugd.enc" 1490131464 2822 11e839d2bbb939844844619b2cff7df6 ""
@@ -276,7 +276,7 @@
   "cards/1c.tex" 1746830874.279 777 3c3ed81380e33e677a6da1cb64521bfb ""
   "cards/1c1.tex" 1746830878.686 1125 efa8190c23f0f06c18be332fc1ee6ab3 ""
   "cards/1c10.tex" 1746830882.429 647 1f91e0e236a5d5daed1672b08f9f28c9 ""
-  "cards/1c10a.tex" 1746830970.279 1145 c9c3eec91002f91de06bdd2730ec88c9 ""
+  "cards/1c10a.tex" 1746839222.676 1379 e424ff273a08ce60e2bcaaa3585f3203 ""
   "cards/1c10b.tex" 1746830890.136 410 f95d3bc3ddd0935b65149fdb6faa363b ""
   "cards/1c11.tex" 1746830894.311 477 ae653428f454cfe81ac53ac47f2f84ef ""
   "cards/1c12.tex" 1746830900.113 1132 229e00c657ac79396654c9f420ae7e22 ""
@@ -288,12 +288,12 @@
   "cards/1c5.tex" 1746833650.251 693 4147bc1fdd07853c90de3aea8a57c321 ""
   "cards/1c6.tex" 1746831003.557 734 04d5f41570dccf3bce309e911582f65f ""
   "cards/1c7.tex" 1746833194.094 894 73a2b9953b93dc4ec1f6272392caa02e ""
-  "cards/1c8.tex" 1746830936.769 405 cee5405afd896f697bbb7b4094a0b950 ""
-  "cards/1c9.tex" 1746831009.598 779 17db2fbefcde5f6bad4cfc1c9a771a93 ""
-  "main.aux" 1746833656.261 26781 14994d8be6b412b706c112c1322bba47 "pdflatex"
+  "cards/1c8.tex" 1746836638.123 1220 a94402508b5319a77cda5d469f56a79e ""
+  "cards/1c9.tex" 1746838345.496 2246 240e871d5c5ccaacba1ad286bfa96f89 ""
+  "main.aux" 1746839228.682 26781 6f261fe17ee470cdfd9f8c93406c95a9 "pdflatex"
   "main.ind" 1746503641.55355 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
   "main.tex" 1746831105.01798 619 6611696f2319bdfe9756a7d0c99bb057 ""
-  "main.toc" 1746833656.329 3158 92bac98d6272114161d37cf25ada7235 "pdflatex"
+  "main.toc" 1746839228.75 3158 611e14ae72672a08cd0c63051e8a0ade "pdflatex"
   (generated)
   "main.aux"
   "main.idx"
