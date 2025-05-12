@@ -1,0 +1,22 @@
+%%% Potencias de la unidad imaginaria
+
+\zheadernotags{Potencias de la unidad imaginaria}{1a1}
+
+\begin{proposition}
+Se pueden efectuar las operaciones con números complejos de forma binómica como si fueran binomios algebráicos, reemplazando $i^2$ por $-1$, $i^3$ por $-i$, $i^4$ por $1$, $i^5$ por $i$, etc. Específicamente, si $n \in \mathbb{N}$, entonces
+\begin{equation*}
+    i^n = \begin{cases}
+        \hfil 1 & \text{ si } n \equiv 0 \pmod{4} \\
+        \hfil i & \text{ si } n \equiv 1 \pmod{4} \\
+        \hfil -1 & \text{ si } n \equiv 2 \pmod{4} \\
+        \hfil -i & \text{ si } n \equiv 3 \pmod{4}.
+    \end{cases}
+\end{equation*}
+\end{proposition}
+
+\begin{proof}
+Nótese que $i^2 = -1$, $i^3 = -i$ y $i^4 = 1$. Si $n \in \mathbb{N}$, entonces por el algoritmo de la división, existen $k, r \in \mathbb{Z}$ tal que $n = 4k + r$, $0 \le r \le 3$. Si $r=0$, entonces $i^n = i^{4n} = (i^4)^n = 1^n = 1$. Si $r=1$ se tiene que $i^n = i^{4 k + 1} = (i^4)^k i^1 = 1^k i^1 = i$. Si $r=2$ se puede escribir $i^n = i^{4 k + 2} = (i^4)^k i^2 = 1^k -1 = -1$ y finalmente, si $r = 3$, se tiene $i^n = i^{4 k + 3} = (i^4)^k i^3 = 1^k i^3 = -i$.
+\bigskip
+
+Más aún, dado que $(a,0)(b,0) = (a b,0)$ para cualesquiera $a,b \in \mathbb{R}$, se pueden utilizar las propiedades de conmutatividad, asociatividad y distributividad del campo $\mathbb{C}$ para operar sus elementos como si fueran binomios algebraicos cuando están en su forma binómica.
+\end{proof}

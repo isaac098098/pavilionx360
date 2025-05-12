@@ -20,6 +20,7 @@
 \usepackage[spanish]{cleveref} %reference element type
 \usepackage{libertine}
 \usepackage[libertine]{newtxmath}
+\usepackage{multicol}
 
 %Diagrams
 \usepackage{tikz-cd}
@@ -235,5 +236,5 @@
 }
 
 \newcommand{\ztitle}[1]{
-    \addto{\captionsspanish}{\renewcommand{\contentsname}{Topología}} %babel, toc title format
+    \addto{\captionsspanish}{\renewcommand{\contentsname}{#1}} %babel, toc title format
 }
