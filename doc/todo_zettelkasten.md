@@ -5,6 +5,7 @@
 - [X] Completar preámbulo.
 - [X] Diseñar la tabla de contenidos y hacer que las fichas aparezcan con su título ahí.
 - [X] Script para intercambiar cartas.
+- [ ] Revisar `create_card.sh` cuando el nodo es un nodo raíz (inserta la carta debajo del último nodo hermano en vez de el último descendiente del último nodo hermano).
 
 Nota: el sistema solo puede ordenar un máximo de 10^8 fichas por nivel jerárquico, sin límite de niveles.
 

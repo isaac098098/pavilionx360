@@ -1,15 +1,32 @@
-%%% Definición de espacio topológico
-%% tags: definición
+%%% Propiedades de la imagen e imagen inversa
+%% tags: propiedades, imagen, imagen inversa
 
-\zheader{Definición de espacio topológico}{1}{definición}
+\zheader{Propiedades de conjuntos y funciones}{1}{propiedades, imagen, imagen inversa}
 
-\begin{definition}
-Sea $X$ un conjunto. Una \textbf{topología} sobre $X$es una familia $\mathcal{T}$ de subconjuntos de $X$ con las siguientes propiedades:
-\begin{enumerate}[label=\textnormal{(\roman*)}]
-\item $\varnothing, X \in \mathcal{T}$.
-\item Si $\{ U_i \}_{i \in \mathcal{I}} \subset \mathcal{T}$ entonces $\bigcup_{i \in \mathcal{I}} U_i \in \mathcal{T}$.
-\item Si $\{ U_i \}_{i \in \mathcal{I}} \subset \mathcal{T}$ y $\mathcal{I}$ es finito, entonces $\bigcap_{i \in \mathcal{I}} U_i \in \mathcal{T}$.
-\end{enumerate}
+\begin{theorem}
+Sean $f : X \longrightarrow Y$ una función, $A, A_1, A_2, \{ A_{\alpha} \}_{\alpha \in I}$ subconjuntos de $X$ y $B, B_1, B_2, \{ B_{\beta} \}_{\beta \in J}$ subconjuntos de $Y$, se tiene que
 
-A la pareja $(X,\mathcal{T})$ se le llama \textbf{espacio topológico}.
-\end{definition}
+\begin{multicols}{2}
+    \begin{enumerate}[label=\textnormal{(\roman*)}, align=left, labelwidth=2.0em, leftmargin=3.0em]
+    \item $f(X - A) \subset Y - f(A)$ si $f$ es inyectiva,
+    \item $Y - f(A) \subset f(X - A)$ si $f$ es suprayectiva,
+    \item $f^{-1}(Y - B) = X - f^{-1}(B)$,
+    \item $f(f^{-1}(B)) \subset B$,
+    \item $B \subset f(f^{-1}(B))$ si $f$ es suprayectiva,
+    \item $A \subset f^{-1}(f(A))$,
+    \item $f^{-1}(f(A)) \subset A$ si $f$ es inyectiva,
+    \columnbreak
+    \item $f \left( \bigcup_{\alpha \in I} A_{\alpha} \right) = \bigcup_{\alpha \in I} f(A_{\alpha})$,
+    \item $f \left( \bigcap_{\alpha \in I} A_{\alpha} \right) \subset \bigcap_{\alpha \in I} f(A_{\alpha})$,
+    \item $\bigcap_{\alpha \in I} f(A_{\alpha}) \subset f \left( \bigcap_{\alpha \in I} A_{\alpha} \right)$ si $f$ es inyectiva,
+    \item $f^{-1} \left( \bigcup_{\beta \in J} B_{\alpha} \right) = \bigcup_{\alpha \in J} f^{-1}(B_{\beta})$,
+    \item $f^{-1}\left( \bigcap_{\beta \in J} B_{\beta} \right) = \bigcap_{\alpha \in J} f^{-1}(B_{\beta})$,
+    \item $A_1 \subset A_2$ implica $f(A_1) \subset f(A_2)$,
+    \item $B_1 \subset B_2$ implica $f^{-1}(B_1) \subset f^{-1}(B_2)$.
+    \end{enumerate}
+\end{multicols}
+\end{theorem}
+
+\begin{proof}
+Pendiente.
+\end{proof}

@@ -1,0 +1,44 @@
+%%% Propiedades de la suma topológica
+%% tags: propiedades, suma topológica
+
+\zheader{Propiedades de la suma topológica}{2d2}{propiedades, suma topológica}
+
+\begin{proposition}
+Sea $\{ X_{\lambda} \}_{\lambda \in \Lambda}$ una familia de espacios topológicos y sea $X = \coprod_{\lambda \in \Lambda} X_{\lambda}$ su suma topológica. Se tiene que
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item Si $\mu \in \Lambda$ y $A \subset X_{\mu}$, entonces $i^{-1}_{\mu}(A \times \{ \mu \}) = A$,
+\item Si $\mu \in \Lambda$ y $A \subset X_{\mu}$, entonces $i^{-1}_{\lambda}(A \times \{ \mu \}) = \emptyset, \forall \lambda \in \Lambda, \lambda \ne \mu$,
+\item Si $B \subset X$, entonces $i^{-1}_{\mu}(B) \times \{ \mu \} = B \cap X_{\mu} \times \{ \mu \}, \forall \mu \in \Lambda$,
+\item Si $\mu \in \Lambda$, entonces $U$ es abierto en $X_{\mu}$ si y solo si $U \times \{ \mu \}$ es abierto en $X_{\mu} \times \{ \mu \}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+({\scshape\romannumeral 1}) Si $\mu \in \Lambda$ y $A \subset X_{\mu}$, entonces
+\begin{align*}
+    x \in i^{-1}_{\mu}(A \times \{ \mu \}) & \iff i_{\mu}(x) \in A \times \{ \mu \} \\
+                                           & \iff (x, \mu) \in A \times \{ \mu \} \\
+                                           & \iff x \in A.
+\end{align*}
+Esto prueba la afirmación.
+\bigskip
+
+({\scshape\romannumeral 2}) Si $\lambda \ne \mu$, $A \subset X_{\mu}$ y existiera $x \in i^{-1}_{\lambda}(A \times \{ \mu \})$, entonces $(x,\lambda) \in A \times \{ \mu \}$ y por tanto $\lambda = \mu$, contradiciendo la hipótesis.
+\bigskip
+
+({\scshape\romannumeral 3}) Sea $\mu \in \Lambda$ y $B \subset X$, entonces
+\begin{align*}
+    (x,\lambda) \in i^{-1}_{\mu}(B) \times \{ \mu \} & \iff x \in i^{-1}_{\mu}(B) \land \lambda \in \{ \mu \} \land x \in X_{\mu}  \\
+                                                     & \iff i_{\mu}(x) \in B \land \lambda = \mu \land x \in X_{\mu} \\
+                                                     & \iff (x,\mu) \in B \land \lambda = \mu \land (x, \lambda) \in X_{\mu} \times \{ \lambda \}  \\
+                                                     & \iff (x,\lambda) \in B \land \lambda = \mu \land (x, \lambda) \in X_{\mu} \times \{ \mu \} \\
+                                                     & \iff (x,\lambda) \in B \cap X_{\mu} \times \{ \mu \}.
+\end{align*}
+Como $\mu$ fue arbitrario, se tiene el resultado.
+\bigskip
+
+({\scshape\romannumeral 4}) Si $\mu \in \Lambda$ y $U$ es abierto en $X_{\mu}$, entonces $U \subset X_{\mu}$ y por ({\scshape\romannumeral 1}) se tiene que $i^{-1}_{\mu}(U \times \{ \mu \}) = U$. Luego $U \times \{ \mu \}$ debe ser abierto en la topología coinducida en $X$ por $X_{\mu}$ a través de $i_{\mu}$, es decir, $U \times \{ \mu \} \in \mathcal{T}_{\mu}$. Más aún, si $\lambda \ne \mu$, por ({\scshape\romannumeral 2}) se tiene que $i^{-1}_{\lambda}(U \times \{ \mu \}) = \emptyset$, el cual también es abierto en $X_{\lambda}$. En consecuencia, $U \times \{ \mu \} \in \mathcal{T}_{\lambda}$, para cada $\lambda \in \Lambda$. Luego $U \times \{ \mu \} \in \bigcap_{\lambda \in \Lambda} \mathcal{T}_{\lambda} = \mathcal{S}$, es decir, $U \times \{ \mu \}$ es abierto en $X$.
+\bigskip
+
+Supóngase ahora que $U \times \{ \mu \}$ es abierto en $X_{\mu} \times \{ \mu \}$. Como la inclusión $i_{\mu} : X_{\mu} \longrightarrow X$ es continua y $i_{\mu}(X_{\mu}) = X_{\mu} \times \{ \mu \}$, entonces $i_{\mu} : X_{\mu} \longrightarrow X_{\mu} \times \{ \mu \}$ también es continua. Como $U \subset X_{\mu}$, entonces $i^{-1}_{\mu}(U \times \{ \mu \}) = U$ por ({\scshape\romannumeral 1}) y se sigue que $U$ es abierto en $X_{\mu}$.
+\end{proof}
