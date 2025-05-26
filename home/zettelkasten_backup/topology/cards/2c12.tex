@@ -17,6 +17,10 @@ Sea $f : X \longrightarrow Y$ continua y suprayectiva. Entonces $f$ es identific
         Y \arrow[swap,dashed]{ru}{\overline{g}}
     \end{tikzcd}
 }
+\bigskip
+
+Se dice que $\overline{g}$ \textbf{es el resultado de pasar $g$ al cociente.}
+
 \end{theorem}
 
 \begin{proof}
@@ -31,7 +35,3 @@ Supóngase ahora que se verifica la condición. Defínase en $X$ la relación de
 
 Se tiene entonces que $p = \overline{p} \circ \overline{f} \circ p$ y $f = \overline{f} \circ \overline{p} \circ f$. Afirmamos que $\overline{f} \circ \overline{p} = \text{id}_Y$. En efecto, si $y \in Y$, entonces existe $x \in X$ tal que $y = f(x)$, luego $y = f(x) = \overline{f}(\overline{p}(f(x))) = \overline{f}(\overline{p}(y))$. Como $y$ es arbitrario esto prueba la afirmación. Similarmente se prueba que $\overline{p} \circ \overline{f} = \text{id}_{X/\sim}$. Se tiene pues que $\overline{f}$ es un homeomorfismo y por tanto identificación, y dado que $p$ también es identificación y $f = \overline{f} \circ p$, entonces $f$ es identificación.
 \end{proof}
-
-\begin{definition}
-En el teorema anterior, se dice que $\overline{g}$ \textbf{es el resultado de pasar $g$ al cociente.}
-\end{definition}

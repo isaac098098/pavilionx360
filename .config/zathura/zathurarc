@@ -11,7 +11,8 @@ map i mark_evaluate
 
 # nord
 
-set default-bg                  rgba(46,52,64,0.8)
+# set default-bg                  rgba(46,52,64,0.8) # blur-bg
+set default-bg                  rgba(46,52,64,1)
 set default-fg                  "#D8DEE9"
 
 set completion-bg               "#3B4252"

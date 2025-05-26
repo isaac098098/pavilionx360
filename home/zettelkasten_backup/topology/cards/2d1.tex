@@ -12,5 +12,8 @@ Sea $\{ X_{\lambda} \}_{\lambda \in \Lambda}$ una familia de espacios topológic
 \end{proposition}
 
 \begin{proof}
-Pendiente.
+({\scshape\romannumeral 1}) Sea $\mu \in \Lambda$ arbitrario pero fijo. Si $U$ es abierto en $X$, entonces $U \in \mathcal{S} = \bigcap_{\lambda \in \Lambda} \mathcal{T}_{\lambda}$, donde $\mathcal{T}_{\lambda}$ es la topología coinducida en $X$ por $X_{\lambda}$ a través de $i_{\lambda}$. En particular, $U \in \mathcal{T}_{\mu}$, luego, por definición, $i^{-1}_{\mu}(U)$ es abierto en $X_{\mu}$. Por tanto, $i_{\mu}$ es continua y como $\mu$ fue arbitrario se tiene el resultado.
+\bigskip
+
+({\scshape\romannumeral 2}) Supóngase que $\mathcal{T}$ es una topología que hace continuas a todas las inclusiones. Si $U \in \mathcal{T}$, entonces $i^{-1}_{\lambda}(U)$ es abierto en $X_{\lambda}$, para cada $\lambda \in \Lambda$, luego $U \in \mathcal{T}_{\lambda}$ para cada $\lambda$, por definición de $\mathcal{T}_{\lambda}$. En consecuencia, $U \in \bigcap_{\lambda \in \Lambda} \mathcal{T}_{\lambda} = \mathcal{S}$. Como $U$ fue arbitrario, entonces $\mathcal{T} \subset \mathcal{S}$ y se sigue que $\mathcal{S}$ es la topología más fina que hace continua a todas las inclusiones.
 \end{proof}

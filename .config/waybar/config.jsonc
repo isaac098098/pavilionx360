@@ -31,7 +31,8 @@
         "family" : "ipv4",
         //"format-wifi": "{ifname} <span color='#FFFFFF'>{essid} {ipaddr}</span>",
         "format-wifi": "{ifname} <span color='#FFFFFF'>{essid}</span>",
-        "format-disconnected": "<span color='#EBCB8B'>{ifname}</span> disconnected",
+        //"format-disconnected": "<span color='#EBCB8B'>{ifname}</span> disconnected",
+        "format-disconnected": ""
     },
     "network#enp2s0": {
         "interface": "enp2s0",

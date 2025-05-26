@@ -1,7 +1,7 @@
-%%% Caracterización de abiertos y cerrados en la suma topológica
+%%% Caracterización de abiertos y cerrados
 %% tags: caracterización, abiertos, suma topológica
 
-\zheader{Caracterización de abiertos y cerrados en la suma topológica}{2d3}{caracterización, abiertos, suma topológica}
+\zheader{Caracterización de abiertos y cerrados}{2d3}{caracterización, abiertos, suma topológica}
 
 \begin{theorem}
 Sea $\{ X_{\lambda} \}_{\lambda \in \Lambda}$ una familia de espacios topológicos y sea $X = \coprod_{\lambda \in \Lambda} X_{\lambda}$ su suma topológica. Entonces
@@ -23,3 +23,11 @@ Sea $\{ X_{\lambda} \}_{\lambda \in \Lambda}$ una familia de espacios topológic
 \end{align*}
 por el punto anterior.
 \end{proof}
+
+\begin{corollary}
+Sea $\{ X_{\lambda} \}_{\lambda \in \Lambda}$ una familia de espacios topológicos y sea $X = \coprod_{\lambda \in \Lambda} X_{\lambda}$ su suma topológica. Entonces
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item $U$ es abierto en $X$ si y sólo si $i^{-1}_{\lambda}(U)$ es abierto en $X_{\lambda}, \forall \lambda \in \Lambda$,
+\item $F$ es cerrado en $X$ si y sólo si $i^{-1}_{\lambda}(F)$ es cerrado en $X_{\lambda}, \forall \lambda \in \Lambda$.
+\end{enumerate}
+\end{corollary}
