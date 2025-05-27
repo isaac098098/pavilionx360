@@ -1,0 +1,24 @@
+%%% Funciones que preservan relación
+%% tags: preserva relación, continuidad
+
+\zheader{Funciones que preservan relación}{2d12b}{preserva relación, continuidad}
+
+\begin{definition}
+Si $R$ y $S$ son relaciones en dos conjuntos $X$ y $Y$, respectivamente, se dice que $f$ \textbf{preserva relaciones} si $x \, R \, x'$ implica que $f(x) \, S \, f(x'), \forall x \in X$.
+\end{definition}
+
+\begin{corollary}
+Sean $R$ y $S$ relaciones en dos espacios $X$ y $Y$, respectivamente y sean $p_X$, $p_Y$ las respectivas aplicaciones cociente. Si $f : X \longrightarrow Y$ es continua y preserva relaciones, entonces existe una única función continua $f_* : X/R \longrightarrow Y/S$ tal que $f_* \circ p_X = p_Y \circ f$. Es decir, tal que el siguiente diagrama conmuta 
+\bigskip
+
+\adjustbox{scale=1.2,center}{
+    \begin{tikzcd}[row sep=large,column sep=large]
+        X \arrow[swap]{d}{p_X} \arrow{r}{f} & Y \arrow{d}{p_Y} \\
+        X/R \arrow[swap]{r}{f_*} & Y/S.
+    \end{tikzcd}
+}
+\end{corollary}
+
+\begin{proof}
+Se sigue de \hyperref[card:2d12]{\textsf{2d12}} tomando $g = p_Y \circ f$.
+\end{proof}

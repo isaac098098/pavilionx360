@@ -1,0 +1,12 @@
+%%% Homeomorfismo inducido por funciones compatibles
+%% tags: compatibilidad, homeomorfismo
+
+\zheader{Homeomorfismo inducido por funciones compatibles}{2d12a}{compatibilidad, homeomorfismo}
+
+\begin{corollary}
+Si $f : X \longrightarrow Y$, $g : X \longrightarrow Z$ son identificaciones, suprayectivas y compatibles entre sí, es decir, $f(x_1) = f(x_2)$ si y solo si $g(x_1) = g(x_2), \forall x_1, x_2 \in X$, entonces $Y$ y $Z$ son homeomorfos.
+\end{corollary}
+
+\begin{proof}
+Por \hyperref[card:2d12]{\textsf{2d12}}, como $f$ es identificación, $g$ es continua y $g$ es compatible con $f$, entonces existe una función continua $\overline{g} : Y \longrightarrow Z$ tal que $\overline{g} \circ f = g$. Similarmente, como $g$ es identificación, $f$ es continua y $f$ es compatible con $g$, entonces existe una función continua $\overline{f} : Z \longrightarrow Y$ tal que $\overline{f} \circ g = f$. Luego $\overline{g} \circ \overline{f} \circ g = g$ y $\overline{f} \circ \overline{g} \circ f = f$ y como $f$ y $g$ son suprayectivas, entonces $\overline{g} \circ \overline{f} = \text{id}_{Z}$ y $\overline{f} \circ \overline{g} =  \text{id}_{Y}$. Luego $\overline{f}$ y $\overline{g}$ son homeomorfismos.
+\end{proof}

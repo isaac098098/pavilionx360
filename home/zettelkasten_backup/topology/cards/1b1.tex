@@ -1,0 +1,31 @@
+%%% Partición por clases de equivalencia
+%% tags: partición, clase de equivalencia
+
+\zheader{Partición por clases de equivalencia}{1b1}{partición, clase de equivalencia}
+
+\begin{definition}
+Si $R$ es una relación de equivalencia en $X$ y $x \in X$, el conjunto $R x = \{ y \in X \mid y \, R \, x \}$ se llama la \textbf{clase de equivalencia} de $x$. También se le suele denotar $[x]$ si no hay riesgo de confusión. A la familia $\{ R x \mid x \in X \}$ se le llamará \textbf{conjunto cociente} de $X$ por $R$ y se denotará $X/R$.
+\end{definition}
+
+\begin{theorem}
+Si $R$ es una clase de equivalencia en un conjunto $X$, entonces:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item $\bigcup \{ R x \mid x \in X \} = X$,
+\item $x \, R \, y$ si y sólo si $R x = R y$,
+\item dos clases de equivalencia son iguales o son disjuntas.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+({\scshape\romannumeral 1}) Como $R x \subset X, \forall x \in X$, entonces $\bigcup \{ R x \mid x \in X \} \subset X$. Recíprocamente, si $x \in X$, entonces $x \, R \, x$, luego $x \in R x \subset \bigcup \{ R x \mid x \in X \}$. Esto prueba la afirmación.
+\bigskip
+
+({\scshape\romannumeral 2}) Supóngase que $x \, R \, y$. Si $z \in R x$, entones $z \, R \, x$, luego $z \, R \, y$ y por tanto $z \in R y$, luego $R x \subset R y$. Similarmente se tiene que $R x \subset R y$ y por tanto $R x = R y$. Recíprocamente, si $R x = R y$, dado que $x \, R \, x$, entonces $x \in R x = R y$, por tanto, $x \, R \, y$.
+\bigskip
+
+({\scshape\romannumeral 3}) Sean $R x$ y $R y$ dos clases de equivalencia. Si $R x \cap R y = \emptyset$ no hay nada que probar. Suponga existe $z \in R x \cap R y$. Entonces $z \, R \, x$ y $z \, R \, y$ y en consecuencia $x \, R \, y$ por transitividad, así que $R x = R y$ por ({\scshape\romannumeral 2}).
+\end{proof}
+
+\begin{corollary}
+Si $R$ es una relación de equivalencia en un conjunto $X$, entonces la familia $\{ R x \mid x \in X \}$ es una partición del conjunto $X$
+\end{corollary}
