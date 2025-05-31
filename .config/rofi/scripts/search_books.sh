@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=""
+dir="/home/isaac09809/documents/academic/cinvestav/semestre_1/topologia/top_bib/"
 
 if [[ -n "$1" ]]; then
     killall rofi

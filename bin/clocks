@@ -1,3 +1,0 @@
-#!/bin/bash
-
-GTK_THEME=catppuccin-mocha-yellow-standard+default gnome-clocks

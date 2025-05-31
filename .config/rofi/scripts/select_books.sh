@@ -26,6 +26,9 @@ then
         "General Mathematics")
             dir="$HOME/documents/books/sciences/math"
         ;;
+        "All")
+            dir="$HOME/documents/books/"
+        ;;
     esac
 
     sed -i "3s|.*|dir=\"$dir\"|" $HOME/.config/rofi/scripts/search_books.sh
@@ -39,6 +42,7 @@ else
     echo "Analysis"
     echo "Algebra"
     echo "General Mathematics"
+    echo "All"
     
     exit 0
 fi
