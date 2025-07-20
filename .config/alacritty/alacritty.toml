@@ -1,7 +1,7 @@
-[general]
-import = [
-    "~/.config/alacritty/themes/nord.toml"
-]
+# [general]
+# import = [
+    # "~/.config/alacritty/themes/nord.toml"
+# ]
 
 [window]
 padding.y = 4
@@ -13,21 +13,17 @@ opacity = 0.9
 size = 12
 
 [font.normal]
-# family = "JetBrains Mono NL"
 family = "Mx437 IBM VGA 8x16"
 style = "Bold"
 
 [font.bold]
-# family = "JetBrains Mono NL"
 family = "Mx437 IBM VGA 8x16"
 style = "Bold"
 
 [font.italic]
-# family = "JetBrains Mono NL"
 family = "Mx437 IBM VGA 8x16"
 style = "Italic"
 
 [font.bold_italic]
-# family = "JetBrains Mono NL"
 family = "Mx437 IBM VGA 8x16"
 style = "Bold Italic"

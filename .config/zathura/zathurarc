@@ -12,43 +12,43 @@ map i mark_evaluate
 # nord
 
 # set default-bg                  rgba(46,52,64,0.8) # blur-bg
-set default-bg                  rgba(46,52,64,1)
-set default-fg                  "#D8DEE9"
+# set default-bg                  rgba(46,52,64,1)
+# set default-fg                  "#D8DEE9"
 
-set completion-bg               "#3B4252"
-set completion-fg               "#81A1C1"
-set completion-highlight-fg     "#3B4252"
-set completion-highlight-bg     "#81A1C1"
-set completion-group-fg         "#3B4252"
-set completion-group-bg         "#81A1C1"
+# set completion-bg               "#3B4252"
+# set completion-fg               "#81A1C1"
+# set completion-highlight-fg     "#3B4252"
+# set completion-highlight-bg     "#81A1C1"
+# set completion-group-fg         "#3B4252"
+# set completion-group-bg         "#81A1C1"
 
-set statusbar-fg                "#D8DEE9"
-set statusbar-bg                "#3B4252"
+# set statusbar-fg                "#D8DEE9"
+# set statusbar-bg                "#3B4252"
 
-set notification-bg             "#A3BE8C"
-set notification-fg             "#3B4252"
-set notification-warning-bg     "#D08770"
-set notification-warning-fg     "#2E3440"
-set notification-error-bg       "#BF616A"
-set notification-error-fg       "#2E3440"
+# set notification-bg             "#A3BE8C"
+# set notification-fg             "#3B4252"
+# set notification-warning-bg     "#D08770"
+# set notification-warning-fg     "#2E3440"
+# set notification-error-bg       "#BF616A"
+# set notification-error-fg       "#2E3440"
 
-set recolor-lightcolor          rgba(0,0,0,0)
-set recolor-darkcolor           "#D8DEE9"
+# set recolor-lightcolor          rgba(0,0,0,0)
+# set recolor-darkcolor           "#D8DEE9"
 
-set index-bg                    "#3B4252"
-set index-fg                    "#D8DEE9"
-set index-active-bg             "#8FBCBB"
-set index-active-fg             "#3B4252"
+# set index-bg                    "#3B4252"
+# set index-fg                    "#D8DEE9"
+# set index-active-bg             "#8FBCBB"
+# set index-active-fg             "#3B4252"
 
-set render-loading-bg           "#3B4252"
-set render-loading-fg           "#3B4252"
+# set render-loading-bg           "#3B4252"
+# set render-loading-fg           "#3B4252"
 
-set inputbar-bg                 "#3B4252"
-set inputbar-fg                 "#D8DEE9"
+# set inputbar-bg                 "#3B4252"
+# set inputbar-fg                 "#D8DEE9"
 
-set highlight-color             rgba(46,52,64,0)
-set highlight-fg                "#BF616A"
-set highlight-active-color      rgba(129,162,190,0)
+# set highlight-color             rgba(46,52,64,0)
+# set highlight-fg                "#BF616A"
+# set highlight-active-color      rgba(129,162,190,0)
 
 # onedark-darker
 
