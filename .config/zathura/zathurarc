@@ -1,6 +1,5 @@
 set guioptions                  ""
-# set font                        "Iosevka NF SemiBold 10.4"
-set font                        "'Mx437 IBM VGA 8x16' 12"
+set font                        "Iosevka NF SemiBold 11"
 set recolor                     "false"
 set recolor-keephue             "true"
 set selection-clipboard         clipboard

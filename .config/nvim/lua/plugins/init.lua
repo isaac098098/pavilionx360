@@ -1,11 +1,4 @@
 return {
-    -- {
-        -- 'nvim-lualine/lualine.nvim',
-        -- dependencies = { 'nvim-tree/nvim-web-devicons' },
-        -- config = function()
-            -- require('config.lualine')
-        -- end
-    -- },
     {
         --requires nvim-treesitter-cli
         'lervag/vimtex',
@@ -29,9 +22,12 @@ return {
             require('config.nvim-treesitter')
         end
     },
-    -- {
-    --     'RRethy/base16-nvim',
-    -- },
+    {
+        'RRethy/base16-nvim',
+        config = function()
+            require('config.base16')
+        end
+    },
     {
         "L3MON4D3/LuaSnip",
         name = 'luasnip',
@@ -68,32 +64,12 @@ return {
             return require('config.telescope')
         end
     },
-    {
-        'akinsho/toggleterm.nvim',
-        version = "*",
-        config = true,
-        opts = function()
-            return require('config.toggleterm')
-        end
-    },
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons',
-        config = function()
-            return require('config.bufferline')
-        end
-    },
     -- {
-        -- 'navarasu/onedark.nvim',
+        -- 'akinsho/bufferline.nvim',
+        -- version = "*",
+        -- dependencies = 'nvim-tree/nvim-web-devicons',
         -- config = function()
-            -- return require('config.onedark')
+            -- return require('config.bufferline')
         -- end
-    --},
-    {
-        'nordtheme/vim',
-        config = function()
-            return require('config.nord')
-        end
-    }
+    -- }
 }

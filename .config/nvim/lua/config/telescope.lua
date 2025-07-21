@@ -9,9 +9,9 @@ vim.keymap.set('n', '<localleader>fh', builtin.help_tags, { desc = 'Telescope he
 
 return {
     defaults = {
-        prompt_prefix = "   ",
-        selection_caret = " ",
-        entry_prefix = " ",
+        prompt_prefix = "",
+        selection_caret = "",
+        entry_prefix = "",
         sorting_strategy = "ascending",
         hidden = true,
         layout_config = {

@@ -23,3 +23,4 @@ let g:loaded_matchparen=1
 
 hi NonText ctermfg=0
 hi LineNr ctermfg=8
+set fillchars+=eob:\ 

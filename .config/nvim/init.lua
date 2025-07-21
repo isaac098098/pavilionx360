@@ -25,6 +25,7 @@ vim.cmd('let loaded_matchparen=1')
 --     end
 -- })
 -- vim.cmd('syntax off')
+vim.opt.fillchars:append({ eob = ' ' })
 
 -- Keybindings
 
@@ -53,20 +54,15 @@ require("config.lazy")
 
 -- Colorschemes
 
+vim.cmd('highlight NvimTreeNormal guibg=#1A1B1D')
+vim.cmd('highlight NvimTreeWinSeparator guifg=#1A1B1D guibg=#1A1B1D')
+vim.cmd('highlight NvimTreeStatusLine guifg=#1A1B1D guibg=#1A1B1D')
+vim.cmd('highlight NvimTreeStatusLineNC guifg=#1A1B1D guibg=#1A1B1D')
+
 -- Transparent background
 
 vim.cmd('highlight Normal ctermbg=none guibg=none')
 vim.cmd('highlight NonText ctermbg=none guibg=none')
-
--- nord
-
--- bufferline
-vim.cmd('highlight BufferLineOffsetSeparator guifg=#3B4252 guibg=#3B4252')
-vim.cmd('highlight BufferLineSeparator guifg=#222730 guibg=#222730')
-vim.cmd('highlight BufferLineFill guibg=#222730 guifg=#222730')
-
--- vimtex
-vim.cmd('highlight VimTeXInfo guifg=#81A1C1')
 
 local function synctex()
     local cwd = vim.fn.expand('%:p:h')
@@ -93,4 +89,3 @@ local function synctex()
 end
 
 vim.keymap.set('n', '<C-CR>', synctex, { noremap = true, silent = true })
-
