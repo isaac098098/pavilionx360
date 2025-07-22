@@ -68,6 +68,8 @@ static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 static const char *vupcmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *vdowncmd[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *vmutecmd[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
+static const char *selbks[] = { "rofi", "-show", "select_books", "-modes", "\"select_books:~/.config/rofi/scripts/select_books.sh\"", NULL };
+static const char *opnbk[] = { "rofi", "-show", "open_book", "-modes", "\"open_book:~/.config/rofi/scripts/open_book.sh\"", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -76,6 +78,8 @@ static const Key keys[] = {
 	{ MODKEY,             		    XK_u,      spawn,          {.v = unclutter } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = unclutter_kill } },
 	{ MODKEY,             		    XK_x,      spawn,          {.v = lock } },
+	{ ControlMask|ShiftMask,        XK_d,      spawn,          {.v = selbks } },
+	{ ControlMask|ShiftMask,        XK_b,      spawn,          {.v = opnbk } },
 	{ 0 ,                           XF86XK_MonBrightnessUp,    spawn, {.v = brupcmd } },
 	{ 0 ,                           XF86XK_MonBrightnessDown,  spawn, {.v = brdowncmd } },
 	{ 0 ,                           XF86XK_AudioRaiseVolume,   spawn, {.v = vupcmd } },
