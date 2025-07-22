@@ -1,8 +1,9 @@
 #!/usr/bin/bash
 
-cp -r ~/repos/dwm/dwm.c ~/pavilionx360/backup/dwm/
 cp -r ~/repos/dwm/config.h ~/pavilionx360/backup/dwm/
 cp -r ~/repos/st/config.h ~/pavilionx360/backup/st/
+cp -r ~/repos/dwm/dwm.c ~/pavilionx360/backup/dwm/
+cp -r ~/.config/rofi ~/pavilionx360/.config/
 cp -r ~/.config/nvim ~/pavilionx360/.config/
 cp -r ~/.config/zathura ~/pavilionx360/.config/
 
