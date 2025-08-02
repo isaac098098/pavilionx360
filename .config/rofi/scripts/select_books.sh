@@ -15,6 +15,9 @@ then
         "Pentesting")
             dir="$HOME/documents/books/pentesting"
         ;;
+        "Graphics")
+            dir="$HOME/documents/books/graphics"
+        ;;
         "Languages")
             dir="$HOME/documents/books/formal"
         ;;
@@ -32,6 +35,7 @@ else
     echo "OS"
     echo "Reverse Engineering"
     echo "Pentesting"
+    echo "Graphics"
     echo "Languages"
     
     exit 0

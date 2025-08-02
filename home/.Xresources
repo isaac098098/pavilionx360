@@ -1,5 +1,5 @@
 /*nsxiv base16 tomorrow night*/
 
-/* Nsxiv.*.background:    #2E3440 */
-/* Nsxiv.*.foreground:    #D8DEE9 */
-/* Nsxiv.*.font:          JetBrains Mono NL SemiBold-9 */
+ Nsxiv.*.background:    #1D1F21
+ Nsxiv.*.foreground:    #C5C8C6
+ Nsxiv.*.font:          Iosevka NFM SemiBold-11

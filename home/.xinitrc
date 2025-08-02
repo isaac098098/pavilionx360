@@ -1,5 +1,6 @@
 xset s off
 xset -dpms
+xrdb ~/.Xresources
 setxkbmap -layout us -variant intl
 xset r rate 200 40
 while true; do xsetroot -name " $(date '+%a, %b %d %Y %H:%M')"; sleep 1; done &

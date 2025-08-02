@@ -19,8 +19,12 @@ snoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 inoremap <C-e> <C-o>$
 
-let g:loaded_matchparen=1
-
 hi NonText ctermfg=0
 hi LineNr ctermfg=8
+" hi Visual ctermfg=8 ctermbg=15
+hi Visual ctermfg=8 ctermbg=11
+hi ErrorMsg ctermfg=3 ctermbg=none
+
+let g:loaded_matchparen=1
+
 set fillchars+=eob:\ 
