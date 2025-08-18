@@ -19,7 +19,10 @@ then
             dir="$HOME/documents/books/graphics"
         ;;
         "Languages")
-            dir="$HOME/documents/books/formal"
+            dir="$HOME/documents/books/languages"
+        ;;
+        "Diagrams")
+            dir="$HOME/code/drawings"
         ;;
         *)
             rofi -e "No directory for \"$1\"" 2>/dev/null
@@ -37,6 +40,7 @@ else
     echo "Pentesting"
     echo "Graphics"
     echo "Languages"
+    echo "Diagrams"
     
     exit 0
 fi

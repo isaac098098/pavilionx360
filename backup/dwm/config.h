@@ -9,7 +9,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Iosevka Nerd Font Mono:weight=semibold:size=11" };
 static const char dmenufont[]       = "Iosevka Nerd Font Mono:weight=semibold:size=11";
-static const char col_gray1[]       = "#1D1F21";
+/* static const char col_gray1[]       = "#1D1F21"; */
+static const char col_gray1[]       = "#282A2E";
 static const char col_gray2[]       = "#282A2E";
 static const char col_gray3[]       = "#C5C8C6";
 static const char col_gray4[]       = "#373B41";

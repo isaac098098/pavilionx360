@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Nerd Font:size=12:weight=medium:antialias=true:autohint=true";
-static int borderpx = 10;
+static char *font = "Iosevka NFM:size=12.6:weight=medium:antialias=true:autohint=true";
+static int borderpx = 16;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -121,7 +121,7 @@ static const char *colorname[] = {
 	"#cccccc",
 	"#555555",
 	"#C5C8C6", /* default foreground colour */
-	"#1D1F21", /* default background colour */
+	"#282A2E", /* default background colour */
 };
 
 
