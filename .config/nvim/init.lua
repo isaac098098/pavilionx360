@@ -75,15 +75,16 @@ require("config.lazy")
 -- Highlight groups
 
 -- Nvim
-
 vim.cmd('highlight Normal ctermbg=none guibg=none')
 vim.cmd('highlight NormalNC ctermbg=none guibg=none')
 vim.cmd('highlight NonText ctermbg=none guibg=none')
 vim.cmd('highlight ErrorMsg guifg=#C5C8C6 guibg=#282A2E')
 
 -- NvimTree
-
 vim.cmd('highlight NvimTreeNormal guibg=#1D1F21')
 vim.cmd('highlight NvimTreeStatusLine guifg=#1D1F21 guibg=#1D1F21')
 vim.cmd('highlight NvimTreeStatusLineNC guifg=#1D1F21 guibg=#1D1F21')
 vim.cmd('highlight NvimTreeWinSeparator guifg=#1D1F21 guibg=#1D1F21')
+
+-- Zen
+vim.cmd('highlight ZenBg guibg=#282A2E')

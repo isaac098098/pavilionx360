@@ -1,5 +1,4 @@
 vim.api.nvim_set_keymap("n", "<localleader>zm", ":ZenMode<cr>",{})
-
 vim.cmd('highlight ZenBg guibg=#282A2E')
 
 require("zen-mode").setup{
@@ -86,7 +85,7 @@ require("zen-mode").setup{
   end,
   -- callback where you can add custom code when the Zen window closes
   on_close = function()
-      vim.opt.number = false
+      vim.opt.number = true
       vim.cmd('highlight MsgArea guifg=#C5C8C6')
       vim.cmd('highlight ModeMsg guifg=#F0C674')
       vim.cmd('highlight VimTeXInfo guifg=#C5C8C6')
