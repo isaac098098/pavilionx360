@@ -1,5 +1,6 @@
 vim.api.nvim_set_keymap("n", "<localleader>zm", ":ZenMode<cr>",{})
---vim.cmd('autocmd VimEnter * hi ZenBg ctermbg=NONE guibg=#11111B')
+
+vim.cmd('highlight ZenBg guibg=#282A2E')
 
 require("zen-mode").setup{
   window = {
@@ -79,15 +80,15 @@ require("zen-mode").setup{
   -- callback where you can add custom code when the Zen window opens
   on_open = function(win)
       vim.opt.number = false
-      vim.cmd('highlight MsgArea guifg=#1D1F21')
-      vim.cmd('highlight ModeMsg guifg=#1D1F21')
-      vim.cmd('highlight VimTeXInfo guifg=#1D1F21')
+      vim.cmd('highlight MsgArea guifg=#282A2E')
+      vim.cmd('highlight ModeMsg guifg=#282A2E')
+      vim.cmd('highlight VimTeXInfo guifg=#282A2E')
   end,
   -- callback where you can add custom code when the Zen window closes
   on_close = function()
       vim.opt.number = false
       vim.cmd('highlight MsgArea guifg=#C5C8C6')
-      vim.cmd('highlight ModeMsg guifg=#B5BD68')
-      vim.cmd('highlight VimTeXInfo guifg=#81A2BE')
+      vim.cmd('highlight ModeMsg guifg=#F0C674')
+      vim.cmd('highlight VimTeXInfo guifg=#C5C8C6')
   end,
 }
