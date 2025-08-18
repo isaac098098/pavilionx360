@@ -10,6 +10,7 @@ cp -r ~/.local/share/zathura ~/pavilionx360/home/.local/share/
 
 cp ~/.bash_profile ~/pavilionx360/home/
 cp ~/.bashrc ~/pavilionx360/home/
+cp ~/.tmux.conf ~/pavilionx360/home/
 cp ~/.vimrc ~/pavilionx360/home/
 cp ~/.xinitrc ~/pavilionx360/home/
 cp ~/.Xresources ~/pavilionx360/home/
