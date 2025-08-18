@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir="/home/shurik/documents/books/languages"
+dir="/home/shurik/documents/books/graphics"
 
 if [[ -n "$1" ]]; then
     killall rofi 2>/dev/null

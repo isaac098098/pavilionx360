@@ -5,7 +5,8 @@
 vim.cmd('filetype plugin on')
 -- vim.cmd('filetype indent on')
 
--- Tabs andd indentation
+-- Tabs and indentation
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -37,7 +38,8 @@ end
 
 -- Line numbering
 
-vim.opt.number = false
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.numberwidth = 1
 
 -- Highlighting

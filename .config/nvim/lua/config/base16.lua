@@ -14,3 +14,6 @@ vim.opt.laststatus = 0
 -- ModeMsg
 
 vim.cmd('highlight ModeMsg guifg=#F0C674 guibg=#282A2E')
+vim.cmd('highlight LineNr guifg=#C5C8C6 guibg=none')
+vim.cmd('highlight LineNrAbove guifg=#373B41 guibg=none')
+vim.cmd('highlight LineNrBelow guifg=#373B41 guibg=none')

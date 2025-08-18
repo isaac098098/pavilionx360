@@ -20,8 +20,9 @@ inoremap <C-j> <Esc>
 inoremap <C-e> <C-o>$
 
 hi NonText ctermfg=0
-hi LineNr ctermfg=8
-" hi Visual ctermfg=8 ctermbg=15
+hi LineNr ctermfg=15
+hi LineNrAbove ctermfg=8
+hi LineNrBelow ctermfg=8
 hi Visual ctermfg=8 ctermbg=11
 hi ErrorMsg ctermfg=3 ctermbg=none
 
