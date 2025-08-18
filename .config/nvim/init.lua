@@ -39,7 +39,7 @@ end
 -- Line numbering
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.numberwidth = 1
 
 -- Highlighting

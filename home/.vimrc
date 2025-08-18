@@ -9,7 +9,7 @@ set linebreak
 set autoindent
 set smartindent
 set number
-set relativenumber
+" set relativenumber
 set numberwidth=1
 
 nnoremap j gj
@@ -20,9 +20,19 @@ inoremap <C-j> <Esc>
 inoremap <C-e> <C-o>$
 
 hi NonText ctermfg=0
-hi LineNr ctermfg=15
-hi LineNrAbove ctermfg=8
-hi LineNrBelow ctermfg=8
+
+" relative line numbers
+
+" hi LineNr ctermfg=15
+" hi LineNrAbove ctermfg=8
+" hi LineNrBelow ctermfg=8
+
+" normal line numbers
+set cursorline
+set cursorlineopt=number
+hi LineNr ctermfg=8
+hi CursorLineNr ctermfg=15 cterm=none
+
 hi Visual ctermfg=8 ctermbg=11
 hi ErrorMsg ctermfg=3 ctermbg=none
 

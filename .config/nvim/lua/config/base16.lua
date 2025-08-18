@@ -17,3 +17,16 @@ vim.cmd('highlight ModeMsg guifg=#F0C674 guibg=#282A2E')
 vim.cmd('highlight LineNr guifg=#C5C8C6 guibg=none')
 vim.cmd('highlight LineNrAbove guifg=#373B41 guibg=none')
 vim.cmd('highlight LineNrBelow guifg=#373B41 guibg=none')
+
+-- Nvim
+
+-- Relative line numbers
+vim.cmd('highlight LineNr guifg=#C5C8C6')
+vim.cmd('highlight LineNrAbove guifg=#373B41')
+vim.cmd('highlight LineNrBelow guifg=#373B41')
+
+-- Normal line numbers
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+vim.cmd('highlight LineNr guifg=#373B41')
+vim.api.nvim_set_hl(0, "CursorLineNr", { underline = false, fg = "#C5C8C6" })
