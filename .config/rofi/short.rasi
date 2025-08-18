@@ -1,0 +1,101 @@
+* {
+    crust:  #282A2E;
+    bg0:    #282A2E;
+    fg0:    #C5C8C6;
+    orange: #DE935F;
+}
+
+configuration {
+    font: "Iosevka Nerd Font SemiBold 11";
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: #1d1f21;
+    padding: 0px;
+}
+
+window {
+	width: 19%;
+    background-color: @bg0;
+    border-color: @orange;
+    border: 3px;
+    padding: 0px;
+}
+
+mainbox {
+    background-color: @bg0;
+}
+
+prompt {
+    background-color: @orange;
+    padding: 7px;
+    text-color: @crust;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "";
+}
+
+entry {
+    background-color: @crust;
+    text-color: @fg0;
+    padding: 7px;
+    placeholder: "";
+}
+
+listview {
+    background-color: @bg0;
+    spacing: 0px;
+    scrollbar: false;
+    border: 0px;
+    lines: 6;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+message {
+    text-color: @fg0;
+    background-color: @bg0;
+}
+
+textbox {
+    text-color: @orange;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    background-color: @bg0;
+}
+
+element {
+    background-color: @crust;
+    text-color: @fg0;
+    padding: 7px;
+}
+
+element normal.normal {
+    background-color: @crust;
+    text-color: @fg0;
+}
+
+element normal.active {
+    background-color: @crust;
+    text-color: @fg0;
+}
+
+element selected {
+    background-color: @orange;
+    text-color: @crust;
+}
+
+element selected.normal {
+    background-color: @orange;
+    text-color: @crust;
+}
+
+element alternate.normal {
+    background-color: @crust;
+    text-color: @fg0;
+}

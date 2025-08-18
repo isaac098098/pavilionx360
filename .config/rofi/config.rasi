@@ -1,5 +1,0 @@
-configuration {
-    font: "Iosevka NFM Bold 12";
-}
-
-@theme "base16-tomorrow-night"
