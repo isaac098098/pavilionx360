@@ -22,7 +22,7 @@ then
             dir="$HOME/documents/books/languages"
         ;;
         "Diagrams")
-            dir="$HOME/code/drawings"
+            dir="$HOME/code/diagrams"
         ;;
         *)
             rofi -e "No directory for \"$1\"" 2>/dev/null

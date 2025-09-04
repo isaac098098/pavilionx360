@@ -22,7 +22,6 @@ inoremap <C-e> <C-o>$
 hi NonText ctermfg=0
 
 " relative line numbers
-
 " hi LineNr ctermfg=15
 " hi LineNrAbove ctermfg=8
 " hi LineNrBelow ctermfg=8
