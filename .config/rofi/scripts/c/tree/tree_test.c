@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <dirent.h>
+#include <stdbool.h>
 
 #define EXT ".tex"
 
@@ -19,8 +20,8 @@ void fill_root(struct node *n) {
     n->parent = NULL;
     n->child_num = 0;
     n->child_cty = 1;
-    n->children = malloc(sizeof(struct node**));
-    n->children[0] = malloc(sizeof(struct node));
+    n->children = malloc(sizeof(struct node*));
+    n->children[0] = NULL;
 }
 
 int print_node_info(const struct node *n) {
@@ -38,7 +39,7 @@ int print_node_info(const struct node *n) {
 
     if(n->child_num > 0) {
         printf("children: \n");
-        for(int i = 0; i < n->child_num; i++) {
+        for(size_t i = 0; i < n->child_num; i++) {
             printf("    %s\n", n->children[i]->label);
         }
     }
@@ -70,7 +71,7 @@ int parse_node_label(const char *label) {
         fprintf(stderr, "card label must start with a digit\n");
         return -1;
     }
-    for(int i = 0; i < strlen(label); i++) {
+    for(size_t i = 0; i < strlen(label); i++) {
         if(((!isdigit(label[i]) && !isalpha(label[i]))) || isupper(label[i])) {
             printf("invalid character %c in label %s\n", label[i], label);
             fprintf(stderr, "card label must containt characters a-z and 0-9 only\n");
@@ -126,67 +127,55 @@ void print_subtree_pretty(struct node *n, const char *prefix, int is_last) {
 }
 
 struct node* insert_child_in_order(struct node *parent, const char *suffix) {
-    if(parent == NULL) return NULL;
+    if(parent == NULL || suffix == NULL) return NULL;
 
-    char *parent_label = strdup(parent->label);
+    if(strcmp(parent->label, "root") == 0) {
+        size_t low = 0;
 
-    const char *parent_suffix;
-
-    if(strcmp(parent_label, "root") == 0) {
         if(parent->child_num > 0 ) {
-            /* binary search */
-
-            int low = 0, high = parent->child_num - 1, piv;
-
-            while(low <= high) {
-                piv = (low + high) / 2;
-                if(strtol(suffix, NULL, 10) < strtol(get_card_suffix(parent->children[piv]), NULL, 10))
-                    high = piv - 1;
-                else if(strtol(suffix, NULL, 10) > strtol(get_card_suffix(parent->children[piv]), NULL, 10))
-                    low = piv + 1;
+            int l = 0, h = (int)parent->child_num - 1, piv;
+            long key = strtol(suffix, NULL, 10);
+            long piv_val;
+            while(l <= h) {
+                piv = (l + h) / 2;
+                const char *piv_suf = get_card_suffix(parent->children[piv]);
+                piv_val = strtol(piv_suf, NULL, 10);
+                if(key < piv_val) h = piv - 1;
+                else l = piv + 1;
             }
+            low = (size_t)l;
+        } 
+        else low = 0;
 
-            if (parent->child_num == parent->child_cty) {
-                size_t n_cty = parent->child_cty * 2;
-                parent->children = realloc(parent->children, n_cty * sizeof(struct node*));
-                parent->child_cty = n_cty;
-            }
-
-            memmove(&parent->children[low + 1], &parent->children[low], (parent->child_num - low) * sizeof(struct node*));
-            
-            parent->children[low] = malloc(sizeof(struct node));
-            parent->children[low]->label = strdup(suffix);
-            parent->children[low]->parent = parent;
-            parent->children[low]->child_num = 0;
-            parent->children[low]->child_cty = 1;
-            parent->children[low]->children = NULL;
-
-            parent->child_num++;
-
-            return parent->children[low];
+        if (parent->child_num == parent->child_cty) {
+            size_t n_cty = parent->child_cty * 2;
+            parent->children = realloc(parent->children, n_cty * sizeof(struct node*));
+            parent->child_cty = n_cty;
         }
-        else {
-            parent->children = malloc(sizeof(struct node));
 
-            parent->children[0] = malloc(sizeof(struct node));
-            parent->children[0]->label = strdup(suffix);
-            parent->children[0]->parent = parent;
-            parent->children[0]->child_num = 0;
-            parent->children[0]->child_cty = 1;
-            parent->children[0]->children = NULL;
+        memmove(parent->children + low + 1, parent->children + low, (parent->child_num - low) * sizeof(struct node*));
+        
+        parent->children[low] = malloc(sizeof(struct node));
+        parent->children[low]->label = strdup(suffix);
+        parent->children[low]->parent = parent;
+        parent->children[low]->child_num = 0;
+        parent->children[low]->child_cty = 1;
+        parent->children[low]->children = malloc(sizeof(struct node*));
+        parent->children[low]->children[0] = NULL;
 
-            parent->child_num++;
+        parent->child_num++;
 
-            return parent->children[0];
-        }
+        return parent->children[low];
     }
     else {
-        if(parse_node_label(parent_label) < 0) return NULL;
-        parent_suffix = get_card_suffix(parent);
+        if(parse_node_label(parent->label) < 0) return NULL;
+        const char *parent_suffix = get_card_suffix(parent);
+        if(parent_suffix == NULL) return NULL;
 
         if(isalpha(parent_suffix[0]) && isdigit(suffix[0])) {
-            int i = 0;
+            size_t low;
 
+            int i = 0;
             while(suffix[i] != '\0') {
                 if(!isdigit(suffix[i])) {
                     fprintf(stderr, "invalid suffix %s\n", suffix);
@@ -196,113 +185,92 @@ struct node* insert_child_in_order(struct node *parent, const char *suffix) {
             }
 
             if(parent->child_num > 0 ) {
-                /* binary search */
-
-                int low = 0, high = parent->child_num - 1, piv;
-
-                while(low <= high) {
-                    piv = (low + high) / 2;
-                    if(strtol(suffix, NULL, 10) < strtol(get_card_suffix(parent->children[piv]), NULL, 10))
-                        high = piv - 1;
-                    else if(strtol(suffix, NULL, 10) > strtol(get_card_suffix(parent->children[piv]), NULL, 10))
-                        low = piv + 1;
+                long key = strtol(suffix, NULL, 10);
+                long piv_val;
+                int l = 0, h = (int)parent->child_num - 1, piv;
+                while(l <= h) {
+                    piv = (l + h) / 2;
+                    const char *piv_suf = get_card_suffix(parent->children[piv]);
+                    piv_val = strtol(piv_suf, NULL, 10);
+                    if(key < piv_val) h = piv - 1;
+                    else l = piv + 1;
                 }
-
-                if (parent->child_num == parent->child_cty) {
-                    size_t n_cty = parent->child_cty * 2;
-                    parent->children = realloc(parent->children, n_cty * sizeof(struct node*));
-                    parent->child_cty = n_cty;
+                low = (size_t)l;
                 }
+            else low = 0;
 
-                memmove(&parent->children[low + 1], &parent->children[low], (parent->child_num - low) * sizeof(struct node*));
-                
-                parent->children[low] = malloc(sizeof(struct node));
-                parent->children[low]->label = strcat(parent_label, suffix);
-                parent->children[low]->parent = parent;
-                parent->children[low]->child_num = 0;
-                parent->children[low]->child_cty = 1;
-                parent->children[low]->children = NULL;
-
-                parent->child_num++;
-
-                return parent->children[low];
+            if (parent->child_num == parent->child_cty) {
+                size_t n_cty = parent->child_cty * 2;
+                parent->children = realloc(parent->children, n_cty * sizeof(struct node*));
+                parent->child_cty = n_cty;
             }
-            else {
-                parent->children = malloc(sizeof(struct node));
 
-                parent->children[0] = malloc(sizeof(struct node));
-                parent->children[0]->label = strcat(parent_label, suffix);
-                parent->children[0]->parent = parent;
-                parent->children[0]->child_num = 0;
-                parent->children[0]->child_cty = 1;
-                parent->children[0]->children = NULL;
+            memmove(parent->children + low + 1, parent->children + low, (parent->child_num - low) * sizeof(struct node*));
 
-                parent->child_num++;
+            parent->children[low] = malloc(sizeof(struct node));
+            size_t child_n = strlen(parent->label) + strlen(suffix) + 1;
+            parent->children[low]->label = malloc(child_n);
+            strcpy(parent->children[low]->label, parent->label);
+            strcat(parent->children[low]->label, suffix);
+            parent->children[low]->parent = parent;
+            parent->children[low]->child_num = 0;
+            parent->children[low]->child_cty = 1;
+            parent->children[low]->children = malloc(sizeof(struct node*));
+            parent->children[low]->children[0] = NULL;
 
-                return parent->children[0];
-            }
+            parent->child_num++;
+
+            return parent->children[low];
         }
         else if(isdigit(parent_suffix[0]) && isalpha(suffix[0])) {
-            int i = 0;
+            int l = 0, h = (int)parent->child_num - 1, piv;
+            size_t low;
 
+            int i = 0;
             while(suffix[i] != '\0') {
                 if(!isalpha(suffix[i]) || isupper(suffix[i])) {
                     fprintf(stderr, "invalid suffix %s\n", suffix);
-                    fprintf(stderr, "in this case, it must contain non-uppercase alphabetic characters only\n");
-                    return NULL;
+                    fprintf(stderr, "in this case, it must contain non-uppercase alphabetic characters only\n"); return NULL;
                 } i++;
             }
 
             if(parent->child_num > 0 ) {
-                /* binary search */
-
-                int low = 0, high = parent->child_num - 1, piv;
-
-                while(low <= high) {
-                    piv = (low + high) / 2;
-                    if(alpha_cmp(suffix, get_card_suffix(parent->children[piv])) < 0)
-                        high = piv - 1;
-                    else if(alpha_cmp(suffix, get_card_suffix(parent->children[piv])) > 0)
-                        low = piv + 1;
+                while(l <= h) {
+                    piv = (l + h) / 2;
+                    const char *piv_suf = get_card_suffix(parent->children[piv]);
+                    if(alpha_cmp(suffix, piv_suf) < 0) h = piv - 1;
+                    else l = piv + 1;
                 }
-
-                if (parent->child_num == parent->child_cty) {
-                    size_t n_cty = parent->child_cty * 2;
-                    parent->children = realloc(parent->children, n_cty * sizeof(struct node*));
-                    parent->child_cty = n_cty;
-                }
-
-                memmove(&parent->children[low + 1], &parent->children[low], (parent->child_num - low) * sizeof(struct node*));
-                
-                parent->children[low] = malloc(sizeof(struct node));
-                parent->children[low]->label = strcat(parent_label, suffix);
-                parent->children[low]->parent = parent;
-                parent->children[low]->child_num = 0;
-                parent->children[low]->child_cty = 1;
-                parent->children[low]->children = NULL;
-
-                parent->child_num++;
-
-                return parent->children[low];
+                low = (size_t)l;
             }
-            else {
-                parent->children = malloc(sizeof(struct node));
+            else low = 0;
 
-                parent->children[0] = malloc(sizeof(struct node));
-                parent->children[0]->label = strcat(parent_label, suffix);
-                parent->children[0]->parent = parent;
-                parent->children[0]->child_num = 0;
-                parent->children[0]->child_cty = 1;
-                parent->children[0]->children = NULL;
-
-                parent->child_num++;
-
-                return parent->children[0];
+            if (parent->child_num == parent->child_cty) {
+                size_t n_cty = parent->child_cty * 2;
+                parent->children = realloc(parent->children, n_cty * sizeof(struct node*));
+                parent->child_cty = n_cty;
             }
+
+            memmove(parent->children + low + 1, parent->children + low, (parent->child_num - low) * sizeof(struct node*));
+
+            parent->children[low] = malloc(sizeof(struct node));
+            size_t child_n = strlen(parent->label) + strlen(suffix) + 1;
+            parent->children[low]->label = malloc(child_n);
+            strcpy(parent->children[low]->label, parent->label);
+            strcat(parent->children[low]->label, suffix);
+            parent->children[low]->parent = parent;
+            parent->children[low]->child_num = 0;
+            parent->children[low]->child_cty = 1;
+            parent->children[low]->children = malloc(sizeof(struct node*));
+            parent->children[low]->children[0] = NULL;
+
+            parent->child_num++;
+
+            return parent->children[low];
         }
         else {
             fprintf(stderr, "inserting child %s%s to %s violates the card ordering\n",
-                            parent_label, suffix, parent_label);
+                            parent->label, suffix, parent->label);
             return NULL;
         }
     }
@@ -312,7 +280,7 @@ int search_or_create_card_ancestors(struct node *n, const char *card) {
     if(parse_node_label(card) < 0) return -1;
 
     bool found;
-    int i=0, start;
+    size_t i=0, start;
     char *label = strdup("");
     struct node *prev = n;
 
@@ -326,9 +294,9 @@ int search_or_create_card_ancestors(struct node *n, const char *card) {
         if(i > start) {
             char *hcy = strndup(card + start, i - start);
             label = realloc(label, strlen(label) + strlen(hcy) + 1);
-            label = strcat(label, hcy);
+            strcat(label, hcy);
 
-            for(int j = 0; j < prev->child_num; j++) {
+            for(size_t j = 0; j < prev->child_num; j++) {
                 if(strcmp(prev->children[j]->label, label) == 0) {
                     prev = prev->children[j];
                     found = 1;
@@ -339,13 +307,14 @@ int search_or_create_card_ancestors(struct node *n, const char *card) {
             /* insert children in order */
 
             if(found == 0) {
-                prev = insert_child_in_order(prev, hcy);
+                struct node *tmp = insert_child_in_order(prev, hcy);
+                prev = tmp;
             }
 
             free(hcy);
         }
 
-        ////  print_node_info(prev);
+        // print_node_info(prev);
 
         start = i;
         if(card[i] == '\0') break;
@@ -355,9 +324,9 @@ int search_or_create_card_ancestors(struct node *n, const char *card) {
         if(i > start) {
             char *hcy = strndup(card + start, i - start);
             label = realloc(label, strlen(label) + strlen(hcy) + 1);
-            label = strcat(label, hcy);
+            strcat(label, hcy);
 
-            for(int j = 0; j < prev->child_num; j++) {
+            for(size_t j = 0; j < prev->child_num; j++) {
                 if(strcmp(prev->children[j]->label, label) == 0) {
                     prev = prev->children[j];
                     found = 1;
@@ -366,13 +335,17 @@ int search_or_create_card_ancestors(struct node *n, const char *card) {
             }
 
             if(found == 0) {
-                prev = insert_child_in_order(prev, hcy);
+                struct node *tmp = insert_child_in_order(prev, hcy);
+                prev = tmp;
             }
 
             free(hcy);
         }
 
-        if (i == start) return -1;
+        if (i == start) {
+            free(label);
+            return -1;
+        }
     }
 
     free(label);
@@ -395,8 +368,8 @@ int main(int argc, char *argv[]) {
                 size_t len = strlen(dp->d_name);
                 if(len > 4 && strcmp(dp->d_name + len - 4, EXT) == 0) {
                     char *name = strndup(dp->d_name, len - 4);
-                    // parse_node_label(name);
-                    search_or_create_card_ancestors(&root, name);
+                    if(name)
+                        if(search_or_create_card_ancestors(&root, name) < 0) return -1;
                     free(name);
                 }
             }
@@ -406,6 +379,10 @@ int main(int argc, char *argv[]) {
 
         print_subtree_pretty(&root, "", -1);
         // print_subtree_as_list(&root);
+    }
+    else {
+        printf("usage: %s [directory]\n", argv[0]);
+        return 0;
     }
 
     return 0;
