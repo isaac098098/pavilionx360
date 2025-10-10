@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka NFM:size=13.6:weight=semibold:antialias=true:autohint=true";
-// static char *font = "CaskaydiaCove Nerd Fonot Mono:size=12.6:weight=semibold:antialias=true:autohint=true";
+// static char *font = "Iosevka NFM:size=13.6:weight=semibold:antialias=true:autohint=true";
+static char *font = "CaskaydiaCove Nerd Font Mono:size=13.4:weight=semibold:antialias=true:autohint=true";
 static int borderpx = 18;
 
 /*

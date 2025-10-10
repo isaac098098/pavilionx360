@@ -7,7 +7,7 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font Mono:weight=semibold:size=11" };
+static const char *fonts[]          = { "CaskaydiaCove Nerd Font:weight=semibold:size=10.8" };
 static const char dmenufont[]       = "Iosevka Nerd Font Mono:weight=semibold:size=11";
 /* static const char col_gray1[]       = "#1D1F21"; */
 static const char col_gray1[]       = "#282A2E";
