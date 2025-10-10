@@ -7,7 +7,7 @@
  */
 // static char *font = "Iosevka NFM:size=13.6:weight=semibold:antialias=true:autohint=true";
 static char *font = "CaskaydiaCove Nerd Font Mono:size=13.4:weight=semibold:antialias=true:autohint=true";
-static int borderpx = 18;
+static int borderpx = 26;
 
 /*
  * What program is execed by st depends of these precedence rules:
