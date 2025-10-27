@@ -79,15 +79,20 @@ require("zen-mode").setup{
   -- callback where you can add custom code when the Zen window opens
   on_open = function(win)
       vim.opt.number = false
-      vim.cmd('highlight MsgArea guifg=#282A2E')
-      vim.cmd('highlight ModeMsg guifg=#282A2E')
-      vim.cmd('highlight VimTeXInfo guifg=#282A2E')
+      vim.cmd('highlight MsgArea guifg=#1E1A1C')
+      vim.cmd('highlight ModeMsg guifg=#1E1A1C')
+      vim.cmd('highlight VimTeXInfo guifg=#1E1A1C')
   end,
   -- callback where you can add custom code when the Zen window closes
   on_close = function()
-      vim.opt.number = true
-      vim.cmd('highlight MsgArea guifg=#C5C8C6')
-      vim.cmd('highlight ModeMsg guifg=#F0C674')
-      vim.cmd('highlight VimTeXInfo guifg=#C5C8C6')
-  end,
-}
+      local ext = vim.fn.expand("%:e")
+      if ext ~= "tex" then
+          vim.opt.number = true
+      else
+          vim.opt.number = false
+      end
+          vim.cmd('highlight MsgArea guifg=#F6EBEB')
+          vim.cmd('highlight ModeMsg guifg=#F6EBEB')
+          vim.cmd('highlight VimTeXInfo guifg=#F6EBEB')
+      end,
+  }
