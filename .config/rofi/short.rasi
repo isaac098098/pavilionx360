@@ -6,10 +6,7 @@
 }
 
 configuration {
-    // font: "Px437 IBM VGA 8x16 12.6";
-    font: "Ac437 MBytePC230 CGA Bold 7";
-    // font: "Px437 EverexME 5x8 10";
-    // font: "Px437 Portfolio 6x8 9";
+    font: "scientifica Medium 12";
 }
 
 inputbar {

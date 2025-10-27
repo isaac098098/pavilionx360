@@ -13,8 +13,11 @@
 
 // static char *font = "Px437 IBM VGA 8x16:size=13";
 
-static char *font = "Ac437 MBytePC230 CGA:weight=bold:size=9";
+// static char *font = "Ac437 MBytePC230 CGA:weight=bold:size=9";
 // cwscale = 1.01, chscale = 1.25
+
+static char *font = "scientifica:weight:medium:size=13:antialias=true";
+// cwscale = 1.00, chscale = 1.2
 
 // static char *font = "Px437 EverexMe 5x8:size=12";
 // cwscale = 1.03, chscale = 1.25
@@ -43,7 +46,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.00;
-static float chscale = 1.25;
+static float chscale = 1.20;
 
 /*
  * word delimiter string
