@@ -35,7 +35,7 @@ hi CursorLineNr ctermfg=15 cterm=none
 hi Visual ctermfg=8 ctermbg=11
 hi ErrorMsg ctermfg=3 ctermbg=none
 hi WarningMsg ctermfg=3 ctermbg=none
-hi Question ctermfg=3 ctermbg=none
+hi Question ctermfg=8 ctermbg=none
 
 let g:loaded_matchparen=1
 

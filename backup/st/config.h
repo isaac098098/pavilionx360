@@ -5,9 +5,24 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+
 // static char *font = "Iosevka NFM:size=13.6:weight=semibold:antialias=true:autohint=true";
-static char *font = "CaskaydiaCove Nerd Font Mono:size=13.4:weight=semibold:antialias=true:autohint=true";
-static int borderpx = 26;
+// static char *font = "CaskaydiaCove Nerd Font Mono:size=13.4:weight=semibold:antialias=true:autohint=true";
+
+/* oldschool fonts */
+
+// static char *font = "Px437 IBM VGA 8x16:size=13";
+
+static char *font = "Ac437 MBytePC230 CGA:weight=bold:size=9";
+// cwscale = 1.01, chscale = 1.25
+
+// static char *font = "Px437 EverexMe 5x8:size=12";
+// cwscale = 1.03, chscale = 1.25
+
+// static char *font = "Px437 Portfolio 6x8:weight=bold:size=11";
+// cwscale = 1.03, chscale = 1.25
+
+static int borderpx = 40;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -27,8 +42,8 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
-static float chscale = 1.0;
+static float cwscale = 1.00;
+static float chscale = 1.25;
 
 /*
  * word delimiter string
@@ -121,8 +136,8 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"#C5C8C6", /* default foreground colour */
-	"#282A2E", /* default background colour */
+	"#F6EBEB", /* default foreground colour */
+	"#1F1A1C", /* default background colour */
 };
 
 

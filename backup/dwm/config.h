@@ -5,16 +5,15 @@
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "CaskaydiaCove Nerd Font:weight=semibold:size=10.8" };
-static const char dmenufont[]       = "CaskaydiaCove Nerd Font:weight=semibold:size=10.8";
-/* static const char col_gray1[]       = "#1D1F21"; */
-static const char col_gray1[]       = "#282A2E";
-static const char col_gray2[]       = "#282A2E";
-static const char col_gray3[]       = "#C5C8C6";
-static const char col_gray4[]       = "#373B41";
-static const char col_cyan[]        = "#F0C674";
+static const char *fonts[]          = { "Ac437 MBytePC230 CGA:weight=bold:size=8" };
+static const char dmenufont[]       =   "Ac437 MBytePC230 CGA:weight=bold:size=8";
+static const char col_gray1[]       = "#1F1A1C";
+static const char col_gray2[]       = "#1F1A1C";
+static const char col_gray3[]       = "#F6EBEA";
+static const char col_gray4[]       = "#1F1A1C";
+static const char col_cyan[]        = "#E5B191";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -41,8 +40,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 };
 

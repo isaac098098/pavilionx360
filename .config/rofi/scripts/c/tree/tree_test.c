@@ -4,6 +4,7 @@
 #include <string.h>
 #include <dirent.h>
 #include <stdbool.h>
+#include <time.h>
 
 #define EXT ".tex"
 
@@ -384,6 +385,8 @@ int main(int argc, char *argv[]) {
         printf("usage: %s [directory]\n", argv[0]);
         return 0;
     }
+
+    printf("time used: %.6fs\n", (double)clock() / CLOCKS_PER_SEC);
 
     return 0;
 }

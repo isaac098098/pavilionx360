@@ -5,6 +5,10 @@
 vim.cmd('filetype plugin on')
 -- vim.cmd('filetype indent on')
 
+-- Cursor
+
+vim.opt.guicursor = "i:block"
+
 -- Tabs and indentation
 
 vim.opt.tabstop = 4

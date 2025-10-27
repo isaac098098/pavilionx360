@@ -3,7 +3,7 @@
 BLANK='#00000000'
 CLEAR='#00000000'
 DEFAULT='#00000000'
-TEXT='#f0c674ff'
+TEXT='#e5b191ff'
 WRONG='#cc6666ff'
 VERIFYING='#b5bd68ff'
 
@@ -27,22 +27,22 @@ i3lock \
 --keyhl-color=$TEXT          \
 --bshl-color=$TEXT           \
 \
---time-size=70               \
---date-size=22               \
---verif-size=35              \
---wrong-size=35              \
---radius=140                 \
+--time-size=50               \
+--date-size=15               \
+--verif-size=24              \
+--wrong-size=24              \
+--radius=150                 \
 \
 --screen 1                   \
 --clock                      \
 --indicator                  \
 --time-str="%H:%M"           \
 --date-str="%A, %Y-%m-%d"    \
---time-font="Iosevka NF SemiBold"     \
---date-font="Iosevka NF SemiBold"     \
---layout-font="Iosevka NF SemiBold"   \
---verif-font="Iosevka NF SemiBold"    \
---wrong-font="Iosevka NF SemiBold"    \
+--time-font="Ac437 MBytePC230 CGA-Bold"     \
+--date-font="Ac437 MBytePC230 CGA-Bold"     \
+--layout-font="Ac437 MBytePC230 CGA-Bold"   \
+--verif-font="Ac437 MBytePC230 CGA-Bold"    \
+--wrong-font="Ac437 MBytePC230 CGA-Bold"    \
 --color=00000000             \
 --blur 5                     \
 --verif-text="Verifying"     \

@@ -1,22 +1,25 @@
 * {
-    crust:  #282A2E;
-    bg0:    #282A2E;
-    fg0:    #C5C8C6;
+    crust:  #1F1A1C;
+    bg0:    #231D1D;
+    fg0:    #F6EBEB;
     orange: #DE935F;
 }
 
 configuration {
-    font: "Iosevka Nerd Font SemiBold 11";
+    // font: "Px437 IBM VGA 8x16 12.6";
+    font: "Ac437 MBytePC230 CGA Bold 7";
+    // font: "Px437 EverexME 5x8 10";
+    // font: "Px437 Portfolio 6x8 9";
 }
 
 inputbar {
     children: [prompt,entry];
-    background-color: #1d1f21;
+    background-color: @crust;
     padding: 0px;
 }
 
 window {
-	width: 19%;
+	width: 22%;
     background-color: @bg0;
     border-color: @orange;
     border: 3px;
@@ -47,7 +50,8 @@ entry {
 
 listview {
     background-color: @bg0;
-    spacing: 0px;
+    padding: 16px;
+    spacing: 6px;
     scrollbar: false;
     border: 0px;
     lines: 6;
@@ -72,7 +76,7 @@ textbox {
 element {
     background-color: @crust;
     text-color: @fg0;
-    padding: 7px;
+    padding: 8px;
 }
 
 element normal.normal {
@@ -97,5 +101,12 @@ element selected.normal {
 
 element alternate.normal {
     background-color: @crust;
+    text-color: @fg0;
+}
+
+error-message, message {
+    padding: 60px 80px;
+    border-color: @orange;
+    background-color: @bg0;
     text-color: @fg0;
 }
