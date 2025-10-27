@@ -1,0 +1,26 @@
+ctrl + shift + b
+    rofi -show open_book -config $HOME/.config/rofi/short.rasi -modes "open_book:$HOME/.config/rofi/scripts/books/open_book.sh"
+
+ctrl + shift + d
+    rofi -show select_books -config $HOME/.config/rofi/short.rasi -modes "select_books:$HOME/.config/rofi/scripts/books/select_books.sh"
+
+ctrl + shift + e
+    rofi -show edit_card -config $HOME/.config/rofi/long.rasi -modes "edit_card:$HOME/.config/rofi/scripts/zettelkasten/edit_card.sh"
+
+ctrl + shift + i
+    rofi -show select_zettelkasten -config $HOME/.config/rofi/short.rasi -modes "select_zettelkasten:$HOME/.config/rofi/scripts/zettelkasten/select_zettelkasten.sh"
+
+ctrl + shift + m
+    rofi -show create_card -config $HOME/.config/rofi/long.rasi -modes "create_card:$HOME/.config/rofi/scripts/zettelkasten/create_card.sh"
+
+ctrl + shift + q
+    rofi -show delete_card -config $HOME/.config/rofi/long.rasi -modes "delete_card:$HOME/.config/rofi/scripts/zettelkasten/delete_card.sh"
+
+ctrl + shift + w
+    rofi -show swap_cards -config $HOME/.config/rofi/long.rasi -modes "swap_cards:$HOME/.config/rofi/scripts/zettelkasten/swap_cards.sh"
+
+ctrl + shift + x
+    rofi -show insert_card -config $HOME/.config/rofi/long.rasi -modes "insert_card:$HOME/.config/rofi/scripts/zettelkasten/insert_card.sh"
+
+ctrl + shift + y
+    zathura $HOME/zettelkasten/current/main.pdf

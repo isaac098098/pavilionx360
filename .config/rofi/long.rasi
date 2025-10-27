@@ -19,7 +19,7 @@ inputbar {
 }
 
 window {
-	width: 22%;
+	width: 55%;
     background-color: @bg0;
     border-color: @orange;
     border: 3px;
@@ -54,7 +54,7 @@ listview {
     spacing: 6px;
     scrollbar: false;
     border: 0px;
-    lines: 6;
+    lines: 10;
 }
 
 mode-switcher {
