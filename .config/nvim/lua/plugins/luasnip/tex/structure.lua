@@ -300,15 +300,12 @@ s({trig = "zz", name = "Zettelkasten card header"},
         c(1,
             {
                 {
-                    t("%%% "), i(1),
-                    t({"",""}), t("%% tags: "), i(2),
-                    t({"",""}), t({"",""}), t("\\zheader{"), rep(1), t("}{"), f(function() return vim.fn.expand("%:t:r") end), t("}{"), rep(2), t("}"),
+                    t("\\zheader{"), i(1), t("}{"), i(2), t("}{"), f(function() return vim.fn.expand("%:t:r") end), t("}"),
                     t({"",""}), t({"",""}), i(3)
                 },
                 {
-                    t("%%% "), i(1),
-                    t({"",""}), t({"",""}), t("\\zheadernotags{"), rep(1), t("}{"), f(function() return vim.fn.expand("%:t:r") end), t("}"),
-                    t({"",""}), t({"",""}), i(3)
+                    t("\\zheader["), i(1), t("]{"), i(2), t("}{"), i(3), t("}{"), f(function() return vim.fn.expand("%:t:r") end), t("}"),
+                    t({"",""}), t({"",""}), i(4)
                 }
             }
         )
@@ -798,12 +795,6 @@ s({trig = "rta", name = "Reference table"},
 		        }
 		    }
 		)
-    }
-),
-
-s({trig = "rfc", name = "Reference card"},
-    {
-        t("\\hyperref[card:"), i(1), t("]{\\textsf{"), rep(1), t("}}")
     }
 ),
 

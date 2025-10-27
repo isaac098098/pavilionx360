@@ -22,20 +22,20 @@ inoremap <C-e> <C-o>$
 hi NonText ctermfg=0
 
 " relative line numbers
-" hi LineNr ctermfg=15
-" hi LineNrAbove ctermfg=8
-" hi LineNrBelow ctermfg=8
+" hi LineNr ctermfg=7
+" hi LineNrAbove ctermfg=7
+" hi LineNrBelow ctermfg=7
 
 " normal line numbers
 set cursorline
 set cursorlineopt=number
-hi LineNr ctermfg=8
+hi LineNr ctermfg=7
 hi CursorLineNr ctermfg=15 cterm=none
 
-hi Visual ctermfg=8 ctermbg=11
-hi ErrorMsg ctermfg=3 ctermbg=none
-hi WarningMsg ctermfg=3 ctermbg=none
-hi Question ctermfg=8 ctermbg=none
+hi Visual ctermfg=0 ctermbg=4
+hi ErrorMsg ctermfg=4 ctermbg=none
+hi WarningMsg ctermfg=4 ctermbg=none
+hi Question ctermfg=4 ctermbg=none
 
 let g:loaded_matchparen=1
 

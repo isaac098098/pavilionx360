@@ -1,5 +1,5 @@
 set guioptions                  ""
-set font                        "CaskaydiaCove NFM SemiBold 12.4"
+set font                        "Iosevka NF Bold 11.6"
 set recolor                     "false"
 set recolor-keephue             "true"
 set selection-clipboard         clipboard
@@ -10,39 +10,40 @@ map i mark_evaluate
 
 # base16 tomorrow night
 
-set default-bg                  "#282a2e" #00
-set default-fg                  "#c5c8c6" #05
+set default-bg                  "#1e1a1b" #00
+set default-fg                  "#f6ebeb" #05
 
-set completion-bg               "#373b41" #02
-set completion-fg               "#8abeb7" #0C
-set completion-highlight-fg     "#373b41" #02
-set completion-highlight-bg     "#8abeb7" #0C
-set completion-group-fg         "#373b41" #02
-set completion-group-bg         "#8abeb7" #0C
+set completion-bg               "#2a2425" #02
+set completion-fg               "#e5b191" #0C
+set completion-highlight-fg     "#2a2425" #02
+set completion-highlight-bg     "#e5b191" #0C
+set completion-group-fg         "#2a2425" #02
+set completion-group-bg         "#e5b191" #0C
 
-set statusbar-fg                "#b4b7b4" #04
-set statusbar-bg                "#282a2e" #01
+set statusbar-fg                "#f6ebeb" #04
+set statusbar-bg                "#1e1a1b" #01
 
-set notification-bg             "#b5bd68" #09
-set notification-fg             "#282a2e" #00
-set notification-warning-bg     "#de935f" #09
-set notification-warning-fg     "#282a2e" #00
-set notification-error-bg       "#cc6666" #00
-set notification-error-fg       "#282a2e" #00
+set notification-bg             "#1d1a1b" #09
+set notification-fg             "#1e1a1b" #00
+set notification-warning-bg     "#e5b191" #09
+set notification-warning-fg     "#1e1a1b" #00
+set notification-error-bg       "#1e1a1b" #00
+set notification-error-fg       "#f6ebeb" #00
 
-set recolor-lightcolor          "#282a2e" #00
-set recolor-darkcolor           "#e0e0e0" #06
+set recolor-lightcolor          "#1e1a1b" #00
+set recolor-darkcolor           "#f6ebeb" #06
 
-set index-bg                    "#282a2e" #09
-set index-fg                    "#c5c8c6" #00
-set index-active-bg             "#de935f" #09
-set index-active-fg             "#282a2e" #00
+set index-bg                    "#1e1a1b" #09
+set index-fg                    "#f6ebeb" #00
+set index-active-bg             "#e5b191" #09
+set index-active-fg             "#1e1a1b" #00
 
-set render-loading-bg           "#de935f" #09
-set render-loading-fg           "#282a2e" #00
+set render-loading-bg           "#e5b191" #09
+set render-loading-fg           "#1e1a1b" #00
 
-set inputbar-bg                 "#282a2e" #00
-set inputbar-fg                 "#c5c8c6" #02
+set inputbar-bg                 "#1e1a1b" #00
+set inputbar-fg                 "#f6ebeb" #02
 
 set highlight-color             rgba(240,198,116,0) #0A
 set highlight-active-color      rgba(129,162,190,0) #0D
+

@@ -2,7 +2,7 @@
     crust:  #1F1A1C;
     bg0:    #231D1D;
     fg0:    #F6EBEB;
-    orange: #DE935F;
+    orange: #E09B6C;
 }
 
 configuration {

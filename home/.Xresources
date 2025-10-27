@@ -1,5 +1,5 @@
 /*nsxiv base16 tomorrow night*/
 
- Nsxiv.*.background:    #1D1F21
- Nsxiv.*.foreground:    #C5C8C6
- Nsxiv.*.font:          Iosevka NFM SemiBold-11
+ Nsxiv.*.background:    #1E1A1B
+ Nsxiv.*.foreground:    #F6EBEB
+ Nsxiv.*.font:          scientifica-13
