@@ -15,8 +15,14 @@ then
         "Pentesting")
             dir="$HOME/documents/books/pentesting"
         ;;
+        "OpenGL")
+            dir="$HOME/documents/books/graphics/opengl"
+        ;;
+        "Vulkan")
+            dir="$HOME/documents/books/graphics/vulkan"
+        ;;
         "Graphics")
-            dir="$HOME/documents/books/graphics"
+            dir="$HOME/documents/books/graphics/theory"
         ;;
         "Languages")
             dir="$HOME/documents/books/languages"
@@ -38,6 +44,8 @@ else
     echo "OS"
     echo "Reverse Engineering"
     echo "Pentesting"
+    echo "OpenGL"
+    echo "Vulkan"
     echo "Graphics"
     echo "Languages"
     echo "Diagrams"
