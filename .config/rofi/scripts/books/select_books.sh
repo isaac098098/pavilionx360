@@ -24,11 +24,17 @@ then
         "Graphics")
             dir="$HOME/documents/books/graphics/theory"
         ;;
-        "Languages")
-            dir="$HOME/documents/books/languages"
+        "C")
+            dir="$HOME/documents/books/languages/c"
         ;;
-        "Diagrams")
-            dir="$HOME/code/diagrams"
+        "C++")
+            dir="$HOME/documents/books/languages/cpp"
+        ;;
+        "Python")
+            dir="$HOME/documents/books/languages/python"
+        ;;
+        "Algorithms")
+            dir="$HOME/documents/books/languages/algorithms"
         ;;
         *)
             rofi -e "No directory for \"$1\"" 2>/dev/null
@@ -47,8 +53,10 @@ else
     echo "OpenGL"
     echo "Vulkan"
     echo "Graphics"
-    echo "Languages"
-    echo "Diagrams"
+    echo "C"
+    echo "C++"
+    echo "Python"
+    echo "Algorithms"
     
     exit 0
 fi
