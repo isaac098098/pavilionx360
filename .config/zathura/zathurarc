@@ -1,0 +1,49 @@
+set guioptions                  s
+#set font                        Iosevka NF SemiBold 10.6
+set font                        "scientifica medium 12"
+set recolor                     false
+set recolor-keephue             true
+set selection-clipboard         clipboard
+set window-title-basename       true
+set statusbar-basename          true
+unmap normal i
+map i mark_evaluate
+
+# base16 tomorrow night
+
+set default-bg                  "#1E1A1B"
+set default-fg                  "#F6EBEB"
+
+set completion-bg               "#2A2425"
+set completion-fg               "#E5B191"
+set completion-highlight-fg     "#2A2425"
+set completion-highlight-bg     "#E5B191"
+set completion-group-fg         "#2A2425"
+set completion-group-bg         "#E5B191"
+
+set statusbar-fg                "#F6EBEB"
+set statusbar-bg                "#1E1A1B"
+
+set notification-bg             "#1D1A1B"
+set notification-fg             "#1E1A1B"
+set notification-warning-bg     "#E5B191"
+set notification-warning-fg     "#1E1A1B"
+set notification-error-bg       "#1E1A1B"
+set notification-error-fg       "#F6EBEB"
+
+set recolor-lightcolor          "#1E1A1B"
+set recolor-darkcolor           "#F6EBEB"
+
+set index-bg                    "#1E1A1B"
+set index-fg                    "#F6EBEB"
+set index-active-bg             "#E5B191"
+set index-active-fg             "#1E1A1B"
+
+set render-loading-bg           "#E5B191"
+set render-loading-fg           "#1E1A1B"
+
+set inputbar-bg                 "#1E1A1B"
+set inputbar-fg                 "#F6EBEB"
+
+set highlight-color             rgba(240,198,116,0)
+set highlight-active-color      rgba(129,162,190,0)
