@@ -42,7 +42,7 @@ nnoremap mR :make run<CR>
 nnoremap u <Cmd>silent! undo<CR>
 nnoremap <C-r> <Cmd>silent! redo<CR>
 vnoremap <C-j> <Esc>
-vnoremap K <Cmd>silent! vertical Man <cWORD><CR>
+vnoremap K y<Cmd>silent! execute 'vertical Man ' . getreg('"')<CR>
 snoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 inoremap <C-e> <C-o>$
