@@ -37,8 +37,7 @@ nnoremap co <Cmd>silent! cwindow<CR>
 nnoremap cO <Cmd>silent! cclose<CR>
 nnoremap K <Cmd>silent! vertical Man <cword><CR>
 nnoremap mm <Cmd>silent make all<Bar> redraw!<CR>
-nnoremap mr <Cmd>ver terminal make run<CR>
-nnoremap mR <Cmd>ver terminal make run<CR>
+nnoremap mr <Cmd>vert terminal make run<CR>
 nnoremap u <Cmd>silent! undo<CR>
 nnoremap <C-r> <Cmd>silent! redo<CR>
 vnoremap <C-j> <Esc>
@@ -93,3 +92,13 @@ function! CloseManBuffers()
 endfunction
 
 nnoremap fj <Cmd>call CloseManBuffers()<CR>
+
+function! CloseTermBuffers()
+  for buf in getbufinfo({'bufloaded': 1})
+    if getbufvar(buf.bufnr, '&buftype') ==# 'terminal'
+      execute 'bwipeout' buf.bufnr
+    endif
+  endfor
+endfunction
+
+nnoremap ff <Cmd>call CloseTermBuffers()<CR>
