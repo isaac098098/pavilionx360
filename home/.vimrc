@@ -81,3 +81,13 @@ augroup ManClean
   autocmd!
   autocmd FileType man silent! g/^troff:.*/d
 augroup END
+
+function! CloseManBuffers()
+  for buf in getbufinfo({'bufloaded': 1})
+    if getbufvar(buf.bufnr, '&filetype') ==# 'man'
+      execute 'bwipeout' buf.bufnr
+    endif
+  endfor
+endfunction
+
+nnoremap fj <Cmd>call CloseManBuffers()<CR>
