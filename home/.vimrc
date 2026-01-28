@@ -28,17 +28,17 @@ set report=20
 set laststatus=0
 set completeopt=menu,noselect,menuone
 set fillchars+=eob:\ 
-set fillchars=vert:\│
+set fillchars=vert:\│ 
 
 nnoremap j gj
 nnoremap k gk
-nnoremap gp :pclose<CR>
-nnoremap co :cwindow<CR>
-nnoremap cO :cclose<CR>
+nnoremap gp <Cmd>silent! pclose<CR>
+nnoremap co <Cmd>silent! cwindow<CR>
+nnoremap cO <Cmd>silent! cclose<CR>
 nnoremap K <Cmd>silent! vertical Man <cword><CR>
-nnoremap mm :silent make all<Bar> redraw!<CR>
-nnoremap mr :silent make run <Bar> redraw!<CR>
-nnoremap mR :make run<CR>
+nnoremap mm <Cmd>silent make all<Bar> redraw!<CR>
+nnoremap mr <Cmd>terminal make run<CR>
+nnoremap mR <Cmd>terminal make run<CR>
 nnoremap u <Cmd>silent! undo<CR>
 nnoremap <C-r> <Cmd>silent! redo<CR>
 vnoremap <C-j> <Esc>
@@ -70,7 +70,9 @@ hi PmenuSel ctermfg=0 ctermbg=4
 hi Pmenu ctermfg=15 ctermbg=0
 hi PmenuSbar ctermfg=0 ctermbg=0
 hi StatusLine ctermfg=0 ctermbg=0 cterm=NONE
-hi StatusLineNC ctermfg=0 ctermbg=15
+hi StatusLineNC ctermfg=0 ctermbg=0 cterm=NONE
+hi StatusLineTerm ctermfg=0 ctermbg=0 cterm=NONE
+hi StatusLineTermNC ctermfg=0 ctermbg=0 cterm=NONE
 hi VertSplit ctermfg=0 ctermbg=0
 hi QuickFixLine ctermfg=0 ctermbg=4
 hi TabLineSel ctermfg=0 ctermbg=4
